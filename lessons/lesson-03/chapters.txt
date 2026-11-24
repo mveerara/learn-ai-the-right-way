@@ -1,0 +1,13 @@
+0:00 Colab with Google Drive
+0:14 What is Google Colab?
+0:32 A notebook is made of cells
+0:56 The catch: Colab forgets
+1:18 What we'll set up
+1:39 Step 1: the workbench folder
+2:00 Step 2: a notebook
+2:18 Step 3: connect to Drive
+2:38 Test: does it remember?
+3:05 About the free GPU
+3:25 Good habits from day one
+3:47 Your guided lab
+4:03 Recap and your quiz

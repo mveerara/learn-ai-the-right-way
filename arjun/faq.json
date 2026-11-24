@@ -1,0 +1,626 @@
+{
+ "lessons": {
+  "1": {
+   "t": "Lesson 1: What AI, ML and deep learning are",
+   "u": "https://claude.ai/artifact/1NKfwA6VeMyb9MLXLfQZQ2"
+  },
+  "2": {
+   "t": "Lesson 2: The workbench",
+   "u": "https://claude.ai/artifact/3W59cNDxfdPycH1sGNxNW8"
+  },
+  "3": {
+   "t": "Lesson 3: Colab with Google Drive",
+   "u": "https://claude.ai/artifact/YYsMi7EGrFmaS6KAUNU679"
+  },
+  "0": {
+   "t": "General: getting started and costs",
+   "u": "https://claude.ai/artifact/1S27dYy5tfBcnoW8L9NmsE"
+  },
+  "py": {
+   "t": "Course 0: Python basics",
+   "u": "https://claude.ai/artifact/1S27dYy5tfBcnoW8L9NmsE"
+  },
+  "c0l1": {
+   "t": "Course 0, Lesson 1: Why Linux runs AI",
+   "u": "https://claude.ai/artifact/EkUfoCHwmwVLEPnA1RYo3U"
+  },
+  "c0l2": {
+   "t": "Course 0, Lesson 2: Moving around: files and folders",
+   "u": "https://claude.ai/artifact/X9eRahk6qfETj7k7WjKaCU"
+  },
+  "c0l3": {
+   "t": "Course 0, Lesson 3: Wildcards, pipes and redirection",
+   "u": "https://claude.ai/artifact/6Y4TiiuFiKP5nYK7BaioPM"
+  },
+  "c0l4": {
+   "t": "Course 0, Lesson 4: Owners and permissions",
+   "u": "https://claude.ai/artifact/VzxYBndyoeyFYSWsejhXiy"
+  },
+  "c0l5": {
+   "t": "Course 0, Lesson 5: sudo, root and staying safe",
+   "u": "https://claude.ai/artifact/VhDgxn7Fw2eRoCuRtdD2An"
+  }
+ },
+ "faq": [
+  {
+   "l": 1,
+   "q": "Do I need maths or coding for this?",
+   "a": "Not for this lesson. Course 1 needs only a Google account and a browser. Maths and Python come in later courses, one small step at a time."
+  },
+  {
+   "l": 1,
+   "q": "Is ChatGPT (or Claude) AI, machine learning or deep learning?",
+   "a": "All three at once. These chatbots run on large language models, which are deep learning models. Deep learning is a kind of machine learning, and machine learning is a kind of AI. Remember the three circles."
+  },
+  {
+   "l": 1,
+   "q": "Does every AI system learn from data?",
+   "a": "No. A system built from hand-written rules, like an old spam filter or a tax calculator, is still AI but not machine learning. That's quiz question 5."
+  },
+  {
+   "l": 1,
+   "q": "What's the difference between AI and data science?",
+   "a": "Data science is about getting answers from data, using statistics, charts and often machine learning. It overlaps with AI rather than sitting inside it. This channel teaches the parts of both that you need to build working models."
+  },
+  {
+   "l": 1,
+   "q": "What exactly are features and labels?",
+   "a": "Features are the measurable facts about each example, such as age, ticket class or fare: the columns you learn from. The label is the answer you want to predict, such as survived yes or no."
+  },
+  {
+   "l": 1,
+   "q": "Supervised or unsupervised: how do I tell them apart?",
+   "a": "Ask whether the examples come with the right answers. With answers (labels), it's supervised learning, as in the Titanic example. Without answers, finding groups on its own, it's unsupervised, as in the classroom clustering game."
+  },
+  {
+   "l": 1,
+   "q": "Why is it called \"deep\" learning?",
+   "a": "Because the neural network has many layers stacked one after another. Each layer builds on the one before: edges, then shapes, then whole objects."
+  },
+  {
+   "l": 1,
+   "q": "If deep learning is so powerful, why not use it every time?",
+   "a": "It needs far more data and computing power, and its decisions are harder to explain. For rows-and-columns data, a simple model is often just as good or better. Start simple, and add complexity only when it earns its place."
+  },
+  {
+   "l": 1,
+   "q": "Was the Titanic table in the video real data?",
+   "a": "The rows were illustrative, laid out like the famous Titanic passenger dataset. You'll work with the real dataset in a lab later in the series."
+  },
+  {
+   "l": 1,
+   "q": "I didn't pass the quiz. What now?",
+   "a": "No problem: there's no limit on tries. Take it again, or watch the 60-second recap first and then retry. The pass mark is 4 out of 5."
+  },
+  {
+   "l": 2,
+   "q": "Do I need to install anything for this lesson?",
+   "a": "No. This lesson only explains the plan. You set up step one, Google Colab, in the next lesson, using just a Google account and a browser."
+  },
+  {
+   "l": 2,
+   "q": "Is Google Colab really free?",
+   "a": "Yes, Colab has a free tier that is enough for every lab in the early courses. Its limits, such as how long a session runs or whether a GPU is available, change from time to time, which is one reason your work is saved in GitHub."
+  },
+  {
+   "l": 2,
+   "q": "What is a repository?",
+   "a": "A folder that remembers every change you make to its files. On GitHub it's also backed up online, so you can open it on any computer. Yours will be called workbench."
+  },
+  {
+   "l": 2,
+   "q": "Do I need a GitHub account now?",
+   "a": "Not yet. You'll create a free one in Course 1, Module 2. Until then, Colab saves your work to Google Drive."
+  },
+  {
+   "l": 2,
+   "q": "My laptop has 4 GB of memory. Can I still follow along?",
+   "a": "Yes, for the browser-based courses: Colab runs on Google's computers, not yours. For the laptop lessons, 8 GB is the practical minimum, and 16 GB is comfortable."
+  },
+  {
+   "l": 2,
+   "q": "Can I use a tablet or a phone?",
+   "a": "For watching and for Colab, a tablet works. Typing code on a phone is painful, so use a laptop, desktop or tablet with a keyboard when you can."
+  },
+  {
+   "l": 2,
+   "q": "What is a dev container?",
+   "a": "A box that packs your whole setup, Python version, libraries and tools, so it runs identically on any computer or in the browser with GitHub Codespaces. You'll build one in Course 1, Module 2."
+  },
+  {
+   "l": 2,
+   "q": "Do I have to pay for Databricks or BigQuery?",
+   "a": "No. Databricks has a Free Edition and BigQuery has a sandbox that needs no credit card. You'll only use them in the big data course, and free-tier rules can change, so check their sites then."
+  },
+  {
+   "l": 2,
+   "q": "Why not just use my laptop for everything?",
+   "a": "You can for small and medium data. But some labs need a free GPU (Colab) or many machines at once (Databricks), and companies use all of these, so it pays to know them."
+  },
+  {
+   "l": 3,
+   "q": "Is Google Colab really free?",
+   "a": "Yes. Colab says it is free of charge to use. Paid plans add more computing power and longer sessions, but you won't need them for this course."
+  },
+  {
+   "l": 3,
+   "q": "How long can a Colab session run?",
+   "a": "Up to 12 hours on the free tier, and less if you leave it idle. Colab doesn't publish exact limits and they change, which is exactly why your work lives in Drive."
+  },
+  {
+   "l": 3,
+   "q": "My files disappeared. What happened?",
+   "a": "They were probably saved on Colab's computer, under /content, rather than in your Drive. Mount your Drive and save under /content/drive/MyDrive/workbench instead."
+  },
+  {
+   "l": 3,
+   "q": "Is it safe to give Colab access to my Drive?",
+   "a": "The permission is between your own Google account and Google's own Colab service. Only allow it for notebooks you created or trust, because a notebook with that access can read and change your Drive files."
+  },
+  {
+   "l": 3,
+   "q": "Do I have to mount Drive every time?",
+   "a": "Yes, once per session. That's why the setup cell goes at the top of every notebook: after a restart, you rerun it first."
+  },
+  {
+   "l": 3,
+   "q": "Where is my notebook saved?",
+   "a": "In your Google Drive. New notebooks go to a folder called Colab Notebooks unless you move them, which is why step 2 moves yours into workbench/notebooks."
+  },
+  {
+   "l": 3,
+   "q": "Should I turn on the GPU now?",
+   "a": "No. The early labs don't need it, and free GPU time is limited and changes. We'll switch it on when deep learning arrives."
+  },
+  {
+   "l": 3,
+   "q": "Can I do this lab on a tablet or phone?",
+   "a": "A tablet with a keyboard works. On a phone, Colab is hard to use, so use a laptop or desktop if you can."
+  },
+  {
+   "l": 3,
+   "q": "Why won't the lab just give me the full code?",
+   "a": "Because you learn by building it. The hints get more specific each time you open one, so you're never stuck for long."
+  },
+  {
+   "l": 0,
+   "q": "Where do I start?",
+   "a": "Take the entrance quiz in the course catalogue, under Where to start. It takes about 15 minutes. Pass, and you go straight to Course 1. If not yet, it shows which Course 0 modules to take first."
+  },
+  {
+   "l": 0,
+   "q": "Why is there an entrance quiz?",
+   "a": "Almost every AI tool stands on Linux, Git and Python basics. The quiz checks you have that ground, so no lesson leaves you stuck. It's placement, not a filter: nobody is turned away."
+  },
+  {
+   "l": 0,
+   "q": "I failed the entrance quiz. What now?",
+   "a": "That's fine. Your result lists the modules you missed. Take only those parts of Course 0, then retake the quiz. There's no limit on tries."
+  },
+  {
+   "l": 0,
+   "q": "I already know Linux and Python. Do I have to take Course 0?",
+   "a": "No. Pass the entrance quiz and you can skip it. Passing is all the proof needed, wherever you learned the skills."
+  },
+  {
+   "l": 0,
+   "q": "What is Course 0?",
+   "a": "The prep course: Linux command line, file permissions, Git, the GPU stack and Python basics as videos, plus cheatsheets with quizzes for installing software, environments, networks and SSH, containers and cloud basics."
+  },
+  {
+   "l": 0,
+   "q": "What does the course cost?",
+   "a": "Every video, quiz, cheatsheet and certificate is free. Optional lab packs give extra practice, with lower student prices. All prices are in the course catalogue."
+  },
+  {
+   "l": 0,
+   "q": "How do refunds work?",
+   "a": "Every purchase has a 7-day refund, no questions asked."
+  },
+  {
+   "l": 0,
+   "q": "Can I pay from outside India?",
+   "a": "Overseas card payments are opening soon. Overseas prices are already listed in the catalogue."
+  },
+  {
+   "l": 0,
+   "q": "Is there a student discount?",
+   "a": "Yes. Every paid pack has a lower student price, shown in the course catalogue."
+  },
+  {
+   "l": 0,
+   "q": "Do I get a certificate?",
+   "a": "Yes, and it's free, like every video, quiz and cheatsheet."
+  },
+  {
+   "l": 0,
+   "q": "What is the pass mark for quizzes?",
+   "a": "80% on every quiz, for example 4 out of 5. You can retake any quiz as often as you like."
+  },
+  {
+   "l": 0,
+   "q": "Can I talk to a mentor or a real person?",
+   "a": "There's no live support team. I'm Arjun, the FAQ guide, and I search every lesson's FAQ for you. If your question isn't answered, ask in the comments under the lesson's video; common questions get added to the FAQ."
+  },
+  {
+   "l": 0,
+   "q": "Who is Ria?",
+   "a": "Ria is the channel's animated presenter, with an AI-generated voice. The lessons are written by Mukund Veeraraghavan, who designed the course."
+  },
+  {
+   "l": 0,
+   "q": "How often do new lessons come out?",
+   "a": "New lessons are released regularly. Subscribe to the channel and turn on notifications to hear about each one."
+  },
+  {
+   "l": 0,
+   "q": "I'm stuck in a lab. What should I do?",
+   "a": "Open the hints one at a time: each is more specific than the last. Check you did the earlier steps in order, then rerun your notebook from the top. Still stuck? Ask in the lesson's comments with the exact error message."
+  },
+  {
+   "l": "py",
+   "q": "Is Python pass by value or pass by reference?",
+   "a": "Neither, exactly: Python passes a reference to the object, sometimes called call by sharing. If a function changes a mutable object in place, like `x.append(4)` on a list, the caller sees the change. If the function rebinds the name, like `x = [9]`, the caller does not. Immutable objects (int, str, tuple) can't be changed in place, so they behave like pass by value."
+  },
+  {
+   "l": "py",
+   "q": "Why did changing one list change another list too?",
+   "a": "Because `b = a` doesn't copy the list; both names point to the same list. Make a real copy with `b = a.copy()` or `b = list(a)`. For lists inside lists, use `import copy` and `b = copy.deepcopy(a)`."
+  },
+  {
+   "l": "py",
+   "q": "What is the difference between a list and a tuple?",
+   "a": "A list can be changed after it's made (add, remove, replace items); a tuple can't. Use a list for a collection that grows, and a tuple for a fixed group of values, like a pair of coordinates. Tuples can also be dictionary keys; lists can't."
+  },
+  {
+   "l": "py",
+   "q": "What are mutable and immutable types?",
+   "a": "Mutable objects can be changed in place: lists, dictionaries, sets. Immutable ones can't: int, float, str, tuple. 'Changing' an immutable value really creates a new object, which is why `s.upper()` returns a new string instead of changing `s`."
+  },
+  {
+   "l": "py",
+   "q": "Why shouldn't I use a list as a default argument?",
+   "a": "Default values are created once, when the function is defined, so `def f(x=[])` shares one list across every call and it keeps growing. Use `def f(x=None):` and then `if x is None: x = []` inside the function."
+  },
+  {
+   "l": "py",
+   "q": "What is the difference between is and == in Python?",
+   "a": "`==` asks whether two values are equal; `is` asks whether they are the very same object. Two separate lists `[1, 2]` are `==` but not `is`. Use `is` only for checks like `x is None`."
+  },
+  {
+   "l": "py",
+   "q": "What is a decorator?",
+   "a": "A function that takes another function and returns a new one that adds behaviour around it, such as timing, logging or caching. Writing `@timer` above `def train():` is shorthand for `train = timer(train)`. You'll meet built-in ones like `@property` and `@functools.lru_cache`."
+  },
+  {
+   "l": "py",
+   "q": "What does if __name__ == \"__main__\": mean?",
+   "a": "Code under this line runs only when you run the file directly, not when another file imports it. It lets one file work both as a script and as a module you can import."
+  },
+  {
+   "l": "py",
+   "q": "What are *args and **kwargs?",
+   "a": "They let a function accept any number of arguments. `*args` collects extra positional arguments into a tuple; `**kwargs` collects extra named arguments into a dictionary. The names are a convention; the `*` and `**` are what matter."
+  },
+  {
+   "l": "py",
+   "q": "What is a list comprehension?",
+   "a": "A short way to build a list from a loop: `[x * x for x in range(5)]` gives `[0, 1, 4, 9, 16]`. You can add a filter: `[x for x in nums if x > 0]`. If it stops being easy to read, write a normal loop instead."
+  },
+  {
+   "l": "py",
+   "q": "What is a lambda function?",
+   "a": "A small one-line function without a name, like `lambda x: x * 2`. It's mostly used where a function is needed briefly, for example `sorted(people, key=lambda p: p['age'])`. For anything longer, use `def`."
+  },
+  {
+   "l": "py",
+   "q": "Why do I get an IndentationError?",
+   "a": "Python uses indentation to know which lines belong to a loop, function or if-block. Every line in a block must be indented the same way. Use 4 spaces, don't mix tabs and spaces, and check the line the error points to and the one above it."
+  },
+  {
+   "l": "py",
+   "q": "What is the difference between print and return?",
+   "a": "`print` shows a value on the screen and the function still gives back nothing. `return` hands a value back to the code that called the function, so you can store it or use it. A function with no `return` gives back `None`."
+  },
+  {
+   "l": "py",
+   "q": "Why does 0.1 + 0.2 not equal 0.3 in Python?",
+   "a": "Computers store decimals in binary, and 0.1 can't be stored exactly, so the sum is 0.30000000000000004. This happens in every language. Compare with `math.isclose(a, b)` instead of `==`, round for display, or use the `decimal` module for money."
+  },
+  {
+   "l": "py",
+   "q": "What is the difference between / and // in Python?",
+   "a": "`/` always gives a decimal: `7 / 2` is `3.5`. `//` divides and rounds down: `7 // 2` is `3`. `%` gives the remainder: `7 % 2` is `1`."
+  },
+  {
+   "l": "py",
+   "q": "How do I loop over a dictionary?",
+   "a": "`for key in d:` loops over the keys. `for key, value in d.items():` gives both at once, which is what you usually want. Use `d.get(key, default)` to read a key that might be missing without an error."
+  },
+  {
+   "l": "py",
+   "q": "What is a virtual environment and why use one?",
+   "a": "A separate folder of installed packages for one project, so projects don't break each other with different versions. Create one with `python -m venv .venv`, then activate it before installing packages. Colab doesn't need one; your laptop does."
+  },
+  {
+   "l": "py",
+   "q": "I get ModuleNotFoundError: No module named ... What do I do?",
+   "a": "The package isn't installed in the Python you're running. Install it with `pip install name` in the same environment (activate your virtual environment first). In Colab, run `%pip install name` in a cell. Check the spelling too: the install name can differ, e.g. `pip install scikit-learn` but `import sklearn`."
+  },
+  {
+   "l": "py",
+   "q": "What is the difference between a module and a package?",
+   "a": "A module is one `.py` file you can import. A package is a folder of modules imported under one name, like `numpy` or `pandas`. You install packages with pip and import modules from them."
+  },
+  {
+   "l": "py",
+   "q": "What is a generator and what does yield do?",
+   "a": "A generator produces values one at a time instead of building a whole list in memory. A function with `yield` becomes a generator: each `yield` hands out one value and pauses until the next is asked for. It's how you process huge files line by line."
+  },
+  {
+   "l": "py",
+   "q": "How do I open and read a file safely?",
+   "a": "Use `with open('data.txt') as f:` and read inside the block. The file is closed automatically, even if an error happens. Add `encoding='utf-8'` for text files to avoid surprises on Windows."
+  },
+  {
+   "l": "py",
+   "q": "What are a class and self?",
+   "a": "A class is a blueprint for objects that bundle data and functions together. `self` is the particular object a method is working on, so `self.name` means this object's name. You'll mostly use classes others wrote, like a pandas DataFrame or a scikit-learn model."
+  },
+  {
+   "l": "py",
+   "q": "How do I handle errors with try and except?",
+   "a": "Put the risky code in `try:` and the recovery in `except SomeError:`. Catch the specific error you expect, like `except FileNotFoundError:`, not a bare `except:`, which hides real bugs."
+  },
+  {
+   "l": "py",
+   "q": "What is an f-string?",
+   "a": "A string with an `f` in front that fills in values: `f\"Accuracy: {acc:.2%}\"` prints Accuracy: 93.50%. It's the easiest way to mix text and numbers."
+  },
+  {
+   "l": "py",
+   "q": "Why do I get UnboundLocalError?",
+   "a": "You assigned to a variable inside a function, so Python treats it as local throughout that function, and you read it before assigning. Pass the value in as an argument and return the new value, rather than changing an outside variable."
+  },
+  {
+   "l": "py",
+   "q": "Should I learn Python 2 or Python 3?",
+   "a": "Python 3. Python 2 reached its end of life in 2020 and modern libraries no longer support it. Colab and every lab in this course use Python 3."
+  },
+  {
+   "l": "py",
+   "q": "pip or conda: which should I use?",
+   "a": "Both install packages. This course uses pip with a virtual environment, which is enough for almost everything. Conda is useful when a package needs non-Python libraries, but don't mix the two in one environment."
+  },
+  {
+   "l": "c0l1",
+   "q": "Do I need to install Linux for this course?",
+   "a": "No. Colab already runs on Linux, so you can do every Course 0 lab in your browser. Later, Windows users can add WSL and Mac users can use the Terminal app."
+  },
+  {
+   "l": "c0l1",
+   "q": "Is Linux hard to learn?",
+   "a": "The basics take a few hours, and you only need a dozen commands to get going. This module teaches exactly those, one lesson at a time."
+  },
+  {
+   "l": "c0l1",
+   "q": "What is the difference between Linux and Ubuntu?",
+   "a": "Linux is the core of the system. Ubuntu is a distribution: Linux packaged with tools and an installer. Colab runs Ubuntu, and so does WSL by default."
+  },
+  {
+   "l": "c0l1",
+   "q": "Why does Colab say I'm root?",
+   "a": "Colab gives you a temporary machine all to yourself, so it runs you as the administrator. On real servers you'll be a normal user. The sudo lesson explains why that matters."
+  },
+  {
+   "l": "c0l1",
+   "q": "Is the Mac Terminal the same as Linux?",
+   "a": "Very close. macOS is a Unix system, so most commands in this course work the same. A few options differ slightly; --help will tell you."
+  },
+  {
+   "l": "c0l1",
+   "q": "What is WSL?",
+   "a": "Windows Subsystem for Linux: a Microsoft feature that runs a real Linux system inside Windows. You install it by running wsl --install in PowerShell as administrator."
+  },
+  {
+   "l": "c0l1",
+   "q": "Why use commands when there's a mouse?",
+   "a": "Servers usually have no screen, commands can be saved and repeated exactly, and they're much faster for repetitive work."
+  },
+  {
+   "l": "c0l1",
+   "q": "My command says 'command not found'. What now?",
+   "a": "Check the spelling and capitals: Linux is case-sensitive, so LS is not ls. If it's spelled right, the program may simply not be installed."
+  },
+  {
+   "l": "c0l1",
+   "q": "Does man work in Colab?",
+   "a": "Colab's Linux is a trimmed-down version, so the full manuals may be missing. Use --help instead, which works for almost every command."
+  },
+  {
+   "l": "c0l2",
+   "q": "Why doesn't !cd work in Colab?",
+   "a": "Each line starting with ! runs in its own short-lived shell, so the change of folder is lost when that line ends. Use %cd, which Colab remembers for the rest of the notebook."
+  },
+  {
+   "l": "c0l2",
+   "q": "What's the difference between a folder and a directory?",
+   "a": "Nothing: they're two words for the same thing. Linux tradition says directory, which is why the command is cd, change directory."
+  },
+  {
+   "l": "c0l2",
+   "q": "Are file names case-sensitive?",
+   "a": "Yes. Data.csv and data.csv are two different files on Linux. Stick to lowercase names to avoid surprises."
+  },
+  {
+   "l": "c0l2",
+   "q": "Can I use spaces in file names?",
+   "a": "You can, but you then have to put the name in quotes every time. Use underscores or dashes instead, like my_data.csv."
+  },
+  {
+   "l": "c0l2",
+   "q": "What are hidden files?",
+   "a": "Files whose names start with a dot, such as .bashrc. They usually hold settings. ls -a shows them."
+  },
+  {
+   "l": "c0l2",
+   "q": "I deleted a file with rm. Can I get it back?",
+   "a": "Usually not. That's why your important work lives in your Drive workbench, and later in Git, where earlier versions are kept."
+  },
+  {
+   "l": "c0l2",
+   "q": "What's the difference between cp and cp -r?",
+   "a": "cp copies files. To copy a folder and everything inside it, you need -r, for recursive."
+  },
+  {
+   "l": "c0l2",
+   "q": "Where is my home folder in Colab?",
+   "a": "Colab runs you as root, so your home is /root. Your notebook starts in /content, which is where you should work."
+  },
+  {
+   "l": "c0l2",
+   "q": "Why count lines with wc -l?",
+   "a": "For a CSV file, it tells you the number of rows almost instantly, before you even open Python. Remember the header line."
+  },
+  {
+   "l": "c0l3",
+   "q": "Why put the pattern in quotes with find?",
+   "a": "Without quotes, the shell may expand the star in your current folder before find ever sees it. Quotes pass the pattern to find unchanged."
+  },
+  {
+   "l": "c0l3",
+   "q": "What's the difference between > and >>?",
+   "a": "A single > replaces the file's contents. A double >> adds to the end. Use >> for logs."
+  },
+  {
+   "l": "c0l3",
+   "q": "Why did my file become empty?",
+   "a": "You probably redirected into the same file you were reading, like sort data.txt > data.txt. The shell empties the target before the command runs. Write to a new file instead."
+  },
+  {
+   "l": "c0l3",
+   "q": "Where do error messages go?",
+   "a": "To standard error, which also shows on your screen. Redirect them with 2> errors.txt to keep them separately."
+  },
+  {
+   "l": "c0l3",
+   "q": "Is grep case-sensitive?",
+   "a": "Yes. Add -i to ignore case, so grep -i error matches Error and ERROR too."
+  },
+  {
+   "l": "c0l3",
+   "q": "How do I see the columns of a CSV quickly?",
+   "a": "head -n 1 file.csv shows the header line. cut -d, -f2 keeps just the second column."
+  },
+  {
+   "l": "c0l3",
+   "q": "Can a pipe have more than two commands?",
+   "a": "Yes, as many as you like. Each command's output feeds the next, read from left to right."
+  },
+  {
+   "l": "c0l3",
+   "q": "Do wildcards work in Colab?",
+   "a": "Yes, in lines that start with !, because they run in a real Linux shell."
+  },
+  {
+   "l": "c0l3",
+   "q": "What does uniq do without sort?",
+   "a": "It only merges repeated lines that are next to each other, so the counts come out wrong. Sort first."
+  },
+  {
+   "l": "c0l4",
+   "q": "Why does chmod not stop me reading a file in Colab?",
+   "a": "Colab runs you as root, and root can read any file regardless of permissions. On a normal user account, the same settings would block you."
+  },
+  {
+   "l": "c0l4",
+   "q": "What does chmod 777 do, and should I use it?",
+   "a": "It lets everyone read, change and run the file. It's a common quick fix online, but it's unsafe on shared machines. Give the least permission that works."
+  },
+  {
+   "l": "c0l4",
+   "q": "What's the difference between chmod and chown?",
+   "a": "chmod changes what people may do with a file. chown changes who owns it."
+  },
+  {
+   "l": "c0l4",
+   "q": "Why does running my script need ./ in front?",
+   "a": "Linux only looks for commands in certain folders listed in PATH. ./ tells it to run the file in the current folder instead."
+  },
+  {
+   "l": "c0l4",
+   "q": "What does the d at the start of ls -l mean?",
+   "a": "It marks a directory. A dash marks a normal file, and an l marks a link."
+  },
+  {
+   "l": "c0l4",
+   "q": "Can I change permissions on files in Google Drive?",
+   "a": "Drive mounted in Colab doesn't follow Linux permissions in the usual way. Practise on files in /content instead."
+  },
+  {
+   "l": "c0l4",
+   "q": "What is a group used for?",
+   "a": "To share files with a team: give the group read or write access, and everyone in it gets that access."
+  },
+  {
+   "l": "c0l4",
+   "q": "How do I see which groups I'm in?",
+   "a": "Run groups, or id for more detail."
+  },
+  {
+   "l": "c0l4",
+   "q": "What does chmod -R do?",
+   "a": "It applies the change to a folder and everything inside it. Use it carefully."
+  },
+  {
+   "l": "c0l5",
+   "q": "What password does sudo ask for?",
+   "a": "Your own account password, not root's. Nothing appears on screen while you type it; that's normal."
+  },
+  {
+   "l": "c0l5",
+   "q": "Why does sudo say I'm not in the sudoers file?",
+   "a": "Your account isn't on the list of users allowed to use sudo. On your own machine, the first user usually is. On shared servers, ask the administrator."
+  },
+  {
+   "l": "c0l5",
+   "q": "Should I just log in as root to save time?",
+   "a": "No. Working as root all the time removes the safety net for every command. Use sudo for the few commands that need it."
+  },
+  {
+   "l": "c0l5",
+   "q": "Is it safe to run sudo commands from tutorials?",
+   "a": "Only from sources you trust, and only after reading what each part does. Be especially careful with commands that download and run scripts."
+  },
+  {
+   "l": "c0l5",
+   "q": "What is apt?",
+   "a": "Ubuntu's package manager: it installs, updates and removes system software. It needs sudo on a normal account."
+  },
+  {
+   "l": "c0l5",
+   "q": "What's the difference between apt and pip?",
+   "a": "apt installs system software for the whole machine. pip installs Python packages, and belongs inside a virtual environment, without sudo."
+  },
+  {
+   "l": "c0l5",
+   "q": "Why is a virtual environment important?",
+   "a": "It keeps each project's Python packages separate, so they can't clash with each other or with the system."
+  },
+  {
+   "l": "c0l5",
+   "q": "I ran a command with sudo and now my files are owned by root. How do I fix it?",
+   "a": "Give them back to yourself with sudo chown, followed by your user name and the file names. Then avoid sudo for that kind of task."
+  },
+  {
+   "l": "c0l5",
+   "q": "Is Colab's root dangerous?",
+   "a": "Not really. Colab's machine is temporary and is thrown away anyway, so it's a safe place to practise. Your Drive files are the exception: be careful with rm on paths under /content/drive."
+  },
+  {
+   "l": "c0l4",
+   "q": "My script says Permission denied when I run it. Why?",
+   "a": "It isn't marked as executable yet. Run chmod u+x followed by the script's name, then run it again with ./ in front."
+  }
+ ]
+}

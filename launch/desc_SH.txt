@@ -1,0 +1,31 @@
+New to AI? Start here. In under 4 minutes, Ria walks you through the whole course: what you'll learn, how every lesson works, and the entrance quiz that tells you where to begin.
+
+▶ Course catalogue (every course, lesson and price): https://claude.ai/artifact/1S27dYy5tfBcnoW8L9NmsE
+▶ Take the entrance quiz: https://claude.ai/artifact/F48KAj4ELKBGXpcbHCFGnz
+▶ Stuck? Ask Arjun, our FAQ guide: https://claude.ai/artifact/6ykEguQuoSDHw2rMSKryVF
+▶ Next: Lesson 1, What AI, ML and Deep Learning Actually Are: https://youtu.be/MJ39tzld5rA
+
+How every lesson works
+• A short video
+• A guided lab: prompts and hints, never the full code
+• A quiz: pass mark 80%
+• A FAQ for the most common questions
+
+Everything you need to learn is free: videos, quizzes, cheatsheets and the certificate. Optional lab packs give extra practice, with lower prices for students.
+
+Chapters
+0:00 Start here
+0:16 The right way: foundations first
+0:33 What you'll learn: 13 courses, 6 tracks
+1:02 Course 0: the prep course
+1:24 How every lesson works
+1:46 Why an entrance quiz?
+2:11 Where you take it
+2:29 Two outcomes
+2:52 What it costs
+3:09 Stuck? Ask Arjun
+3:30 Your first step
+
+Ria is the channel's animated presenter, with an AI-generated voice. The course is written and designed by Mukund Veeraraghavan.
+
+#LearnAI #MachineLearning #DataScience

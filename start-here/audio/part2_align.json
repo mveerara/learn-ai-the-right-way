@@ -1,0 +1,144 @@
+{
+ "mp3": "/home/claude/l00/audio/part2.mp3",
+ "duration": 84.924063,
+ "sents": [
+  {
+   "slide": 5,
+   "text": "Every lesson follows the same pattern.",
+   "start": 0.0,
+   "end": 2.197
+  },
+  {
+   "slide": 5,
+   "text": "You watch a short video.",
+   "start": 2.651,
+   "end": 3.882
+  },
+  {
+   "slide": 5,
+   "text": "You do a guided lab, which gives you prompts and hints, but never the full code, because you learn by typing it yourself.",
+   "start": 4.205,
+   "end": 11.07
+  },
+  {
+   "slide": 5,
+   "text": "Then you take a quiz, and the pass mark is eighty percent.",
+   "start": 11.609,
+   "end": 15.014
+  },
+  {
+   "slide": 5,
+   "text": "And each lesson has its own FAQ, for the questions people ask most.",
+   "start": 15.441,
+   "end": 20.209
+  },
+  {
+   "slide": 6,
+   "text": "Now, the entrance quiz.",
+   "start": 21.077,
+   "end": 22.667
+  },
+  {
+   "slide": 6,
+   "text": "Why have one at all?",
+   "start": 23.158,
+   "end": 24.238
+  },
+  {
+   "slide": 6,
+   "text": "Because almost every AI tool stands on a few basics.",
+   "start": 24.829,
+   "end": 29.674
+  },
+  {
+   "slide": 6,
+   "text": "If a lesson says, install the GPU driver with sudo, and sudo is a mystery, you're stuck before the real lesson even starts.",
+   "start": 30.015,
+   "end": 37.384
+  },
+  {
+   "slide": 6,
+   "text": "The quiz makes sure you have that ground under your feet.",
+   "start": 37.941,
+   "end": 40.721
+  },
+  {
+   "slide": 6,
+   "text": "It's placement, not a filter.",
+   "start": 41.151,
+   "end": 43.011
+  },
+  {
+   "slide": 6,
+   "text": "It tells you where to start.",
+   "start": 43.455,
+   "end": 44.717
+  },
+  {
+   "slide": 7,
+   "text": "You'll find it in the course catalogue, under Where to start.",
+   "start": 45.301,
+   "end": 48.561
+  },
+  {
+   "slide": 7,
+   "text": "Press the button that says, take the entrance quiz.",
+   "start": 49.145,
+   "end": 51.868
+  },
+  {
+   "slide": 7,
+   "text": "It's about twenty easy questions, it takes around fifteen minutes, and it's free.",
+   "start": 52.384,
+   "end": 56.924
+  },
+  {
+   "slide": 7,
+   "text": "If you learned these skills somewhere else, passing the quiz is all the proof you need.",
+   "start": 57.567,
+   "end": 62.269
+  },
+  {
+   "slide": 8,
+   "text": "There are two outcomes.",
+   "start": 63.184,
+   "end": 64.369
+  },
+  {
+   "slide": 8,
+   "text": "To pass, you need eighty percent overall, with no weak area.",
+   "start": 64.817,
+   "end": 68.826
+  },
+  {
+   "slide": 8,
+   "text": "Then you register, and go straight to Course one.",
+   "start": 69.371,
+   "end": 72.158
+  },
+  {
+   "slide": 8,
+   "text": "If you don't pass yet, that's completely fine.",
+   "start": 72.737,
+   "end": 75.284
+  },
+  {
+   "slide": 8,
+   "text": "The quiz shows exactly which modules you missed.",
+   "start": 75.778,
+   "end": 78.567
+  },
+  {
+   "slide": 8,
+   "text": "You take only those parts of Course zero, then retake the quiz.",
+   "start": 79.04,
+   "end": 82.848
+  },
+  {
+   "slide": 8,
+   "text": "Nobody is turned away.",
+   "start": 83.308,
+   "end": 84.694
+  }
+ ]
+}

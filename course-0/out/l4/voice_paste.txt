@@ -1,0 +1,33 @@
+COURSE 0 · LESSON 4: Owners and Permissions  (voice: Bella, same settings)
+
+
+
+===== PART 1: slides 1-4 =====
+
+Every file on Linux belongs to someone, and comes with rules about who can read it, change it or run it. Most permission denied errors you'll ever see come from these rules. Today you learn to read them and change them.
+
+Linux is built for many people sharing one machine. Each person has a user account. Users can belong to groups, like a team. And one special user, root, is the administrator, who can do anything. Every file has one owner user and one owner group.
+
+Run ls dash l, and the first column is the permission string. The first character is the type: a dash for a file, d for a directory. Then come three groups of three letters: for the owner, for the group, and for everyone else. After that you see the owner's name, the group's name, the size, and the file name.
+
+Each group has three letters. r is read: see what's inside. w is write: change it. x is execute: for a file, run it as a program; for a folder, enter it with cd. A dash means that permission is missing. So r w x, r dash x, r dash dash means: the owner can do everything, the group can read and run, and everyone else can only read.
+
+
+===== PART 2: slides 5-8 =====
+
+chmod changes permissions. Say who: u for the user who owns it, g for group, o for others, a for all. Then plus to add, or minus to remove. Then the letters. chmod u plus x train dot sh lets you run your script. chmod o minus r secrets dot txt stops everyone else from reading it.
+
+You'll often see permissions as numbers. Read is four, write is two, execute is one, and you add them up. Seven is read, write and execute; six is read and write; five is read and execute; four is read only. Three digits mean owner, group and others. So seven five five is the usual setting for programs and folders, six four four for normal files, and six hundred for private files, like keys.
+
+Here's the classic case. You write a script, try to run it with dot slash train dot sh, and get permission denied: the file isn't marked as executable yet. chmod u plus x, run it again, and it works. The dot slash just means: the file in this folder.
+
+chown changes the owner and the group: user, colon, group. Only the administrator can give files away, so chown usually needs sudo, which is next lesson's topic. You'll meet chown when files created by one program have to be used by another.
+
+
+===== PART 3: slides 9-11 =====
+
+Why does this matter for AI work? SSH refuses to use a private key that others can read, so keys must be six hundred. On a shared GPU server, permissions keep your data and other people's apart. Scripts need the execute bit before they run. And with containers and mounted disks, permission denied is one of the first errors you'll meet. Now you can read it.
+
+In the lab, you'll create a tiny script, watch it fail with permission denied, fix it with chmod, and practise both the letter form and the number form. Prompts and hints, never the full answer.
+
+Let's recap. Every file has an owner, a group, and three sets of permissions: read, write and execute, for the owner, the group and everyone else. ls dash l shows them; chmod changes them, with letters or with numbers like seven five five and six four four; and chown changes the owner. Next: sudo and root, and how to use that power safely.

@@ -1,0 +1,157 @@
+<title>Learn AI Course Catalogue</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Lexend:wght@400;500;600&display=swap">
+<style>
+/* Layout: one reading column; placement path, then prices, then the course list as expandable rows grouped by track. */
+:root{
+  --bg:#F3F7F6; --surface:#FFFFFF; --ink:#1D2A2C; --muted:#5A6B6E; --line:#D6E2E0;
+  --accent:#0F7C77; --accent-ink:#FFFFFF; --accent-soft:#DDF0EE; --deep:#0B4F4C;
+  --good:#1E8B4C; --good-soft:#DFF3E6; --warm:#E8A33A; --warm-soft:#FCEFD9;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Lexend","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101819; --surface:#182324; --ink:#E6EFEE; --muted:#9DB0AF; --line:#2B3B3C;
+  --accent:#3FB8B0; --accent-ink:#0C1515; --accent-soft:#1C3534; --deep:#8FD3CC;
+  --good:#5BCB86; --good-soft:#163222; --warm:#F0B95A; --warm-soft:#3A2D16; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101819; --surface:#182324; --ink:#E6EFEE; --muted:#9DB0AF; --line:#2B3B3C;
+  --accent:#3FB8B0; --accent-ink:#0C1515; --accent-soft:#1C3534; --deep:#8FD3CC;
+  --good:#5BCB86; --good-soft:#163222; --warm:#F0B95A; --warm-soft:#3A2D16; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 56px}
+.wrap{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:36px}
+.eyebrow{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(30px,6vw,44px);line-height:1.08;margin:6px 0 10px;color:var(--deep);text-wrap:balance}
+h2{font-family:var(--display);font-weight:800;font-size:26px;margin:0 0 6px;text-wrap:balance}
+h3{font-family:var(--display);font-weight:600;font-size:19px;margin:0}
+p{margin:0;max-width:65ch}
+.lead{font-size:18px;color:var(--muted)}
+.stats{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:14px;font-size:14px;color:var(--muted)}
+.stats b{color:var(--ink);font-variant-numeric:tabular-nums}
+section{display:flex;flex-direction:column;gap:14px}
+/* placement path */
+.path{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pstep{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.pstep .n{font-family:var(--display);font-weight:800;color:var(--accent);font-size:22px}
+.pstep p{font-size:14px;color:var(--muted)}
+.fork{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fork div{border-radius:12px;padding:12px 14px;font-size:14px}
+.fork .ok{background:var(--good-soft)}
+.fork .no{background:var(--warm-soft)}
+.fork b{display:block;font-size:15px}
+.btn{align-self:flex-start;font:inherit;font-weight:600;border-radius:12px;padding:11px 18px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);text-decoration:none}
+.btn:focus-visible,summary:focus-visible{outline:3px solid var(--warm);outline-offset:2px}
+.note{font-size:13px;color:var(--muted)}
+/* prices */
+.tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.free{color:var(--good);font-weight:600}
+/* courses */
+.track{display:flex;flex-direction:column;gap:10px}
+.track>.tname{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+details.course{background:var(--surface);border:1px solid var(--line);border-radius:14px}
+details.course>summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;gap:12px;align-items:center}
+details.course>summary::-webkit-details-marker{display:none}
+.code{flex:0 0 auto;font-family:var(--display);font-weight:800;font-size:15px;color:var(--accent);background:var(--accent-soft);border-radius:8px;padding:4px 8px;font-variant-numeric:tabular-nums}
+.cmeta{min-width:0;flex:1}
+.cmeta .sub{font-size:13px;color:var(--muted)}
+.chev{flex:0 0 auto;color:var(--accent);transition:transform .2s}
+details[open] .chev{transform:rotate(90deg)}
+.lessons{padding:0 16px 14px;display:flex;flex-direction:column}
+.mod{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding:12px 0 4px}
+.les{display:flex;gap:10px;align-items:baseline;padding:7px 0;border-top:1px solid var(--line);font-size:15px}
+.les .t{flex:1;min-width:0}
+.pill{flex:0 0 auto;font-size:12px;font-weight:600;border-radius:999px;padding:2px 9px;white-space:nowrap}
+.pill.launch{background:var(--good-soft);color:var(--good)}
+.pill.planned{background:var(--accent-soft);color:var(--muted)}
+.pill.video{background:var(--accent-soft);color:var(--accent)}
+.pill.sheet{background:var(--warm-soft);color:var(--ink)}
+.gate{font-size:13px;color:var(--muted);padding:0 16px 12px}
+@media (max-width:620px){.path,.fork{grid-template-columns:1fr}}
+@media (prefers-reduced-motion: reduce){.chev{transition:none}}
+</style>
+
+<main class="wrap">
+  <header>
+    <div class="eyebrow">Learn AI the Right Way</div>
+    <h1>Course Catalogue</h1>
+    <p class="lead">Thirteen short courses, from your first Linux command to building with large language models. Presented by Ria, written by Mukund Veeraraghavan.</p>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <section aria-labelledby="starth">
+    <h2 id="starth">Where to start</h2>
+    <div class="path">
+      <div class="pstep"><span class="n">1</span><h3>Entrance quiz</h3><p>About 20 easy questions, 15 minutes. Linux, Git, the GPU stack and Python basics.</p></div>
+      <div class="pstep"><span class="n">2</span><h3>Your result</h3><p>Pass with 80% and no weak area, or get a prep plan with only the modules you missed.</p></div>
+      <div class="pstep"><span class="n">3</span><h3>Register</h3><p>Free. Your placement is saved with your registration.</p></div>
+    </div>
+    <div class="fork">
+      <div class="ok"><b>Passed</b>Go straight to Course 1 and beyond.</div>
+      <div class="no"><b>Not yet</b>Take the Course 0 modules you missed, then retake the quiz. Nobody is turned away.</div>
+    </div>
+    <a class="btn" href="https://claude.ai/artifact/F48KAj4ELKBGXpcbHCFGnz" target="_blank" rel="noopener" id="entranceBtn">Take the entrance quiz</a>
+    <p class="note">Learned these skills elsewhere? Passing the quiz is all the proof needed.</p>
+  </section>
+
+  <section aria-labelledby="priceh">
+    <h2 id="priceh">What it costs</h2>
+    <p>Every video, quiz, cheatsheet and certificate is free. You pay only for optional practice material.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>What</th><th>Includes</th><th class="num">India</th><th class="num">Student</th><th class="num">Overseas</th></tr></thead>
+        <tbody>
+          <tr><td>All lessons</td><td>Videos, quizzes, FAQs, first lab of every course, certificate</td><td class="num free">Free</td><td class="num free">Free</td><td class="num free">Free</td></tr>
+          <tr><td>Course 0 cheatsheets</td><td>One-page PDFs for every prep topic, after free registration</td><td class="num free">Free</td><td class="num free">Free</td><td class="num free">Free</td></tr>
+          <tr><td>Prep Practice Pack</td><td>All cheatsheets plus extra Linux, Git and Python exercises</td><td class="num">₹199</td><td class="num">₹149</td><td class="num">$5</td></tr>
+          <tr><td>Course Lab Pack</td><td>Every guided lab, notebook and practice quiz for one of Courses 2 to 11</td><td class="num">₹499</td><td class="num">₹299</td><td class="num">$15</td></tr>
+          <tr><td>LLM Lab Pack</td><td>The same for Course 12, including RAG and agent labs</td><td class="num">₹799</td><td class="num">₹499</td><td class="num">$25</td></tr>
+          <tr><td>Interview Practice Pack</td><td>Ria-led mock interviews, model answers and scoring checklists</td><td class="num">₹699</td><td class="num">₹399</td><td class="num">$19</td></tr>
+          <tr><td>Full Path Bundle</td><td>Every lab pack, Courses 2 to 12, plus updates</td><td class="num">₹3,999</td><td class="num">₹2,499</td><td class="num">$99</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Paid packs open as each course is released. Student prices are for current students. Overseas card payments open soon. 7-day refund on any purchase, no questions asked.</p>
+  </section>
+
+  <section aria-labelledby="coursesh">
+    <h2 id="coursesh">All courses</h2>
+    <p class="note">Open a course to see its lessons. Course 0 is the prep course: video lessons for the hard topics, cheatsheet and quiz for the rest.</p>
+    <div id="courses"></div>
+  </section>
+
+  <p class="note">There is no live support or mentoring. Stuck? <a href="https://claude.ai/artifact/6ykEguQuoSDHw2rMSKryVF" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">Ask Arjun, our FAQ guide</a>. He searches every lesson's FAQ. Common questions from the comments are added to the FAQs.</p>
+</main>
+
+<script>
+const DATA = [{"code": "C00", "name": "Prep: Tools of the Trade", "track": "Getting Started", "tcode": "T0", "lessons": [{"id": "T0-C00-M1-L01", "title": "Why Linux runs AI", "module": "Linux and the terminal", "fmt": "video", "level": "Prep", "lab": true, "status": "planned"}, {"id": "T0-C00-M1-L02", "title": "Moving around: files and folders", "module": "Linux and the terminal", "fmt": "video", "level": "Prep", "lab": true, "status": "planned"}, {"id": "T0-C00-M1-L03", "title": "Wildcards, pipes and redirection", "module": "Linux and the terminal", "fmt": "video", "level": "Prep", "lab": true, "status": "planned"}, {"id": "T0-C00-M2-L01", "title": "Owners and permissions", "module": "Users, permissions and sudo", "fmt": "video", "level": "Prep", "lab": true, "status": "planned"}, {"id": "T0-C00-M2-L02", "title": "sudo, root and staying safe", "module": "Users, permissions and sudo", "fmt": "video", "level": "Prep", "lab": true, "status": "planned"}, {"id": "T0-C00-M3-L01", "title": "apt, pip and conda: who installs what", "module": "Installing software", "fmt": "sheet", "level": "Prep", "lab": true, "status": "planned"}, {"id": "T0-C00-M4-L01", "title": "PATH, environment variables and processes", "module": "The environment", "fmt": "sheet", "level": "Prep", "lab": true, "status": "planned"}, {"id": "T0-C00-M5-L01", "title": "SSH, keys and copying files to a server", "module": "Networks and remote machines", "fmt": "sheet", "level": "Prep", "lab": true, "status": "planned"}, {"id": "T0-C00-M6-L01", "title": "Commit, push and pull", "module": "Git and GitHub", "fmt": "video", "level": "Prep", "lab": true, "status": "planned"}, {"id": "T0-C00-M6-L02", "title": "Branches and pull requests", "module": "Git and GitHub", "fmt": "video", "level": "Prep", "lab": true, "status": "planned"}, {"id": "T0-C00-M7-L01", "title": "Docker images and containers", "module": "Containers", "fmt": "sheet", "level": "Prep", "lab": true, "status": "planned"}, {"id": "T0-C00-M8-L01", "title": "Driver, CUDA, cuDNN, PyTorch: why versions must match", "module": "The GPU stack", "fmt": "video", "level": "Prep", "lab": true, "status": "planned"}, {"id": "T0-C00-M9-L01", "title": "Virtual machines, storage and avoiding surprise bills", "module": "Cloud basics", "fmt": "sheet", "level": "Prep", "lab": true, "status": "planned"}, {"id": "T0-C00-M10-L01", "title": "Variables, lists and dictionaries", "module": "Python basics", "fmt": "video", "level": "Prep", "lab": true, "status": "planned"}, {"id": "T0-C00-M10-L02", "title": "Loops, conditions and functions", "module": "Python basics", "fmt": "video", "level": "Prep", "lab": true, "status": "planned"}, {"id": "T0-C00-M11-L01", "title": "Comprehensions, lambda, decorators and modules", "module": "Python next steps", "fmt": "sheet", "level": "Prep", "lab": true, "status": "planned"}]}, {"code": "C01", "name": "Build Your Workbench", "track": "Getting Started", "tcode": "T0", "lessons": [{"id": "T0-C01-M1-L01", "title": "What AI, ML and deep learning actually are", "module": "One workbench, everywhere", "level": "Beginner", "lab": false, "status": "launch"}, {"id": "T0-C01-M1-L02", "title": "The workbench: one setup for every course and every job", "module": "One workbench, everywhere", "level": "Beginner", "lab": false, "status": "launch"}, {"id": "T0-C01-M1-L03", "title": "Online sandbox: Colab with Google Drive that remembers your work", "module": "One workbench, everywhere", "level": "Beginner", "lab": true, "status": "launch"}, {"id": "T0-C01-M1-L04", "title": "Offline sandbox: Python on your laptop", "module": "One workbench, everywhere", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T0-C01-M1-L05", "title": "Installing libraries and pinning versions", "module": "One workbench, everywhere", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T0-C01-M2-L01", "title": "A project folder that scales", "module": "Work like industry", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T0-C01-M2-L02", "title": "Git and GitHub: your work, saved and versioned", "module": "Work like industry", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T0-C01-M2-L03", "title": "Same environment anywhere: dev containers", "module": "Work like industry", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T0-C01-M2-L04", "title": "Getting data of any size: CSV, Parquet, cloud tables", "module": "Work like industry", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T0-C01-M2-L05", "title": "Moving between laptop and cloud without losing work", "module": "Work like industry", "level": "Beginner", "lab": true, "status": "planned"}]}, {"code": "C02", "name": "Python You Need for ML", "track": "Python for Data", "tcode": "T1", "lessons": [{"id": "T1-C02-M1-L01", "title": "Variables, lists and dictionaries", "module": "Core Python", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T1-C02-M1-L02", "title": "Loops and functions", "module": "Core Python", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T1-C02-M1-L03", "title": "Lambda, comprehensions and other shortcuts", "module": "Core Python", "level": "Intermediate", "lab": false, "status": "planned"}, {"id": "T1-C02-M1-L04", "title": "Searching: binary search step by step", "module": "Core Python", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T1-C02-M2-L01", "title": "NumPy arrays in 10 minutes", "module": "Working with data", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T1-C02-M2-L02", "title": "pandas DataFrames", "module": "Working with data", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T1-C02-M2-L03", "title": "Speeding up Python", "module": "Working with data", "level": "Advanced", "lab": false, "status": "planned"}]}, {"code": "C03", "name": "Exploring and Visualising Data", "track": "Python for Data", "tcode": "T1", "lessons": [{"id": "T1-C03-M1-L01", "title": "Mean, median, spread and z-scores", "module": "EDA and statistics", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T1-C03-M1-L02", "title": "Finding data quality problems", "module": "EDA and statistics", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T1-C03-M1-L03", "title": "Charts that tell the truth", "module": "EDA and statistics", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T1-C03-M1-L04", "title": "Correlation is not causation", "module": "EDA and statistics", "level": "Intermediate", "lab": false, "status": "planned"}]}, {"code": "C04", "name": "Statistics for Data Science", "track": "Python for Data", "tcode": "T1", "lessons": [{"id": "T1-C04-M1-L01", "title": "Probability and distributions with dice and coins", "module": "Probability and sampling", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T1-C04-M1-L02", "title": "Sampling and the central limit theorem", "module": "Probability and sampling", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T1-C04-M1-L03", "title": "Confidence intervals: what 95% really means", "module": "Probability and sampling", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T1-C04-M2-L01", "title": "Hypothesis tests and p-values (and what a p-value is not)", "module": "Testing ideas", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T1-C04-M2-L02", "title": "t-tests and non-parametric tests", "module": "Testing ideas", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T1-C04-M2-L03", "title": "Power and sample size", "module": "Testing ideas", "level": "Intermediate", "lab": false, "status": "planned"}, {"id": "T1-C04-M2-L04", "title": "Bootstrap and resampling", "module": "Testing ideas", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T1-C04-M2-L05", "title": "Multiple testing: 20 tests, one fluke", "module": "Testing ideas", "level": "Advanced", "lab": false, "status": "planned"}]}, {"code": "C05", "name": "Machine Learning from Zero", "track": "Classical Machine Learning", "tcode": "T2", "lessons": [{"id": "T2-C05-M1-L01", "title": "What a model learns: training vs testing", "module": "First models", "level": "Beginner", "lab": false, "status": "planned"}, {"id": "T2-C05-M1-L02", "title": "Linear regression", "module": "First models", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T2-C05-M1-L03", "title": "Reading regression output", "module": "First models", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T2-C05-M1-L04", "title": "Logistic regression for yes/no questions", "module": "First models", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T2-C05-M1-L05", "title": "Decision trees and random forests", "module": "First models", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T2-C05-M1-L06", "title": "Grouping without labels: k-means", "module": "First models", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T2-C05-M2-L01", "title": "Accuracy, precision, recall", "module": "Judging a model", "level": "Beginner", "lab": false, "status": "planned"}, {"id": "T2-C05-M2-L02", "title": "ROC curves and AUC", "module": "Judging a model", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T2-C05-M2-L03", "title": "Cross-validation", "module": "Judging a model", "level": "Intermediate", "lab": false, "status": "planned"}, {"id": "T2-C05-M2-L04", "title": "Overfitting and underfitting", "module": "Judging a model", "level": "Intermediate", "lab": false, "status": "planned"}, {"id": "T2-C05-M3-L01", "title": "Feature engineering", "module": "Features", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T2-C05-M3-L02", "title": "Imbalanced data", "module": "Features", "level": "Intermediate", "lab": false, "status": "planned"}]}, {"code": "C06", "name": "Neural Networks from Zero", "track": "Neural Networks & Deep Learning", "tcode": "T3", "lessons": [{"id": "T3-C06-M1-L01", "title": "A neuron is just weighted voting", "module": "The neuron", "level": "Beginner", "lab": false, "status": "planned"}, {"id": "T3-C06-M1-L02", "title": "Activation functions", "module": "The neuron", "level": "Beginner", "lab": false, "status": "planned"}, {"id": "T3-C06-M1-L03", "title": "Forward pass", "module": "The neuron", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T3-C06-M2-L01", "title": "Loss: measuring wrongness", "module": "How networks learn", "level": "Beginner", "lab": false, "status": "planned"}, {"id": "T3-C06-M2-L02", "title": "Gradient descent", "module": "How networks learn", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T3-C06-M2-L03", "title": "Backpropagation without fear", "module": "How networks learn", "level": "Intermediate", "lab": false, "status": "planned"}, {"id": "T3-C06-M2-L04", "title": "Build a tiny network that reads digits", "module": "How networks learn", "level": "Intermediate", "lab": true, "status": "planned"}]}, {"code": "C07", "name": "Making Networks Work", "track": "Neural Networks & Deep Learning", "tcode": "T3", "lessons": [{"id": "T3-C07-M1-L01", "title": "Regularisation and dropout", "module": "Training well", "level": "Intermediate", "lab": false, "status": "planned"}, {"id": "T3-C07-M1-L02", "title": "Optimisers: momentum and Adam", "module": "Training well", "level": "Intermediate", "lab": false, "status": "planned"}, {"id": "T3-C07-M1-L03", "title": "Batch normalisation", "module": "Training well", "level": "Intermediate", "lab": false, "status": "planned"}, {"id": "T3-C07-M1-L04", "title": "Is my training broken? Four sanity checks", "module": "Training well", "level": "Intermediate", "lab": true, "status": "planned"}]}, {"code": "C08", "name": "Seeing and Reading: CNNs and Sequences", "track": "Neural Networks & Deep Learning", "tcode": "T3", "lessons": [{"id": "T3-C08-M1-L01", "title": "Convolutions explained", "module": "Images", "level": "Intermediate", "lab": false, "status": "planned"}, {"id": "T3-C08-M1-L02", "title": "Build an image classifier", "module": "Images", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T3-C08-M1-L03", "title": "Transfer learning", "module": "Images", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T3-C08-M2-L01", "title": "RNNs and LSTMs", "module": "Sequences", "level": "Advanced", "lab": false, "status": "planned"}, {"id": "T3-C08-M2-L02", "title": "Encoder-decoder and attention", "module": "Sequences", "level": "Advanced", "lab": false, "status": "planned"}, {"id": "T3-C08-M2-L03", "title": "Autoencoders: compressing with networks", "module": "Sequences", "level": "Advanced", "lab": true, "status": "planned"}]}, {"code": "C09", "name": "ML Project Strategy", "track": "Running Real ML Projects", "tcode": "T4", "lessons": [{"id": "T4-C09-M1-L01", "title": "The nine steps of a data science project", "module": "Doing it right", "level": "Intermediate", "lab": false, "status": "planned"}, {"id": "T4-C09-M1-L02", "title": "Error analysis", "module": "Doing it right", "level": "Intermediate", "lab": false, "status": "planned"}, {"id": "T4-C09-M1-L03", "title": "Data leakage: when results are too good", "module": "Doing it right", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T4-C09-M1-L04", "title": "Train, dev and test sets in practice", "module": "Doing it right", "level": "Intermediate", "lab": false, "status": "planned"}]}, {"code": "C10", "name": "Big Data Analytics", "track": "Running Real ML Projects", "tcode": "T4", "lessons": [{"id": "T4-C10-M1-L01", "title": "What makes data 'big'", "module": "When data stops fitting", "level": "Beginner", "lab": false, "status": "planned"}, {"id": "T4-C10-M1-L02", "title": "pandas in chunks", "module": "When data stops fitting", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T4-C10-M1-L03", "title": "Parquet: the file format of big data", "module": "When data stops fitting", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T4-C10-M1-L04", "title": "DuckDB and Polars: big data on a laptop", "module": "When data stops fitting", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T4-C10-M2-L01", "title": "Spark in plain words", "module": "Scaling out", "level": "Intermediate", "lab": false, "status": "planned"}, {"id": "T4-C10-M2-L02", "title": "PySpark in Colab", "module": "Scaling out", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T4-C10-M2-L03", "title": "Real clusters: Databricks Free Edition", "module": "Scaling out", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T4-C10-M2-L04", "title": "SQL on terabytes: BigQuery public datasets", "module": "Scaling out", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T4-C10-M2-L05", "title": "Graph analytics at scale", "module": "Scaling out", "level": "Advanced", "lab": true, "status": "planned"}, {"id": "T4-C10-M2-L06", "title": "Capstone: a year of NYC taxi trips", "module": "Scaling out", "level": "Advanced", "lab": true, "status": "planned"}]}, {"code": "C11", "name": "Case Studies", "track": "Running Real ML Projects", "tcode": "T4", "lessons": [{"id": "T4-C11-M1-L01", "title": "Case: predicting telecom churn honestly", "module": "From the field", "level": "Intermediate", "lab": false, "status": "planned"}, {"id": "T4-C11-M1-L02", "title": "Case: compressing telemetry 1,661x", "module": "From the field", "level": "Advanced", "lab": false, "status": "planned"}, {"id": "T4-C11-M1-L03", "title": "Case: reading steel drawings with computer vision", "module": "From the field", "level": "Advanced", "lab": false, "status": "planned"}]}, {"code": "C12", "name": "LLMs from Zero", "track": "NLP, LLMs & Generative AI", "tcode": "T5", "lessons": [{"id": "T5-C12-M1-L01", "title": "Cleaning text", "module": "Working with text", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T5-C12-M1-L02", "title": "Bag of words", "module": "Working with text", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T5-C12-M1-L03", "title": "N-grams", "module": "Working with text", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T5-C12-M1-L04", "title": "Build a tiny next-word predictor", "module": "Working with text", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T5-C12-M2-L01", "title": "What an LLM is (and isn't)", "module": "How LLMs work", "level": "Beginner", "lab": false, "status": "planned"}, {"id": "T5-C12-M2-L02", "title": "Tokens", "module": "How LLMs work", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T5-C12-M2-L03", "title": "Embeddings: meaning as numbers", "module": "How LLMs work", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T5-C12-M2-L04", "title": "Attention and transformers", "module": "How LLMs work", "level": "Intermediate", "lab": false, "status": "planned"}, {"id": "T5-C12-M3-L01", "title": "Prompting that works", "module": "Using LLMs", "level": "Beginner", "lab": true, "status": "planned"}, {"id": "T5-C12-M3-L02", "title": "RAG: giving an LLM your documents", "module": "Using LLMs", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T5-C12-M3-L03", "title": "Agents and tools", "module": "Using LLMs", "level": "Intermediate", "lab": true, "status": "planned"}, {"id": "T5-C12-M3-L04", "title": "Fine-tuning vs prompting", "module": "Using LLMs", "level": "Advanced", "lab": false, "status": "planned"}, {"id": "T5-C12-M3-L05", "title": "Evaluating LLM output", "module": "Using LLMs", "level": "Intermediate", "lab": false, "status": "planned"}, {"id": "T5-C12-M3-L06", "title": "LLMs in the enterprise", "module": "Using LLMs", "level": "Advanced", "lab": false, "status": "planned"}]}];
+const $=id=>document.getElementById(id);
+const nL = DATA.reduce((s,c)=>s+c.lessons.length,0);
+const nLaunch = DATA.reduce((s,c)=>s+c.lessons.filter(l=>l.status==="launch").length,0);
+$("stats").innerHTML = `<span><b>${DATA.length}</b> courses</span><span><b>${nL}</b> lessons</span><span><b>${nLaunch}</b> ready at launch</span><span><b>80%</b> pass mark on every quiz</span>`;
+const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+let html="", lastTrack="";
+DATA.forEach((c,ci)=>{
+  if(c.track!==lastTrack){ if(lastTrack) html+="</div>"; html+=`<div class="track"><div class="tname">${esc(c.track)}</div>`; lastTrack=c.track; }
+  const ready=c.lessons.filter(l=>l.status==="launch").length;
+  const sub = c.code==="C00" ? `Free · ${c.lessons.length} lessons · placement prep` : `${c.lessons.length} lessons${ready?` · ${ready} ready at launch`:""}`;
+  let rows="", lastMod="";
+  c.lessons.forEach(l=>{
+    if(l.module!==lastMod){ rows+=`<div class="mod">${esc(l.module)}</div>`; lastMod=l.module; }
+    const fmt = l.fmt ? `<span class="pill ${l.fmt}">${l.fmt==="video"?"Video":"Cheatsheet + quiz"}</span>` : "";
+    const st = `<span class="pill ${l.status}">${l.status==="launch"?"Launch week":"Planned"}</span>`;
+    rows+=`<div class="les"><span class="t">${esc(l.title)}</span>${fmt}${st}</div>`;
+  });
+  const gate = c.code==="C00" ? "" : (c.code==="C01" ? "" : `<div class="gate">Needs: entrance quiz passed, or Course 0 completed.</div>`);
+  html+=`<details class="course" id="c-${c.code}"${ci<2?" open":""}><summary><span class="code">${c.code.replace("C","").replace(/^0(?=\d)/,"")}</span><span class="cmeta"><h3>${esc(c.name)}</h3><span class="sub">${sub}</span></span><span class="chev" aria-hidden="true">›</span></summary>${gate}<div class="lessons">${rows}</div></details>`;
+});
+html+="</div>";
+$("courses").innerHTML=html;
+</script>

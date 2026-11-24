@@ -1,0 +1,212 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Lesson 1 Quiz &amp; FAQ</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Lexend:wght@400;500;600&display=swap">
+<style>
+/* Layout: one centred learning card; Ria speaks from a bubble above it; one question at a time. */
+:root{
+  --bg:#F3F7F6; --surface:#FFFFFF; --ink:#1D2A2C; --muted:#5A6B6E; --line:#D6E2E0;
+  --accent:#0F7C77; --accent-ink:#FFFFFF; --accent-soft:#DDF0EE;
+  --good:#1E8B4C; --good-soft:#DFF3E6; --bad:#B4462F; --bad-soft:#FBE6E0; --warm:#E8A33A;
+  --display:"Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --body:"Lexend", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101819; --surface:#182324; --ink:#E6EFEE; --muted:#9DB0AF; --line:#2B3B3C;
+  --accent:#3FB8B0; --accent-ink:#0C1515; --accent-soft:#1C3534;
+  --good:#5BCB86; --good-soft:#163222; --bad:#EE8A71; --bad-soft:#3A1F18; --warm:#F0B95A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101819; --surface:#182324; --ink:#E6EFEE; --muted:#9DB0AF; --line:#2B3B3C;
+  --accent:#3FB8B0; --accent-ink:#0C1515; --accent-soft:#1C3534;
+  --good:#5BCB86; --good-soft:#163222; --bad:#EE8A71; --bad-soft:#3A1F18; --warm:#F0B95A; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:28px 48px}
+.wrap{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+.crumb{font-size:13px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(26px,5vw,34px);line-height:1.15;margin:0;text-wrap:balance}
+.ria{display:flex;gap:12px;align-items:flex-end}
+.ria svg{flex:0 0 64px;width:64px;height:64px}
+.bubble{background:var(--accent-soft);border-radius:16px 16px 16px 4px;padding:12px 16px;min-width:0;font-weight:500}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:16px}
+.progress{display:flex;gap:6px}
+.progress span{flex:1;height:6px;border-radius:3px;background:var(--line)}
+.progress span.done{background:var(--accent)}
+.progress span.ok{background:var(--good)}
+.progress span.miss{background:var(--bad)}
+.qnum{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.q{font-family:var(--display);font-weight:600;font-size:21px;line-height:1.3;margin:0;text-wrap:balance}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:12px;align-items:center;width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--surface);
+  border:2px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;transition:border-color .15s, background .15s}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt:focus-visible{outline:3px solid var(--warm);outline-offset:2px}
+.opt .key{flex:0 0 28px;height:28px;border-radius:8px;display:grid;place-items:center;font-weight:600;font-size:14px;background:var(--accent-soft);color:var(--accent)}
+.opt.right{border-color:var(--good);background:var(--good-soft)}
+.opt.right .key{background:var(--good);color:var(--surface)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt.wrong .key{background:var(--bad);color:var(--surface)}
+.opt:disabled{cursor:default}
+.why{border-left:4px solid var(--accent);padding:4px 0 4px 12px;color:var(--ink)}
+.why b{display:block;font-family:var(--display);font-size:17px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.btn{font:inherit;font-weight:600;border-radius:12px;padding:12px 18px;cursor:pointer;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn:focus-visible{outline:3px solid var(--warm);outline-offset:2px}
+.score{font-family:var(--display);font-weight:800;font-size:56px;line-height:1;font-variant-numeric:tabular-nums}
+.score small{font-size:22px;color:var(--muted);font-weight:600}
+.next{display:flex;flex-direction:column;gap:4px;border:1px dashed var(--line);border-radius:14px;padding:14px 16px}
+.next .lbl{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.next .t{font-weight:600}
+.foot{font-size:13px;color:var(--muted)}
+canvas#confetti{position:fixed;inset:0;pointer-events:none;width:100%;height:100%}
+@media (prefers-reduced-motion: reduce){.opt{transition:none}}
+.faq h2{font-family:var(--display);font-weight:800;font-size:24px;margin:0}
+.faq .sub{margin:0;color:var(--muted);font-size:14px}
+.faq details{border-top:1px solid var(--line);padding:12px 0}
+.faq details:last-of-type{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--accent);font-weight:600;flex:0 0 auto}
+.faq details[open] summary::after{content:"\2013"}
+.faq summary:focus-visible{outline:3px solid var(--warm);outline-offset:2px;border-radius:6px}
+.faq details p{margin:8px 0 0;color:var(--ink)}
+</style>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+<main class="wrap">
+  <div class="crumb">Learn AI the Right Way · Course 1 · Lesson 1</div>
+  <h1>What AI, ML and deep learning actually are</h1>
+
+  <div class="ria">
+    <svg viewBox="100 100 200 200" role="img" aria-label="Ria">
+      <circle cx="200" cy="200" r="100" fill="var(--accent-soft)"/>
+      <path d="M112 230 q-6 -120 88 -128 q94 8 88 128 l0 40 l-176 0z" fill="#2B1B17"/>
+      <ellipse cx="200" cy="225" rx="78" ry="92" fill="#C98C5F"/>
+      <circle cx="172" cy="232" r="9" fill="#3B2A20"/><circle cx="232" cy="232" r="9" fill="#3B2A20"/>
+      <circle cx="175" cy="228" r="3" fill="#fff"/><circle cx="235" cy="228" r="3" fill="#fff"/>
+      <path d="M176 278 q24 22 48 0 q-24 9 -48 0z" fill="#8E2F3A"/>
+      <path d="M122 205 q8 -78 78 -82 q62 2 80 60 q-60 -10 -100 -48 q-20 36 -58 70z" fill="#2B1B17"/>
+    </svg>
+    <div class="bubble" id="say">Five quick questions on today's lesson. Take your time — you can try again as often as you like.</div>
+  </div>
+
+  <section class="card" id="quiz" aria-live="polite">
+    <div class="progress" id="bar"></div>
+    <div class="qnum" id="qnum"></div>
+    <p class="q" id="q"></p>
+    <div class="opts" id="opts"></div>
+    <div class="why" id="why" hidden></div>
+    <div class="row" id="ctrl" hidden><button class="btn" id="nextBtn" type="button">Next question</button></div>
+  </section>
+
+  <section class="card" id="result" hidden aria-live="polite">
+    <div class="score" id="score"></div>
+    <p id="verdict" style="margin:0;font-weight:500"></p>
+    <div class="next" id="nextCard"></div>
+    <div class="row" id="resultBtns"></div>
+  </section>
+
+  <section class="card faq" id="faq" aria-labelledby="faqh">
+    <h2 id="faqh">Lesson 1 FAQ</h2>
+    <p class="sub">Answers to the questions learners ask most about this lesson.</p>
+    <details><summary>Do I need maths or coding for this?</summary><p>Not for this lesson. Course 1 needs only a Google account and a browser. Maths and Python come in later courses, one small step at a time.</p></details><details><summary>Is ChatGPT (or Claude) AI, machine learning or deep learning?</summary><p>All three at once. These chatbots run on large language models, which are deep learning models. Deep learning is a kind of machine learning, and machine learning is a kind of AI. Remember the three circles.</p></details><details><summary>Does every AI system learn from data?</summary><p>No. A system built from hand-written rules, like an old spam filter or a tax calculator, is still AI but not machine learning. That's quiz question 5.</p></details><details><summary>What's the difference between AI and data science?</summary><p>Data science is about getting answers from data, using statistics, charts and often machine learning. It overlaps with AI rather than sitting inside it. This channel teaches the parts of both that you need to build working models.</p></details><details><summary>What exactly are features and labels?</summary><p>Features are the measurable facts about each example, such as age, ticket class or fare: the columns you learn from. The label is the answer you want to predict, such as survived yes or no.</p></details><details><summary>Supervised or unsupervised: how do I tell them apart?</summary><p>Ask whether the examples come with the right answers. With answers (labels), it's supervised learning, as in the Titanic example. Without answers, finding groups on its own, it's unsupervised, as in the classroom clustering game.</p></details><details><summary>Why is it called "deep" learning?</summary><p>Because the neural network has many layers stacked one after another. Each layer builds on the one before: edges, then shapes, then whole objects.</p></details><details><summary>If deep learning is so powerful, why not use it every time?</summary><p>It needs far more data and computing power, and its decisions are harder to explain. For rows-and-columns data, a simple model is often just as good or better. Start simple, and add complexity only when it earns its place.</p></details><details><summary>Was the Titanic table in the video real data?</summary><p>The rows were illustrative, laid out like the famous Titanic passenger dataset. You'll work with the real dataset in a lab later in the series.</p></details><details><summary>Who is Ria?</summary><p>Ria is the channel's animated presenter, with an AI-generated voice. The lessons are written by Mukund Veeraraghavan, who designed the course.</p></details><details><summary>I didn't pass the quiz. What now?</summary><p>No problem: there's no limit on tries. Take it again, or rewatch the lesson first and then retry. The pass mark is 4 out of 5.</p></details><details><summary>Can I ask a question or get help from a mentor?</summary><p>There's no live support or mentoring. <a href="https://claude.ai/artifact/6ykEguQuoSDHw2rMSKryVF" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">Ask Arjun</a>, our FAQ guide: describe your problem in your own words and he finds the matching answers from every lesson's FAQ. Not answered? Leave a comment on the video; common questions are added to the FAQ.</p></details>
+  </section>
+
+  <p class="foot">Pass mark: 80% (4 out of 5). New here? <a href="https://youtu.be/W5zVEoP0nb0" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">Start here</a> · <a href="https://claude.ai/artifact/1S27dYy5tfBcnoW8L9NmsE" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">Course catalogue</a></p>
+</main>
+
+<script>
+const QUIZ = [
+  {q:"Which is the widest term?", o:["Machine learning","Deep learning","Artificial intelligence","Neural network"], a:2,
+   why:"AI is the umbrella. Machine learning sits inside it, and deep learning sits inside machine learning."},
+  {q:"A spam filter that improves as it sees more emails is an example of…", o:["Machine learning","A fixed rule list","A spreadsheet formula","A database"], a:0,
+   why:"It learns patterns from labelled examples instead of following hand-written rules."},
+  {q:"Deep learning models are built from…", o:["Decision rules","Layers of artificial neurons","SQL queries","Random guesses"], a:1,
+   why:"'Deep' refers to the many layers of neurons stacked in the network."},
+  {q:"Which usually needs the most data to work well?", o:["A simple rule","Linear regression","A deep neural network","An average"], a:2,
+   why:"Large networks have many settings to learn, so they need many more examples."},
+  {q:"True or false: every AI system learns from data.", o:["True","False"], a:1,
+   why:"Some AI is built from hand-written rules or search. Learning from data is what makes it machine learning."}
+];
+const PASS_RATE = 0.8; // 80% pass mark for every quiz
+const PASS = Math.ceil(PASS_RATE * QUIZ.length);
+const NEXT = {title:'Lesson 2: The workbench, one setup for every course and every job', url:'https://youtu.be/ifS5lhZqnN4', foot:'Next video in the playlist'};
+const BASIC = {title:'Rewatch Lesson 1', url:'https://youtu.be/MJ39tzld5rA', foot:'Then try the quiz again'};
+const PRAISE = ["Spot on!","Exactly right.","Nailed it.","Yes — well done.","Perfect."];
+const NUDGE = ["Not quite — here's why.","Close. Have a look at this.","Good try. Here's the idea."];
+
+let i=0, right=0, results=[];
+const $=id=>document.getElementById(id);
+
+function bar(){
+  $("bar").innerHTML = QUIZ.map((_,k)=>`<span class="${k<results.length?(results[k]?'ok':'miss'):(k===i?'done':'')}"></span>`).join("");
+}
+function show(){
+  const it = QUIZ[i];
+  bar();
+  $("qnum").textContent = `Question ${i+1} of ${QUIZ.length}`;
+  $("q").textContent = it.q;
+  $("why").hidden = true; $("ctrl").hidden = true;
+  $("opts").innerHTML = "";
+  it.o.forEach((txt,k)=>{
+    const b=document.createElement("button");
+    b.className="opt"; b.type="button"; b.id=`opt-${i}-${k}`;
+    b.innerHTML=`<span class="key">${"ABCD"[k]}</span><span>${txt}</span>`;
+    b.onclick=()=>pick(k);
+    $("opts").appendChild(b);
+  });
+  $("opts").firstChild.focus({preventScroll:true});
+}
+function pick(k){
+  const it=QUIZ[i], ok=k===it.a;
+  [...$("opts").children].forEach((b,j)=>{b.disabled=true; if(j===it.a) b.classList.add("right"); else if(j===k) b.classList.add("wrong");});
+  if(ok) right++;
+  results.push(ok);
+  bar();
+  const head = ok ? PRAISE[i%PRAISE.length] : NUDGE[i%NUDGE.length];
+  $("why").innerHTML=`<b>${head}</b>${it.why}`;
+  $("why").hidden=false;
+  $("say").textContent = ok ? "Lovely. On to the next one." : "No problem — that's what quizzes are for.";
+  $("nextBtn").textContent = i===QUIZ.length-1 ? "See my result" : "Next question";
+  $("ctrl").hidden=false; $("nextBtn").focus({preventScroll:true});
+}
+$("nextBtn").onclick=()=>{ i++; if(i<QUIZ.length) show(); else finish(); };
+
+function finish(){
+  $("quiz").hidden=true; $("result").hidden=false;
+  $("score").innerHTML=`${right}<small> / ${QUIZ.length}</small>`;
+  const pass = right>=PASS, btns=$("resultBtns");
+  btns.innerHTML="";
+  if(pass){
+    $("verdict").textContent = right===QUIZ.length ? "Brilliant — a perfect score. You know your AI from your ML from your DL." : "Well done — you passed. You've got the big picture.";
+    $("say").textContent = "Wonderful! You're ready for the next lesson.";
+    $("nextCard").innerHTML=`<span class="lbl">Up next</span><span class="t">${NEXT.title}</span><span class="foot">${NEXT.foot}</span>`;
+    btns.innerHTML=`<a class="btn" href="${NEXT.url}" target="_blank" rel="noopener" id="goNext">Watch the next lesson</a><button class="btn ghost" type="button" id="again">Take the quiz again</button>`;
+    confetti();
+  } else {
+    $("verdict").textContent = "Nearly there. Most people need a second look at this — that's normal.";
+    $("say").textContent = "Let's lock it in. Pick whichever helps you most.";
+    $("nextCard").innerHTML=`<span class="lbl">Try this first</span><span class="t">${BASIC.title}</span><span class="foot">${BASIC.foot}</span>`;
+    btns.innerHTML=`<a class="btn" href="${BASIC.url}" target="_blank" rel="noopener" id="goShort">Rewatch the lesson</a><button class="btn ghost" type="button" id="again">Try the quiz again</button>`;
+  }
+  $("again").onclick=()=>{ i=0; right=0; results=[]; $("result").hidden=true; $("quiz").hidden=false; $("say").textContent="Fresh start. You've got this."; show(); };
+}
+
+function confetti(){
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const c=$("confetti"), x=c.getContext("2d"), dpr=window.devicePixelRatio||1;
+  c.width=innerWidth*dpr; c.height=innerHeight*dpr; x.scale(dpr,dpr);
+  const css=getComputedStyle(document.documentElement);
+  const cols=["--accent","--warm","--good","--bad"].map(v=>css.getPropertyValue(v).trim());
+  const P=Array.from({length:140},()=>({x:innerWidth/2,y:innerHeight/3,vx:(Math.random()-.5)*12,vy:Math.random()*-11-3,r:Math.random()*6+3,c:cols[Math.floor(Math.random()*cols.length)],a:Math.random()*6}));
+  let t=0;(function f(){x.clearRect(0,0,innerWidth,innerHeight);
+    P.forEach(p=>{p.vy+=.35;p.x+=p.vx;p.y+=p.vy;p.a+=.2;x.save();x.translate(p.x,p.y);x.rotate(p.a);x.fillStyle=p.c;x.fillRect(-p.r/2,-p.r/4,p.r,p.r/2);x.restore();});
+    if(++t<150) requestAnimationFrame(f); else x.clearRect(0,0,innerWidth,innerHeight);})();
+}
+show();
+</script>
+
+</body></html>

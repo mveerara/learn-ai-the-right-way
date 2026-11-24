@@ -1,0 +1,96 @@
+{
+ "mp3": "/home/claude/l00/audio/part3.mp3",
+ "duration": 52.035875,
+ "sents": [
+  {
+   "slide": 9,
+   "text": "What does it cost?",
+   "start": 0.0,
+   "end": 1.045
+  },
+  {
+   "slide": 9,
+   "text": "Every video, quiz, cheatsheet and certificate is free.",
+   "start": 1.454,
+   "end": 5.372
+  },
+  {
+   "slide": 9,
+   "text": "If you want extra practice, there are optional lab packs, with lower prices for students.",
+   "start": 5.933,
+   "end": 10.779
+  },
+  {
+   "slide": 9,
+   "text": "The catalogue lists every price, and every purchase comes with a seven-day refund.",
+   "start": 11.303,
+   "end": 16.181
+  },
+  {
+   "slide": 10,
+   "text": "And if you get stuck?",
+   "start": 16.774,
+   "end": 17.739
+  },
+  {
+   "slide": 10,
+   "text": "There's no live support team.",
+   "start": 18.158,
+   "end": 19.605
+  },
+  {
+   "slide": 10,
+   "text": "Instead, meet Arjun, our FAQ guide.",
+   "start": 20.03,
+   "end": 23.016
+  },
+  {
+   "slide": 10,
+   "text": "Tell Arjun what went wrong, in your own words, and he'll point you to the matching answers from the lesson FAQs.",
+   "start": 23.535,
+   "end": 29.818
+  },
+  {
+   "slide": 10,
+   "text": "If your question isn't answered yet, ask it in the comments, and common questions get added to the FAQ.",
+   "start": 30.43,
+   "end": 36.32
+  },
+  {
+   "slide": 11,
+   "text": "So here's your first step.",
+   "start": 36.941,
+   "end": 38.38
+  },
+  {
+   "slide": 11,
+   "text": "Open the catalogue in the description.",
+   "start": 38.897,
+   "end": 40.605
+  },
+  {
+   "slide": 11,
+   "text": "Take the entrance quiz.",
+   "start": 40.963,
+   "end": 42.118
+  },
+  {
+   "slide": 11,
+   "text": "Then follow your result: register and start Course one, or begin Course zero.",
+   "start": 42.545,
+   "end": 47.737
+  },
+  {
+   "slide": 11,
+   "text": "Either way, I'll be with you in every lesson.",
+   "start": 48.24,
+   "end": 50.834
+  },
+  {
+   "slide": 11,
+   "text": "See you there.",
+   "start": 51.238,
+   "end": 52.036
+  }
+ ]
+}

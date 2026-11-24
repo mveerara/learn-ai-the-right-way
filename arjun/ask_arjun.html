@@ -1,0 +1,279 @@
+<title>Ask Arjun</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Lexend:wght@400;500;600&display=swap">
+<style>
+/* Layout: Arjun and his speech bubble on top, the question box under him, matched FAQ answers as cards below. Navy accent sets him apart from Ria's teal. */
+:root{
+  --bg:#F2F4F8; --surface:#FFFFFF; --ink:#1B2433; --muted:#5B6578; --line:#D8DEE8;
+  --accent:#2A5384; --accent-ink:#FFFFFF; --accent-soft:#E3EAF4; --deep:#1F3F66;
+  --warm:#E8A33A; --warm-soft:#FCEFD9; --good:#1E8B4C; --good-soft:#DFF3E6;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Lexend","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#10141B; --surface:#182030; --ink:#E5EAF2; --muted:#9BA6B8; --line:#2A3446;
+  --accent:#7FA7DA; --accent-ink:#0E1420; --accent-soft:#1F2C42; --deep:#A9C4E8;
+  --warm:#F0B95A; --warm-soft:#3A2D16; --good:#5BCB86; --good-soft:#163222; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10141B; --surface:#182030; --ink:#E5EAF2; --muted:#9BA6B8; --line:#2A3446;
+  --accent:#7FA7DA; --accent-ink:#0E1420; --accent-soft:#1F2C42; --deep:#A9C4E8;
+  --warm:#F0B95A; --warm-soft:#3A2D16; --good:#5BCB86; --good-soft:#163222; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px}
+.wrap{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+.crumb{font-size:13px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,6vw,38px);line-height:1.1;margin:2px 0 0;color:var(--deep);text-wrap:balance}
+.who{display:flex;gap:14px;align-items:flex-end}
+.face{flex:0 0 96px;width:96px;height:112px;border-radius:20px;background:var(--accent-soft);overflow:hidden}
+.face svg{width:100%;height:100%;display:block}
+.bubble{position:relative;min-width:0;flex:1;background:var(--surface);border:1px solid var(--line);border-radius:18px 18px 18px 4px;padding:14px 16px;font-weight:500}
+.bubble .tag{display:block;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+.spk{float:right;margin:-4px -6px 4px 10px;font:inherit;font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-soft);border:0;border-radius:999px;padding:6px 12px;cursor:pointer}
+.spk:focus-visible,.btn:focus-visible,.chip:focus-visible,textarea:focus-visible{outline:3px solid var(--warm);outline-offset:2px}
+.ask{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:12px}
+label.lbl{font-weight:600}
+textarea{width:100%;min-height:92px;resize:vertical;font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:12px;padding:12px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{font:inherit;font-weight:600;border-radius:12px;padding:11px 18px;cursor:pointer;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.small{padding:7px 12px;font-size:14px;border-radius:10px}
+.hint{font-size:13px;color:var(--muted)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.scope{font-size:13px;color:var(--muted);margin-right:2px}
+.res{display:flex;flex-direction:column;gap:12px}
+.ans{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.ans.top{border-left-color:var(--warm)}
+.ans h3{font-family:var(--display);font-weight:600;font-size:19px;line-height:1.3;margin:0;text-wrap:balance}
+.ans p{margin:0;max-width:65ch}
+.ans code{font-family:ui-monospace,"Cascadia Mono",Consolas,monospace;font-size:.9em;background:var(--accent-soft);border-radius:6px;padding:1px 5px;overflow-wrap:anywhere}
+.ans .src{font-size:13px;color:var(--muted)}
+.ans .src a{color:var(--accent);font-weight:600}
+.rank{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.fb{border:1px dashed var(--line);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:10px}
+.copy{background:var(--warm-soft);border-radius:12px;padding:10px 12px;font-size:14px;word-break:break-word}
+.foot{font-size:13px;color:var(--muted)}
+.foot b{color:var(--ink)}
+</style>
+
+<main class="wrap">
+  <div>
+    <div class="crumb">Learn AI the Right Way · FAQ guide</div>
+    <h1>Ask Arjun</h1>
+  </div>
+
+  <div class="who">
+    <div class="face" aria-hidden="true"><svg viewBox="150 160 300 350" preserveAspectRatio="xMidYMin slice"><defs>
+ <radialGradient id="ajface" cx=".45" cy=".38" r=".75"><stop offset="0" stop-color="#C99470"/><stop offset=".65" stop-color="#B07C58"/><stop offset="1" stop-color="#8F5F40"/></radialGradient>
+ <linearGradient id="ajhair" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1E1714"/><stop offset="1" stop-color="#15100E"/></linearGradient>
+ <linearGradient id="ajshirt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1F3F66"/><stop offset=".5" stop-color="#2A5384"/><stop offset="1" stop-color="#1E3D63"/></linearGradient>
+</defs>
+<!-- shirt -->
+<path d="M108 680 C 106 600, 118 532, 172 510 C 198 500, 222 494, 242 492 L 358 492 C 378 494, 402 500, 428 510 C 482 532, 494 600, 492 680 Z" fill="url(#ajshirt)"/>
+<path d="M146 524 C 162 590, 166 640, 164 680 M454 524 C 438 590, 434 640, 436 680" stroke="#18324F" stroke-width="3" fill="none" opacity=".7"/>
+<!-- neck -->
+<path d="M262 404 C 264 436, 262 452, 256 466 C 284 482, 316 482, 344 466 C 338 452, 336 436, 338 404 Z" fill="#8F5F40"/>
+<!-- open collar -->
+<path d="M240 494 L 300 540 L 360 494 L 342 470 L 300 506 L 258 470 Z" fill="#F2F4F7"/>
+<path d="M300 506 L 300 540" stroke="#C9D0DA" stroke-width="2"/>
+<path d="M256 466 C 278 484, 322 484, 344 466 L 300 506 Z" fill="#8F5F40"/>
+<!-- lanyard + badge -->
+<path d="M260 480 L 284 600 M340 480 L 316 600" stroke="#E8A33A" stroke-width="7" stroke-linecap="round" fill="none"/>
+<!-- head -->
+<path d="M300 204 C 366 204, 388 258, 386 316 C 384 372, 352 420, 300 426 C 248 420, 216 372, 214 316 C 212 258, 234 204, 300 204 Z" fill="url(#ajface)"/>
+<ellipse cx="216" cy="322" rx="11" ry="19" fill="#8F5F40"/><ellipse cx="384" cy="322" rx="11" ry="19" fill="#8F5F40"/>
+<!-- beard -->
+<path d="M222 336 C 226 392, 256 432, 300 434 C 344 432, 374 392, 378 336 C 368 364, 360 388, 340 396 C 324 384, 276 384, 260 396 C 240 388, 232 364, 222 336 Z" fill="#241A16" opacity=".9"/>
+<path d="M268 368 C 284 360, 316 360, 332 368 C 320 374, 280 374, 268 368 Z" fill="#241A16"/>
+<!-- mouth -->
+<path d="M274 384 q26 18 52 0 q-26 6 -52 0z" fill="#7A2F33"/>
+<path d="M280 385 q20 6 40 0 l-2 4 q-18 5 -36 0z" fill="#FFFFFF"/>
+<!-- nose -->
+<path d="M302 318 q-3 24 -12 32 q11 6 22 0" stroke="#7E5236" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+<!-- eyes -->
+<ellipse cx="264" cy="306" rx="16" ry="12" fill="#FFFFFF"/><ellipse cx="336" cy="306" rx="16" ry="12" fill="#FFFFFF"/>
+<circle cx="266" cy="307" r="9.5" fill="#3E2615"/><circle cx="338" cy="307" r="9.5" fill="#3E2615"/>
+<circle cx="266" cy="307" r="5" fill="#120B07"/><circle cx="338" cy="307" r="5" fill="#120B07"/>
+<circle cx="269" cy="303" r="3" fill="#fff"/><circle cx="341" cy="303" r="3" fill="#fff"/>
+<path d="M248 302 q16 -12 33 -2 M319 300 q17 -10 33 2" stroke="#1B110C" stroke-width="3" fill="none" stroke-linecap="round"/>
+<!-- brows: straight, thick -->
+<path d="M240 278 q24 -10 48 -4" stroke="#15100E" stroke-width="8" fill="none" stroke-linecap="round"/>
+<path d="M312 274 q24 -6 48 4" stroke="#15100E" stroke-width="8" fill="none" stroke-linecap="round"/>
+<!-- glasses -->
+<g stroke="#2B2F36" stroke-width="5" fill="none">
+ <rect x="236" y="286" width="58" height="42" rx="12"/><rect x="306" y="286" width="58" height="42" rx="12"/>
+ <path d="M294 302 q6 -5 12 0 M236 298 L 214 292 M364 298 L 386 292"/>
+</g>
+<!-- short hair -->
+<path d="M212 318 C 200 228, 246 176, 304 176 C 362 176, 404 222, 388 318 C 384 286, 378 262, 368 246 C 340 236, 300 232, 262 238 C 244 242, 232 248, 226 256 C 220 276, 214 296, 212 318 Z" fill="url(#ajhair)"/>
+<path d="M240 214 C 270 192, 330 188, 372 214 C 340 204, 280 204, 240 222 Z" fill="#3A2C26" opacity=".7"/>
+<!-- FAQ card held in hands -->
+<g transform="rotate(3 300 610)">
+ <rect x="236" y="566" width="128" height="88" rx="12" fill="#FFFFFF" stroke="#1F3F66" stroke-width="5"/>
+ <text x="300" y="624" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="34" fill="#1F3F66">FAQ</text>
+ <circle cx="352" cy="578" r="14" fill="#E8A33A"/><text x="352" y="586" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="20" fill="#fff">?</text>
+ <ellipse cx="246" cy="626" rx="12" ry="15" fill="#B07C58"/>
+ <ellipse cx="354" cy="626" rx="12" ry="15" fill="#B07C58"/>
+</g>
+</svg></div>
+    <div class="bubble" aria-live="polite"><button class="spk" id="spk" type="button" hidden>▶ Hear Arjun</button><span class="tag">Arjun · FAQ guide · answers come from the course lessons and FAQs</span><span id="say"></span></div>
+  </div>
+
+  <form class="ask" id="form" autocomplete="off">
+    <label class="lbl" for="qbox">What went wrong, or what do you want to know?</label>
+    <textarea id="qbox" placeholder="Example: Lesson 3, my files disappeared after Colab restarted"></textarea>
+    <div class="row"><span class="scope">Look in:</span><div class="chips" id="scope"></div></div>
+    <div class="row">
+      <button class="btn" type="submit">Ask Arjun</button>
+      <span class="hint">Naming the lesson helps.</span>
+    </div>
+    <div class="row"><span class="scope">Common:</span><div class="chips" id="quick"></div></div>
+  </form>
+
+  <section class="res" id="res" aria-live="polite"></section>
+
+  <p class="foot"><b>Arjun is not a live mentor.</b> He searches the FAQs of every published lesson. Questions he can't answer belong in the comments under the lesson's video, and common ones get added to the FAQ. <span id="count"></span></p>
+</main>
+
+<script>
+const DATA = {"lessons": {"1": {"t": "Lesson 1: What AI, ML and deep learning are", "u": "https://claude.ai/artifact/1NKfwA6VeMyb9MLXLfQZQ2"}, "2": {"t": "Lesson 2: The workbench", "u": "https://claude.ai/artifact/3W59cNDxfdPycH1sGNxNW8"}, "3": {"t": "Lesson 3: Colab with Google Drive", "u": "https://claude.ai/artifact/YYsMi7EGrFmaS6KAUNU679"}, "0": {"t": "General: getting started and costs", "u": "https://claude.ai/artifact/1S27dYy5tfBcnoW8L9NmsE"}, "py": {"t": "Course 0: Python basics", "u": "https://claude.ai/artifact/1S27dYy5tfBcnoW8L9NmsE"}, "c0l1": {"t": "Course 0, Lesson 1: Why Linux runs AI", "u": "https://claude.ai/artifact/EkUfoCHwmwVLEPnA1RYo3U"}, "c0l2": {"t": "Course 0, Lesson 2: Moving around: files and folders", "u": "https://claude.ai/artifact/X9eRahk6qfETj7k7WjKaCU"}, "c0l3": {"t": "Course 0, Lesson 3: Wildcards, pipes and redirection", "u": "https://claude.ai/artifact/6Y4TiiuFiKP5nYK7BaioPM"}, "c0l4": {"t": "Course 0, Lesson 4: Owners and permissions", "u": "https://claude.ai/artifact/VzxYBndyoeyFYSWsejhXiy"}, "c0l5": {"t": "Course 0, Lesson 5: sudo, root and staying safe", "u": "https://claude.ai/artifact/VhDgxn7Fw2eRoCuRtdD2An"}}, "faq": [{"l": 1, "q": "Do I need maths or coding for this?", "a": "Not for this lesson. Course 1 needs only a Google account and a browser. Maths and Python come in later courses, one small step at a time."}, {"l": 1, "q": "Is ChatGPT (or Claude) AI, machine learning or deep learning?", "a": "All three at once. These chatbots run on large language models, which are deep learning models. Deep learning is a kind of machine learning, and machine learning is a kind of AI. Remember the three circles."}, {"l": 1, "q": "Does every AI system learn from data?", "a": "No. A system built from hand-written rules, like an old spam filter or a tax calculator, is still AI but not machine learning. That's quiz question 5."}, {"l": 1, "q": "What's the difference between AI and data science?", "a": "Data science is about getting answers from data, using statistics, charts and often machine learning. It overlaps with AI rather than sitting inside it. This channel teaches the parts of both that you need to build working models."}, {"l": 1, "q": "What exactly are features and labels?", "a": "Features are the measurable facts about each example, such as age, ticket class or fare: the columns you learn from. The label is the answer you want to predict, such as survived yes or no."}, {"l": 1, "q": "Supervised or unsupervised: how do I tell them apart?", "a": "Ask whether the examples come with the right answers. With answers (labels), it's supervised learning, as in the Titanic example. Without answers, finding groups on its own, it's unsupervised, as in the classroom clustering game."}, {"l": 1, "q": "Why is it called \"deep\" learning?", "a": "Because the neural network has many layers stacked one after another. Each layer builds on the one before: edges, then shapes, then whole objects."}, {"l": 1, "q": "If deep learning is so powerful, why not use it every time?", "a": "It needs far more data and computing power, and its decisions are harder to explain. For rows-and-columns data, a simple model is often just as good or better. Start simple, and add complexity only when it earns its place."}, {"l": 1, "q": "Was the Titanic table in the video real data?", "a": "The rows were illustrative, laid out like the famous Titanic passenger dataset. You'll work with the real dataset in a lab later in the series."}, {"l": 1, "q": "I didn't pass the quiz. What now?", "a": "No problem: there's no limit on tries. Take it again, or watch the 60-second recap first and then retry. The pass mark is 4 out of 5."}, {"l": 2, "q": "Do I need to install anything for this lesson?", "a": "No. This lesson only explains the plan. You set up step one, Google Colab, in the next lesson, using just a Google account and a browser."}, {"l": 2, "q": "Is Google Colab really free?", "a": "Yes, Colab has a free tier that is enough for every lab in the early courses. Its limits, such as how long a session runs or whether a GPU is available, change from time to time, which is one reason your work is saved in GitHub."}, {"l": 2, "q": "What is a repository?", "a": "A folder that remembers every change you make to its files. On GitHub it's also backed up online, so you can open it on any computer. Yours will be called workbench."}, {"l": 2, "q": "Do I need a GitHub account now?", "a": "Not yet. You'll create a free one in Course 1, Module 2. Until then, Colab saves your work to Google Drive."}, {"l": 2, "q": "My laptop has 4 GB of memory. Can I still follow along?", "a": "Yes, for the browser-based courses: Colab runs on Google's computers, not yours. For the laptop lessons, 8 GB is the practical minimum, and 16 GB is comfortable."}, {"l": 2, "q": "Can I use a tablet or a phone?", "a": "For watching and for Colab, a tablet works. Typing code on a phone is painful, so use a laptop, desktop or tablet with a keyboard when you can."}, {"l": 2, "q": "What is a dev container?", "a": "A box that packs your whole setup, Python version, libraries and tools, so it runs identically on any computer or in the browser with GitHub Codespaces. You'll build one in Course 1, Module 2."}, {"l": 2, "q": "Do I have to pay for Databricks or BigQuery?", "a": "No. Databricks has a Free Edition and BigQuery has a sandbox that needs no credit card. You'll only use them in the big data course, and free-tier rules can change, so check their sites then."}, {"l": 2, "q": "Why not just use my laptop for everything?", "a": "You can for small and medium data. But some labs need a free GPU (Colab) or many machines at once (Databricks), and companies use all of these, so it pays to know them."}, {"l": 3, "q": "Is Google Colab really free?", "a": "Yes. Colab says it is free of charge to use. Paid plans add more computing power and longer sessions, but you won't need them for this course."}, {"l": 3, "q": "How long can a Colab session run?", "a": "Up to 12 hours on the free tier, and less if you leave it idle. Colab doesn't publish exact limits and they change, which is exactly why your work lives in Drive."}, {"l": 3, "q": "My files disappeared. What happened?", "a": "They were probably saved on Colab's computer, under /content, rather than in your Drive. Mount your Drive and save under /content/drive/MyDrive/workbench instead."}, {"l": 3, "q": "Is it safe to give Colab access to my Drive?", "a": "The permission is between your own Google account and Google's own Colab service. Only allow it for notebooks you created or trust, because a notebook with that access can read and change your Drive files."}, {"l": 3, "q": "Do I have to mount Drive every time?", "a": "Yes, once per session. That's why the setup cell goes at the top of every notebook: after a restart, you rerun it first."}, {"l": 3, "q": "Where is my notebook saved?", "a": "In your Google Drive. New notebooks go to a folder called Colab Notebooks unless you move them, which is why step 2 moves yours into workbench/notebooks."}, {"l": 3, "q": "Should I turn on the GPU now?", "a": "No. The early labs don't need it, and free GPU time is limited and changes. We'll switch it on when deep learning arrives."}, {"l": 3, "q": "Can I do this lab on a tablet or phone?", "a": "A tablet with a keyboard works. On a phone, Colab is hard to use, so use a laptop or desktop if you can."}, {"l": 3, "q": "Why won't the lab just give me the full code?", "a": "Because you learn by building it. The hints get more specific each time you open one, so you're never stuck for long."}, {"l": 0, "q": "Where do I start?", "a": "Take the entrance quiz in the course catalogue, under Where to start. It takes about 15 minutes. Pass, and you go straight to Course 1. If not yet, it shows which Course 0 modules to take first."}, {"l": 0, "q": "Why is there an entrance quiz?", "a": "Almost every AI tool stands on Linux, Git and Python basics. The quiz checks you have that ground, so no lesson leaves you stuck. It's placement, not a filter: nobody is turned away."}, {"l": 0, "q": "I failed the entrance quiz. What now?", "a": "That's fine. Your result lists the modules you missed. Take only those parts of Course 0, then retake the quiz. There's no limit on tries."}, {"l": 0, "q": "I already know Linux and Python. Do I have to take Course 0?", "a": "No. Pass the entrance quiz and you can skip it. Passing is all the proof needed, wherever you learned the skills."}, {"l": 0, "q": "What is Course 0?", "a": "The prep course: Linux command line, file permissions, Git, the GPU stack and Python basics as videos, plus cheatsheets with quizzes for installing software, environments, networks and SSH, containers and cloud basics."}, {"l": 0, "q": "What does the course cost?", "a": "Every video, quiz, cheatsheet and certificate is free. Optional lab packs give extra practice, with lower student prices. All prices are in the course catalogue."}, {"l": 0, "q": "How do refunds work?", "a": "Every purchase has a 7-day refund, no questions asked."}, {"l": 0, "q": "Can I pay from outside India?", "a": "Overseas card payments are opening soon. Overseas prices are already listed in the catalogue."}, {"l": 0, "q": "Is there a student discount?", "a": "Yes. Every paid pack has a lower student price, shown in the course catalogue."}, {"l": 0, "q": "Do I get a certificate?", "a": "Yes, and it's free, like every video, quiz and cheatsheet."}, {"l": 0, "q": "What is the pass mark for quizzes?", "a": "80% on every quiz, for example 4 out of 5. You can retake any quiz as often as you like."}, {"l": 0, "q": "Can I talk to a mentor or a real person?", "a": "There's no live support team. I'm Arjun, the FAQ guide, and I search every lesson's FAQ for you. If your question isn't answered, ask in the comments under the lesson's video; common questions get added to the FAQ."}, {"l": 0, "q": "Who is Ria?", "a": "Ria is the channel's animated presenter, with an AI-generated voice. The lessons are written by Mukund Veeraraghavan, who designed the course."}, {"l": 0, "q": "How often do new lessons come out?", "a": "New lessons are released regularly. Subscribe to the channel and turn on notifications to hear about each one."}, {"l": 0, "q": "I'm stuck in a lab. What should I do?", "a": "Open the hints one at a time: each is more specific than the last. Check you did the earlier steps in order, then rerun your notebook from the top. Still stuck? Ask in the lesson's comments with the exact error message."}, {"l": "py", "q": "Is Python pass by value or pass by reference?", "a": "Neither, exactly: Python passes a reference to the object, sometimes called call by sharing. If a function changes a mutable object in place, like `x.append(4)` on a list, the caller sees the change. If the function rebinds the name, like `x = [9]`, the caller does not. Immutable objects (int, str, tuple) can't be changed in place, so they behave like pass by value."}, {"l": "py", "q": "Why did changing one list change another list too?", "a": "Because `b = a` doesn't copy the list; both names point to the same list. Make a real copy with `b = a.copy()` or `b = list(a)`. For lists inside lists, use `import copy` and `b = copy.deepcopy(a)`."}, {"l": "py", "q": "What is the difference between a list and a tuple?", "a": "A list can be changed after it's made (add, remove, replace items); a tuple can't. Use a list for a collection that grows, and a tuple for a fixed group of values, like a pair of coordinates. Tuples can also be dictionary keys; lists can't."}, {"l": "py", "q": "What are mutable and immutable types?", "a": "Mutable objects can be changed in place: lists, dictionaries, sets. Immutable ones can't: int, float, str, tuple. 'Changing' an immutable value really creates a new object, which is why `s.upper()` returns a new string instead of changing `s`."}, {"l": "py", "q": "Why shouldn't I use a list as a default argument?", "a": "Default values are created once, when the function is defined, so `def f(x=[])` shares one list across every call and it keeps growing. Use `def f(x=None):` and then `if x is None: x = []` inside the function."}, {"l": "py", "q": "What is the difference between is and == in Python?", "a": "`==` asks whether two values are equal; `is` asks whether they are the very same object. Two separate lists `[1, 2]` are `==` but not `is`. Use `is` only for checks like `x is None`."}, {"l": "py", "q": "What is a decorator?", "a": "A function that takes another function and returns a new one that adds behaviour around it, such as timing, logging or caching. Writing `@timer` above `def train():` is shorthand for `train = timer(train)`. You'll meet built-in ones like `@property` and `@functools.lru_cache`."}, {"l": "py", "q": "What does if __name__ == \"__main__\": mean?", "a": "Code under this line runs only when you run the file directly, not when another file imports it. It lets one file work both as a script and as a module you can import."}, {"l": "py", "q": "What are *args and **kwargs?", "a": "They let a function accept any number of arguments. `*args` collects extra positional arguments into a tuple; `**kwargs` collects extra named arguments into a dictionary. The names are a convention; the `*` and `**` are what matter."}, {"l": "py", "q": "What is a list comprehension?", "a": "A short way to build a list from a loop: `[x * x for x in range(5)]` gives `[0, 1, 4, 9, 16]`. You can add a filter: `[x for x in nums if x > 0]`. If it stops being easy to read, write a normal loop instead."}, {"l": "py", "q": "What is a lambda function?", "a": "A small one-line function without a name, like `lambda x: x * 2`. It's mostly used where a function is needed briefly, for example `sorted(people, key=lambda p: p['age'])`. For anything longer, use `def`."}, {"l": "py", "q": "Why do I get an IndentationError?", "a": "Python uses indentation to know which lines belong to a loop, function or if-block. Every line in a block must be indented the same way. Use 4 spaces, don't mix tabs and spaces, and check the line the error points to and the one above it."}, {"l": "py", "q": "What is the difference between print and return?", "a": "`print` shows a value on the screen and the function still gives back nothing. `return` hands a value back to the code that called the function, so you can store it or use it. A function with no `return` gives back `None`."}, {"l": "py", "q": "Why does 0.1 + 0.2 not equal 0.3 in Python?", "a": "Computers store decimals in binary, and 0.1 can't be stored exactly, so the sum is 0.30000000000000004. This happens in every language. Compare with `math.isclose(a, b)` instead of `==`, round for display, or use the `decimal` module for money."}, {"l": "py", "q": "What is the difference between / and // in Python?", "a": "`/` always gives a decimal: `7 / 2` is `3.5`. `//` divides and rounds down: `7 // 2` is `3`. `%` gives the remainder: `7 % 2` is `1`."}, {"l": "py", "q": "How do I loop over a dictionary?", "a": "`for key in d:` loops over the keys. `for key, value in d.items():` gives both at once, which is what you usually want. Use `d.get(key, default)` to read a key that might be missing without an error."}, {"l": "py", "q": "What is a virtual environment and why use one?", "a": "A separate folder of installed packages for one project, so projects don't break each other with different versions. Create one with `python -m venv .venv`, then activate it before installing packages. Colab doesn't need one; your laptop does."}, {"l": "py", "q": "I get ModuleNotFoundError: No module named ... What do I do?", "a": "The package isn't installed in the Python you're running. Install it with `pip install name` in the same environment (activate your virtual environment first). In Colab, run `%pip install name` in a cell. Check the spelling too: the install name can differ, e.g. `pip install scikit-learn` but `import sklearn`."}, {"l": "py", "q": "What is the difference between a module and a package?", "a": "A module is one `.py` file you can import. A package is a folder of modules imported under one name, like `numpy` or `pandas`. You install packages with pip and import modules from them."}, {"l": "py", "q": "What is a generator and what does yield do?", "a": "A generator produces values one at a time instead of building a whole list in memory. A function with `yield` becomes a generator: each `yield` hands out one value and pauses until the next is asked for. It's how you process huge files line by line."}, {"l": "py", "q": "How do I open and read a file safely?", "a": "Use `with open('data.txt') as f:` and read inside the block. The file is closed automatically, even if an error happens. Add `encoding='utf-8'` for text files to avoid surprises on Windows."}, {"l": "py", "q": "What are a class and self?", "a": "A class is a blueprint for objects that bundle data and functions together. `self` is the particular object a method is working on, so `self.name` means this object's name. You'll mostly use classes others wrote, like a pandas DataFrame or a scikit-learn model."}, {"l": "py", "q": "How do I handle errors with try and except?", "a": "Put the risky code in `try:` and the recovery in `except SomeError:`. Catch the specific error you expect, like `except FileNotFoundError:`, not a bare `except:`, which hides real bugs."}, {"l": "py", "q": "What is an f-string?", "a": "A string with an `f` in front that fills in values: `f\"Accuracy: {acc:.2%}\"` prints Accuracy: 93.50%. It's the easiest way to mix text and numbers."}, {"l": "py", "q": "Why do I get UnboundLocalError?", "a": "You assigned to a variable inside a function, so Python treats it as local throughout that function, and you read it before assigning. Pass the value in as an argument and return the new value, rather than changing an outside variable."}, {"l": "py", "q": "Should I learn Python 2 or Python 3?", "a": "Python 3. Python 2 reached its end of life in 2020 and modern libraries no longer support it. Colab and every lab in this course use Python 3."}, {"l": "py", "q": "pip or conda: which should I use?", "a": "Both install packages. This course uses pip with a virtual environment, which is enough for almost everything. Conda is useful when a package needs non-Python libraries, but don't mix the two in one environment."}, {"l": "c0l1", "q": "Do I need to install Linux for this course?", "a": "No. Colab already runs on Linux, so you can do every Course 0 lab in your browser. Later, Windows users can add WSL and Mac users can use the Terminal app."}, {"l": "c0l1", "q": "Is Linux hard to learn?", "a": "The basics take a few hours, and you only need a dozen commands to get going. This module teaches exactly those, one lesson at a time."}, {"l": "c0l1", "q": "What is the difference between Linux and Ubuntu?", "a": "Linux is the core of the system. Ubuntu is a distribution: Linux packaged with tools and an installer. Colab runs Ubuntu, and so does WSL by default."}, {"l": "c0l1", "q": "Why does Colab say I'm root?", "a": "Colab gives you a temporary machine all to yourself, so it runs you as the administrator. On real servers you'll be a normal user. The sudo lesson explains why that matters."}, {"l": "c0l1", "q": "Is the Mac Terminal the same as Linux?", "a": "Very close. macOS is a Unix system, so most commands in this course work the same. A few options differ slightly; --help will tell you."}, {"l": "c0l1", "q": "What is WSL?", "a": "Windows Subsystem for Linux: a Microsoft feature that runs a real Linux system inside Windows. You install it by running wsl --install in PowerShell as administrator."}, {"l": "c0l1", "q": "Why use commands when there's a mouse?", "a": "Servers usually have no screen, commands can be saved and repeated exactly, and they're much faster for repetitive work."}, {"l": "c0l1", "q": "My command says 'command not found'. What now?", "a": "Check the spelling and capitals: Linux is case-sensitive, so LS is not ls. If it's spelled right, the program may simply not be installed."}, {"l": "c0l1", "q": "Does man work in Colab?", "a": "Colab's Linux is a trimmed-down version, so the full manuals may be missing. Use --help instead, which works for almost every command."}, {"l": "c0l2", "q": "Why doesn't !cd work in Colab?", "a": "Each line starting with ! runs in its own short-lived shell, so the change of folder is lost when that line ends. Use %cd, which Colab remembers for the rest of the notebook."}, {"l": "c0l2", "q": "What's the difference between a folder and a directory?", "a": "Nothing: they're two words for the same thing. Linux tradition says directory, which is why the command is cd, change directory."}, {"l": "c0l2", "q": "Are file names case-sensitive?", "a": "Yes. Data.csv and data.csv are two different files on Linux. Stick to lowercase names to avoid surprises."}, {"l": "c0l2", "q": "Can I use spaces in file names?", "a": "You can, but you then have to put the name in quotes every time. Use underscores or dashes instead, like my_data.csv."}, {"l": "c0l2", "q": "What are hidden files?", "a": "Files whose names start with a dot, such as .bashrc. They usually hold settings. ls -a shows them."}, {"l": "c0l2", "q": "I deleted a file with rm. Can I get it back?", "a": "Usually not. That's why your important work lives in your Drive workbench, and later in Git, where earlier versions are kept."}, {"l": "c0l2", "q": "What's the difference between cp and cp -r?", "a": "cp copies files. To copy a folder and everything inside it, you need -r, for recursive."}, {"l": "c0l2", "q": "Where is my home folder in Colab?", "a": "Colab runs you as root, so your home is /root. Your notebook starts in /content, which is where you should work."}, {"l": "c0l2", "q": "Why count lines with wc -l?", "a": "For a CSV file, it tells you the number of rows almost instantly, before you even open Python. Remember the header line."}, {"l": "c0l3", "q": "Why put the pattern in quotes with find?", "a": "Without quotes, the shell may expand the star in your current folder before find ever sees it. Quotes pass the pattern to find unchanged."}, {"l": "c0l3", "q": "What's the difference between > and >>?", "a": "A single > replaces the file's contents. A double >> adds to the end. Use >> for logs."}, {"l": "c0l3", "q": "Why did my file become empty?", "a": "You probably redirected into the same file you were reading, like sort data.txt > data.txt. The shell empties the target before the command runs. Write to a new file instead."}, {"l": "c0l3", "q": "Where do error messages go?", "a": "To standard error, which also shows on your screen. Redirect them with 2> errors.txt to keep them separately."}, {"l": "c0l3", "q": "Is grep case-sensitive?", "a": "Yes. Add -i to ignore case, so grep -i error matches Error and ERROR too."}, {"l": "c0l3", "q": "How do I see the columns of a CSV quickly?", "a": "head -n 1 file.csv shows the header line. cut -d, -f2 keeps just the second column."}, {"l": "c0l3", "q": "Can a pipe have more than two commands?", "a": "Yes, as many as you like. Each command's output feeds the next, read from left to right."}, {"l": "c0l3", "q": "Do wildcards work in Colab?", "a": "Yes, in lines that start with !, because they run in a real Linux shell."}, {"l": "c0l3", "q": "What does uniq do without sort?", "a": "It only merges repeated lines that are next to each other, so the counts come out wrong. Sort first."}, {"l": "c0l4", "q": "Why does chmod not stop me reading a file in Colab?", "a": "Colab runs you as root, and root can read any file regardless of permissions. On a normal user account, the same settings would block you."}, {"l": "c0l4", "q": "What does chmod 777 do, and should I use it?", "a": "It lets everyone read, change and run the file. It's a common quick fix online, but it's unsafe on shared machines. Give the least permission that works."}, {"l": "c0l4", "q": "What's the difference between chmod and chown?", "a": "chmod changes what people may do with a file. chown changes who owns it."}, {"l": "c0l4", "q": "Why does running my script need ./ in front?", "a": "Linux only looks for commands in certain folders listed in PATH. ./ tells it to run the file in the current folder instead."}, {"l": "c0l4", "q": "What does the d at the start of ls -l mean?", "a": "It marks a directory. A dash marks a normal file, and an l marks a link."}, {"l": "c0l4", "q": "Can I change permissions on files in Google Drive?", "a": "Drive mounted in Colab doesn't follow Linux permissions in the usual way. Practise on files in /content instead."}, {"l": "c0l4", "q": "What is a group used for?", "a": "To share files with a team: give the group read or write access, and everyone in it gets that access."}, {"l": "c0l4", "q": "How do I see which groups I'm in?", "a": "Run groups, or id for more detail."}, {"l": "c0l4", "q": "What does chmod -R do?", "a": "It applies the change to a folder and everything inside it. Use it carefully."}, {"l": "c0l5", "q": "What password does sudo ask for?", "a": "Your own account password, not root's. Nothing appears on screen while you type it; that's normal."}, {"l": "c0l5", "q": "Why does sudo say I'm not in the sudoers file?", "a": "Your account isn't on the list of users allowed to use sudo. On your own machine, the first user usually is. On shared servers, ask the administrator."}, {"l": "c0l5", "q": "Should I just log in as root to save time?", "a": "No. Working as root all the time removes the safety net for every command. Use sudo for the few commands that need it."}, {"l": "c0l5", "q": "Is it safe to run sudo commands from tutorials?", "a": "Only from sources you trust, and only after reading what each part does. Be especially careful with commands that download and run scripts."}, {"l": "c0l5", "q": "What is apt?", "a": "Ubuntu's package manager: it installs, updates and removes system software. It needs sudo on a normal account."}, {"l": "c0l5", "q": "What's the difference between apt and pip?", "a": "apt installs system software for the whole machine. pip installs Python packages, and belongs inside a virtual environment, without sudo."}, {"l": "c0l5", "q": "Why is a virtual environment important?", "a": "It keeps each project's Python packages separate, so they can't clash with each other or with the system."}, {"l": "c0l5", "q": "I ran a command with sudo and now my files are owned by root. How do I fix it?", "a": "Give them back to yourself with sudo chown, followed by your user name and the file names. Then avoid sudo for that kind of task."}, {"l": "c0l5", "q": "Is Colab's root dangerous?", "a": "Not really. Colab's machine is temporary and is thrown away anyway, so it's a safe place to practise. Your Drive files are the exception: be careful with rm on paths under /content/drive."}, {"l": "c0l4", "q": "My script says Permission denied when I run it. Why?", "a": "It isn't marked as executable yet. Run chmod u+x followed by the script's name, then run it again with ./ in front."}]};
+const LINES = {
+  hello:"Hi, I'm Arjun, the FAQ guide for Learn AI the Right Way. I'm not a live mentor, but I know every lesson's FAQ. Tell me what went wrong, in your own words, and I'll find the answers that match.",
+  how:"It helps to name the lesson, and say exactly what you saw. For example: Lesson three, drive mount asks for permission, and then shows an error.",
+  found:"Here's what I found. Start with the top answer. If it doesn't fix things, try the next one.",
+  none:"I couldn't find a matching answer yet. Try different words, or name the lesson. If it's still not covered, ask in the comments under that lesson's video. Common questions get added to the FAQ.",
+  nohelp:"Sorry that didn't solve it. Check that you followed the lab steps in order, then rerun your notebook from the top. Still stuck? Post your question in the lesson's comments, with the exact error message.",
+  worked:"Great, glad that worked. Back to the lesson, and good luck with the quiz.",
+  start:"Not sure where to start? Take the entrance quiz in the course catalogue. It tells you exactly which parts of Course zero you need, and which you can skip.",
+  pay:"For prices and refunds, see What it costs in the course catalogue. Everything you need to learn is free, and every purchase comes with a seven-day refund."
+};
+const CLIP = {hello:1,how:2,found:3,none:4,nohelp:5,worked:6,start:7,pay:8};
+const $ = id => document.getElementById(id);
+
+/* ---- voice: plays recorded clips when they are published beside the page; text always shows ---- */
+let current = null, lastLine = "hello";
+const HAVE = new Set();
+Object.entries(CLIP).forEach(([k,n]) => {
+  const a = new Audio(); a.preload = "metadata";
+  a.addEventListener("loadedmetadata", () => { HAVE.add(k); if(k===lastLine) $("spk").hidden = false; });
+  a.src = `audio/arjun_${String(n).padStart(2,"0")}.mp3`;
+});
+function play(key){
+  if(!HAVE.has(key)) return;
+  try{ if(current){ current.pause(); } current = new Audio(`audio/arjun_${String(CLIP[key]).padStart(2,"0")}.mp3`); current.play().catch(()=>{}); }catch(e){}
+}
+function say(key, speak){ lastLine = key; $("say").textContent = LINES[key]; $("spk").hidden = !HAVE.has(key); if(speak) play(key); }
+$("spk").onclick = () => play(lastLine);
+
+/* ---- search ---- */
+const STOP = new Set("a an the and or but if then so to of in on at by for with from into about is are was were be been being am do does did doing have has had i me my we our you your it its this that these those there here what which who whom how why when where can could should would will shall may might must not no yes just very too also still get got gets getting want need know please help hi hello thanks thank lesson course one any some all".split(" "));
+const SYN = {
+  disappear:"lost", vanish:"lost", gone:"lost", missing:"lost", lost:"lost", deleted:"lost", delet:"lost",
+  free:"free", cost:"price", price:"price", pay:"price", paid:"price", fee:"price", money:"price", rupee:"price", inr:"price", dollar:"price", buy:"price", purchase:"price", discount:"student",
+  refund:"refund", "money-back":"refund", cancel:"refund",
+  gpu:"gpu", graphic:"gpu", cuda:"gpu", nvidia:"gpu",
+  drive:"drive", gdrive:"drive", mount:"mount", mounting:"mount", connect:"mount", permission:"permission", allow:"permission", access:"permission", safe:"permission", secure:"permission",
+  colab:"colab", notebook:"notebook", ipynb:"notebook",
+  error:"error", fail:"error", failed:"error", crash:"error", broken:"error", stuck:"stuck", disconnect:"restart", disconnected:"restart", restart:"restart", timeout:"restart", idle:"restart", session:"restart", runtime:"restart",
+  phone:"phone", mobile:"phone", tablet:"phone", ipad:"phone",
+  laptop:"laptop", computer:"laptop", pc:"laptop", ram:"memory", memory:"memory", gb:"memory",
+  quiz:"quiz", test:"quiz", exam:"quiz", entrance:"entrance", placement:"entrance", fail_quiz:"entrance",
+  start:"start", begin:"start", beginner:"start",
+  mentor:"mentor", human:"mentor", person:"mentor", teacher:"mentor", support:"mentor", contact:"mentor",
+  certificate:"certificate", cert:"certificate",
+  github:"github", git:"github", repo:"repository", repository:"repository",
+  linux:"linux", sudo:"linux", terminal:"linux", command:"linux",
+  python:"python", ml:"machine", machine:"machine", deep:"deep", dl:"deep", ai:"ai", chatgpt:"chatgpt", claude:"chatgpt", llm:"chatgpt",
+  overseas:"overseas", international:"overseas", abroad:"overseas", usa:"overseas", outside:"overseas",
+  student:"student", college:"student", university:"student",
+  hint:"hint", code:"code", solution:"code", answer:"code"
+};
+function stem(w){
+  w = w.replace(/'s$/,"");
+  if(SYN[w]) return SYN[w];
+  for(const suf of ["ing","ed","es","s"]){ if(w.length>4 && w.endsWith(suf)){ const b=w.slice(0,-suf.length); if(SYN[b]) return SYN[b]; if(suf!=="es") return b; } }
+  return w;
+}
+function toks(s){ return (s.toLowerCase().match(/[a-z0-9][a-z0-9\-]*/g)||[]).filter(w=>!STOP.has(w) && !/^\d$/.test(w)).map(stem); }
+const DOCS = DATA.faq.map(f => ({...f, tq:new Set(toks(f.q)), ta:new Set(toks(f.a))}));
+const DF = {}; DOCS.forEach(d => new Set([...d.tq,...d.ta]).forEach(t => DF[t]=(DF[t]||0)+1));
+const N = DOCS.length, idf = t => Math.log(1 + N/((DF[t]||0)+0.5));
+
+let scope = "all";
+function search(text){
+  const m = text.toLowerCase().match(/\b(?:lesson|l)\s*(\d+)\b/);
+  const named = m ? m[1] : null;
+  const q = [...new Set(toks(text))];
+  const scored = DOCS.map(d => {
+    let s = 0;
+    q.forEach(t => { if(d.tq.has(t)) s += 2*idf(t); else if(d.ta.has(t)) s += idf(t); });
+    const L = String(d.l);
+    if(named && L===named) s *= 1.6;
+    if(L==="0" && intent(text)) s *= 1.6;
+    if(scope!=="all" && !(scope==="c0" ? L.startsWith("c0l") : L===scope)) s = 0;
+    return {d, s};
+  }).filter(x => x.s>0).sort((a,b)=>b.s-a.s);
+  const best = scored.length ? scored[0].s : 0;
+  if(best < 2.2) return [];
+  const seen = new Set();
+  return scored.filter(x => x.s >= best*0.45 && !seen.has(x.d.q) && seen.add(x.d.q)).slice(0,3).map(x=>x.d);
+}
+function intent(text){
+  const t = toks(text);
+  if(t.some(w=>["price","refund","overseas","student"].includes(w))) return "pay";
+  if(t.includes("start")) return "start";
+  return null;
+}
+
+/* ---- render ---- */
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const code = s => s.replace(/`([^`]+)`/g,"<code>$1</code>");
+function render(text){
+  const hits = search(text), it = intent(text), box = $("res");
+  if(!hits.length){
+    say(it || "none", true);
+    box.innerHTML = it ? "" : `<div class="fb"><span>Not covered yet? Ask under the lesson's video. You can copy your question:</span><div class="copy" id="cp">${esc(text)}</div><div class="row"><button class="btn small ghost" type="button" id="cpb">Copy my question</button></div></div>`;
+    if(!it) $("cpb").onclick = copyQ;
+    return;
+  }
+  say(it || "found", true);
+  box.innerHTML = hits.map((d,k)=>{
+    const L = DATA.lessons[String(d.l)];
+    return `<article class="ans${k===0?" top":""}"><span class="rank">${k===0?"Best match":"Also try"}</span><h3>${esc(d.q)}</h3><p>${code(esc(d.a))}</p><span class="src">From <a href="${L.u}" target="_blank" rel="noopener">${esc(L.t)}</a></span></article>`;
+  }).join("") + `<div class="fb"><span>Did that answer it?</span><div class="row"><button class="btn small" type="button" id="yes">Yes, it worked</button><button class="btn small ghost" type="button" id="no">No, still stuck</button></div></div>`;
+  $("yes").onclick = () => { say("worked", true); $("res").querySelector(".fb").innerHTML = "<span>Glad that worked.</span>"; };
+  $("no").onclick = () => {
+    say("nohelp", true);
+    $("res").querySelector(".fb").innerHTML = `<span>Post it in the lesson's comments, with the exact error message. Your question, ready to copy:</span><div class="copy" id="cp">${esc(text)}</div><div class="row"><button class="btn small ghost" type="button" id="cpb">Copy my question</button></div>`;
+    $("cpb").onclick = copyQ;
+  };
+}
+function copyQ(){
+  const el = $("cp"), b = $("cpb");
+  const ok = () => { b.textContent = "Copied"; };
+  const fallback = () => { const r=document.createRange(); r.selectNodeContents(el); const s=getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Selected: press Ctrl+C"; };
+  try{ navigator.clipboard.writeText(el.textContent).then(ok, fallback); }catch(e){ fallback(); }
+}
+
+$("form").addEventListener("submit", e => {
+  e.preventDefault();
+  const t = $("qbox").value.trim();
+  if(!t){ say("how", true); $("qbox").focus(); return; }
+  render(t);
+});
+
+const LBL = k => k==="0" ? "Getting started & costs" : k==="py" ? "Python basics" : k.startsWith("c0l") ? `Course 0 · L${k.slice(3)}` : `Lesson ${k}`;
+const SC = [["all","All"]].concat(Object.keys(DATA.lessons).filter(k=>/^\d+$/.test(k)&&k!=="0").map(k=>[k,LBL(k)])).concat([["c0","Course 0"],["py",LBL("py")],["0",LBL("0")]]);
+$("scope").innerHTML = SC.map(([k,t]) => `<button class="chip" type="button" data-k="${k}" aria-pressed="${k==="all"}">${t}</button>`).join("");
+$("scope").onclick = e => { const b=e.target.closest(".chip"); if(!b) return; scope=b.dataset.k; [...$("scope").children].forEach(c=>c.setAttribute("aria-pressed", c===b)); const t=$("qbox").value.trim(); if(t) render(t); };
+const QK = ["Where do I start?","My files disappeared","Pass by value or reference?","Do I need a GPU?","How do refunds work?","Can I talk to a mentor?"];
+$("quick").innerHTML = QK.map(q=>`<button class="chip" type="button">${q}</button>`).join("");
+$("quick").onclick = e => { const b=e.target.closest(".chip"); if(!b) return; $("qbox").value=b.textContent; render(b.textContent); };
+
+$("count").textContent = `Right now he knows ${DATA.faq.length} answers: Lessons ${Object.keys(DATA.lessons).filter(k=>/^\d+$/.test(k)&&k!=="0").join(", ")}, Course 0 Linux basics, Python basics, and getting started.`;
+say("hello", false);
+</script>

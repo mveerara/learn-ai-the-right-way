@@ -1,0 +1,86 @@
+FINAL YOUTUBE DESCRIPTIONS — Learn AI the Right Way (launch, 21 Nov 2026)
+Paste each block into that video's Description in YouTube Studio, then Save.
+
+
+==================== START HERE ====================
+
+New to AI? Start here. In under 4 minutes, Ria walks you through the whole course: what you'll learn, how every lesson works, and the entrance quiz that tells you where to begin.
+
+▶ Course catalogue (every course, lesson and price): https://claude.ai/artifact/1S27dYy5tfBcnoW8L9NmsE
+▶ Take the entrance quiz: https://claude.ai/artifact/F48KAj4ELKBGXpcbHCFGnz
+▶ Stuck? Ask Arjun, our FAQ guide: https://claude.ai/artifact/6ykEguQuoSDHw2rMSKryVF
+▶ Next: Lesson 1, What AI, ML and Deep Learning Actually Are: https://youtu.be/MJ39tzld5rA
+
+How every lesson works
+• A short video
+• A guided lab: prompts and hints, never the full code
+• A quiz: pass mark 80%
+• A FAQ for the most common questions
+
+Everything you need to learn is free: videos, quizzes, cheatsheets and the certificate. Optional lab packs give extra practice, with lower prices for students.
+
+Chapters
+0:00 Start here
+0:16 The right way: foundations first
+0:33 What you'll learn: 13 courses, 6 tracks
+1:02 Course 0: the prep course
+1:24 How every lesson works
+1:46 Why an entrance quiz?
+2:11 Where you take it
+2:29 Two outcomes
+2:52 What it costs
+3:09 Stuck? Ask Arjun
+3:30 Your first step
+
+Ria is the channel's animated presenter, with an AI-generated voice. The course is written and designed by Mukund Veeraraghavan.
+
+#LearnAI #MachineLearning #DataScience
+
+
+==================== LESSON 1 ====================
+Keep your existing description and chapters. Add these lines at the very top:
+
+▶ Quiz and FAQ for this lesson: https://claude.ai/artifact/1NKfwA6VeMyb9MLXLfQZQ2
+▶ Stuck? Ask Arjun, our FAQ guide: https://claude.ai/artifact/6ykEguQuoSDHw2rMSKryVF
+▶ New here? Start with: https://youtu.be/W5zVEoP0nb0
+▶ Next: Lesson 2, The Workbench: https://youtu.be/ifS5lhZqnN4
+
+
+==================== LESSON 2 ====================
+Keep your existing description and chapters. Add these lines at the very top:
+
+▶ Quiz and FAQ for this lesson: https://claude.ai/artifact/3W59cNDxfdPycH1sGNxNW8
+▶ Stuck? Ask Arjun, our FAQ guide: https://claude.ai/artifact/6ykEguQuoSDHw2rMSKryVF
+▶ New here? Start with: https://youtu.be/W5zVEoP0nb0
+▶ Next: Lesson 3, Colab with Google Drive: https://youtu.be/kGTMBFCdetA
+
+
+==================== LESSON 3 ====================
+
+Run Python in your browser for free with Google Colab, and connect it to Google Drive so your work is never lost. Step one of your AI workbench.
+
+▶ Guided lab, quiz and FAQ: https://claude.ai/artifact/YYsMi7EGrFmaS6KAUNU679
+▶ Stuck? Ask Arjun, our FAQ guide: https://claude.ai/artifact/6ykEguQuoSDHw2rMSKryVF
+▶ New here? Start with: https://youtu.be/W5zVEoP0nb0
+▶ Course catalogue: https://claude.ai/artifact/1S27dYy5tfBcnoW8L9NmsE
+
+Chapters
+0:00 Colab with Google Drive
+0:14 What is Google Colab?
+0:32 A notebook is made of cells
+0:56 The catch: Colab forgets
+1:18 What we'll set up
+1:39 Step 1: the workbench folder
+2:00 Step 2: a notebook
+2:18 Step 3: connect to Drive
+2:38 Test: does it remember?
+3:05 About the free GPU
+3:25 Good habits from day one
+3:47 Your guided lab
+4:03 Recap and your quiz
+
+Next: Course 0, Linux basics.
+
+Ria is the channel's animated presenter, with an AI-generated voice. The course is written and designed by Mukund Veeraraghavan.
+
+#LearnAI #GoogleColab #Python

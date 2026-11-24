@@ -1,0 +1,54 @@
+[
+ {
+  "n": 1,
+  "title": "Colab with Google Drive"
+ },
+ {
+  "n": 2,
+  "title": "What is Google Colab?"
+ },
+ {
+  "n": 3,
+  "title": "A notebook is made of cells"
+ },
+ {
+  "n": 4,
+  "title": "The catch: Colab forgets"
+ },
+ {
+  "n": 5,
+  "title": "What we'll set up"
+ },
+ {
+  "n": 6,
+  "title": "Step 1: the workbench folder"
+ },
+ {
+  "n": 7,
+  "title": "Step 2: a notebook"
+ },
+ {
+  "n": 8,
+  "title": "Step 3: connect to Drive"
+ },
+ {
+  "n": 9,
+  "title": "Test: does it remember?"
+ },
+ {
+  "n": 10,
+  "title": "About the free GPU"
+ },
+ {
+  "n": 11,
+  "title": "Good habits from day one"
+ },
+ {
+  "n": 12,
+  "title": "Your guided lab"
+ },
+ {
+  "n": 13,
+  "title": "Recap and your quiz"
+ }
+]

@@ -1,0 +1,46 @@
+[
+ {
+  "n": 1,
+  "title": "sudo, root and staying safe"
+ },
+ {
+  "n": 2,
+  "title": "root: the administrator"
+ },
+ {
+  "n": 3,
+  "title": "sudo: root for one command"
+ },
+ {
+  "n": 4,
+  "title": "When to use sudo"
+ },
+ {
+  "n": 5,
+  "title": "Never sudo pip"
+ },
+ {
+  "n": 6,
+  "title": "Read before you sudo"
+ },
+ {
+  "n": 7,
+  "title": "One space, big difference"
+ },
+ {
+  "n": 8,
+  "title": "Root in Colab"
+ },
+ {
+  "n": 9,
+  "title": "Four habits that keep you safe"
+ },
+ {
+  "n": 10,
+  "title": "Your guided lab"
+ },
+ {
+  "n": 11,
+  "title": "Recap and your quiz"
+ }
+]

@@ -1,0 +1,50 @@
+[
+ {
+  "n": 1,
+  "title": "Wildcards, pipes and redirection"
+ },
+ {
+  "n": 2,
+  "title": "Wildcards: patterns for names"
+ },
+ {
+  "n": 3,
+  "title": "Wildcards in action"
+ },
+ {
+  "n": 4,
+  "title": "Every command has three streams"
+ },
+ {
+  "n": 5,
+  "title": "Redirection: output into files"
+ },
+ {
+  "n": 6,
+  "title": "Redirection in practice"
+ },
+ {
+  "n": 7,
+  "title": "Pipes: chain commands"
+ },
+ {
+  "n": 8,
+  "title": "Four friends for pipes"
+ },
+ {
+  "n": 9,
+  "title": "One line, one answer"
+ },
+ {
+  "n": 10,
+  "title": "Finding files: find"
+ },
+ {
+  "n": 11,
+  "title": "Your guided lab"
+ },
+ {
+  "n": 12,
+  "title": "Recap and your quiz"
+ }
+]

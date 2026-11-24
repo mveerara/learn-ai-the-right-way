@@ -1,0 +1,138 @@
+{
+ "mp3": "/home/claude/l03/audio/part2.mp3",
+ "duration": 82.83425,
+ "sents": [
+  {
+   "slide": 6,
+   "text": "Step one.",
+   "start": 0.0,
+   "end": 0.749
+  },
+  {
+   "slide": 6,
+   "text": "Open Google Drive and create a new folder called workbench.",
+   "start": 1.387,
+   "end": 5.035
+  },
+  {
+   "slide": 6,
+   "text": "Inside it, make three more folders: data, for datasets; notebooks, for your work; and outputs, for results like charts and files.",
+   "start": 5.538,
+   "end": 14.859
+  },
+  {
+   "slide": 6,
+   "text": "Keeping things in the same place every time saves you hours later.",
+   "start": 15.439,
+   "end": 19.499
+  },
+  {
+   "slide": 7,
+   "text": "Step two.",
+   "start": 20.206,
+   "end": 20.883
+  },
+  {
+   "slide": 7,
+   "text": "Go to colab dot research dot google dot com, and create a new notebook.",
+   "start": 21.44,
+   "end": 26.165
+  },
+  {
+   "slide": 7,
+   "text": "Give it a sensible name, like lesson three setup.",
+   "start": 26.664,
+   "end": 29.532
+  },
+  {
+   "slide": 7,
+   "text": "Then, from the File menu, move it into your workbench notebooks folder.",
+   "start": 30.09,
+   "end": 34.131
+  },
+  {
+   "slide": 7,
+   "text": "Colab saves notebooks to your Drive as you work.",
+   "start": 34.743,
+   "end": 37.388
+  },
+  {
+   "slide": 8,
+   "text": "Step three.",
+   "start": 38.211,
+   "end": 38.893
+  },
+  {
+   "slide": 8,
+   "text": "Connect the notebook to your Drive.",
+   "start": 39.439,
+   "end": 41.149
+  },
+  {
+   "slide": 8,
+   "text": "Colab has a small built-in command for this, called drive dot mount.",
+   "start": 41.715,
+   "end": 46.256
+  },
+  {
+   "slide": 8,
+   "text": "When you run it, Google asks your permission.",
+   "start": 46.831,
+   "end": 50.454
+  },
+  {
+   "slide": 8,
+   "text": "Say yes, and your Drive appears as a folder the notebook can use.",
+   "start": 50.721,
+   "end": 53.608
+  },
+  {
+   "slide": 8,
+   "text": "The guided lab shows you exactly where to find it.",
+   "start": 54.181,
+   "end": 56.921
+  },
+  {
+   "slide": 9,
+   "text": "Now test it.",
+   "start": 57.545,
+   "end": 58.559
+  },
+  {
+   "slide": 9,
+   "text": "Write a short line of text into a file in your outputs folder.",
+   "start": 59.129,
+   "end": 62.404
+  },
+  {
+   "slide": 9,
+   "text": "Then, from the Runtime menu, disconnect and delete the runtime.",
+   "start": 62.945,
+   "end": 66.947
+  },
+  {
+   "slide": 9,
+   "text": "That's like switching the computer off and throwing it away.",
+   "start": 67.457,
+   "end": 71.436
+  },
+  {
+   "slide": 9,
+   "text": "Connect again, reconnect your Drive, and read the file back.",
+   "start": 71.758,
+   "end": 74.356
+  },
+  {
+   "slide": 9,
+   "text": "If it's still there, your workbench remembers.",
+   "start": 74.898,
+   "end": 77.492
+  },
+  {
+   "slide": 9,
+   "text": "Congratulations: that's the most important habit in this whole series.",
+   "start": 78.119,
+   "end": 82.606
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+ARJUN VOICE LINES (FAQ guide page)
+Generate each clip separately, one take each, and send them back in this order.
+Voice: a calm, warm male voice (Indian English if you like), different from Bella.
+Use the same settings as Ria: stability 50, similarity 75.
+
+
+===== CLIP 1: hello (plays when the page opens and the student presses the play button) =====
+
+Hi, I'm Arjun, the FAQ guide for Learn AI the Right Way. I'm not a live mentor, but I know every lesson's FAQ. Tell me what went wrong, in your own words, and I'll find the answers that match.
+
+
+===== CLIP 2: how to ask (plays under the question box) =====
+
+It helps to name the lesson, and say exactly what you saw. For example: Lesson three, drive mount asks for permission, and then shows an error.
+
+
+===== CLIP 3: answers found =====
+
+Here's what I found. Start with the top answer. If it doesn't fix things, try the next one.
+
+
+===== CLIP 4: no match =====
+
+I couldn't find a matching answer yet. Try different words, or name the lesson. If it's still not covered, ask in the comments under that lesson's video. Common questions get added to the FAQ.
+
+
+===== CLIP 5: that didn't help =====
+
+Sorry that didn't solve it. Check that you followed the lab steps in order, then rerun your notebook from the top. Still stuck? Post your question in the lesson's comments, with the exact error message.
+
+
+===== CLIP 6: it worked =====
+
+Great, glad that worked. Back to the lesson, and good luck with the quiz.
+
+
+===== CLIP 7: where do I start =====
+
+Not sure where to start? Take the entrance quiz in the course catalogue. It tells you exactly which parts of Course zero you need, and which you can skip.
+
+
+===== CLIP 8: payments and refunds =====
+
+For prices and refunds, see What it costs in the course catalogue. Everything you need to learn is free, and every purchase comes with a seven-day refund.

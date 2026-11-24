@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lesson 3 Lab and Quiz</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Lexend:wght@400;500;600&display=swap">
+<style>
+/* Lesson page: guided lab (steps with hints), then the quiz, then the FAQ. */
+:root{
+  --bg:#F3F7F6; --surface:#FFFFFF; --ink:#1D2A2C; --muted:#5A6B6E; --line:#D6E2E0;
+  --accent:#0F7C77; --accent-ink:#FFFFFF; --accent-soft:#DDF0EE;
+  --good:#1E8B4C; --good-soft:#DFF3E6; --bad:#B4462F; --bad-soft:#FBE6E0; --warm:#E8A33A;
+  --code-bg:#0B2E2C; --code-ink:#DDF0EE;
+  --display:"Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --body:"Lexend", "Segoe UI", system-ui, sans-serif;
+  --mono:ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101819; --surface:#182324; --ink:#E6EFEE; --muted:#9DB0AF; --line:#2B3B3C;
+  --accent:#3FB8B0; --accent-ink:#0C1515; --accent-soft:#1C3534;
+  --good:#5BCB86; --good-soft:#163222; --bad:#EE8A71; --bad-soft:#3A1F18; --warm:#F0B95A;
+  --code-bg:#0A1314; --code-ink:#CFE6E2; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101819; --surface:#182324; --ink:#E6EFEE; --muted:#9DB0AF; --line:#2B3B3C;
+  --accent:#3FB8B0; --accent-ink:#0C1515; --accent-soft:#1C3534;
+  --good:#5BCB86; --good-soft:#163222; --bad:#EE8A71; --bad-soft:#3A1F18; --warm:#F0B95A;
+  --code-bg:#0A1314; --code-ink:#CFE6E2; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:28px 48px}
+.wrap{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+.crumb{font-size:13px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(26px,5vw,34px);line-height:1.15;margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-weight:800;font-size:24px;margin:0}
+.ria{display:flex;gap:12px;align-items:flex-end}
+.ria svg{flex:0 0 64px;width:64px;height:64px}
+.bubble{background:var(--accent-soft);border-radius:16px 16px 16px 4px;padding:12px 16px;min-width:0;font-weight:500}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:16px}
+.sub{margin:0;color:var(--muted);font-size:14px}
+code{font-family:var(--mono);font-size:.92em;background:var(--accent-soft);padding:1px 6px;border-radius:6px;overflow-wrap:anywhere}
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:12px;padding:12px 14px;font-family:var(--mono);font-size:14px;line-height:1.5;overflow-x:auto;white-space:pre}
+/* lab */
+.labbar{display:flex;align-items:center;gap:12px}
+.labbar .track{flex:1;height:8px;border-radius:4px;background:var(--line);overflow:hidden}
+.labbar .fill{height:100%;width:0;background:var(--good);transition:width .3s}
+.labbar .n{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+#steps{display:flex;flex-direction:column;gap:12px}
+.step{border:2px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.step.done{border-color:var(--good);background:var(--good-soft)}
+.step h3{margin:0;font-family:var(--display);font-weight:600;font-size:18px;line-height:1.3;display:flex;gap:10px;align-items:baseline}
+.step h3 .num{flex:0 0 auto;width:28px;height:28px;border-radius:8px;background:var(--accent);color:var(--accent-ink);display:inline-grid;place-items:center;font-size:14px;font-family:var(--body);font-weight:600}
+.step.done h3 .num{background:var(--good)}
+.step p{margin:0}
+.step .goal{color:var(--muted);font-size:14px}
+.hint{border-left:4px solid var(--warm);padding:4px 0 4px 12px;display:flex;flex-direction:column;gap:8px}
+.hint b{font-family:var(--display);font-size:15px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.btn{font:inherit;font-weight:600;border-radius:12px;padding:10px 16px;cursor:pointer;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.small{padding:7px 12px;font-size:14px;border-radius:10px}
+.btn:disabled{opacity:.5;cursor:default}
+.btn:focus-visible{outline:3px solid var(--warm);outline-offset:2px}
+.check{display:flex;gap:10px;align-items:center;font-weight:600;cursor:pointer}
+.check input{width:22px;height:22px;accent-color:var(--good)}
+/* quiz */
+.progress{display:flex;gap:6px}
+.progress span{flex:1;height:6px;border-radius:3px;background:var(--line)}
+.progress span.done{background:var(--accent)}
+.progress span.ok{background:var(--good)}
+.progress span.miss{background:var(--bad)}
+.qnum{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.q{font-family:var(--display);font-weight:600;font-size:21px;line-height:1.3;margin:0;text-wrap:balance}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:12px;align-items:center;width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--surface);
+  border:2px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;transition:border-color .15s, background .15s}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt:focus-visible{outline:3px solid var(--warm);outline-offset:2px}
+.opt .key{flex:0 0 28px;height:28px;border-radius:8px;display:grid;place-items:center;font-weight:600;font-size:14px;background:var(--accent-soft);color:var(--accent)}
+.opt.right{border-color:var(--good);background:var(--good-soft)}
+.opt.right .key{background:var(--good);color:var(--surface)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt.wrong .key{background:var(--bad);color:var(--surface)}
+.opt:disabled{cursor:default}
+.why{border-left:4px solid var(--accent);padding:4px 0 4px 12px}
+.why b{display:block;font-family:var(--display);font-size:17px}
+.score{font-family:var(--display);font-weight:800;font-size:56px;line-height:1;font-variant-numeric:tabular-nums}
+.score small{font-size:22px;color:var(--muted);font-weight:600}
+.next{display:flex;flex-direction:column;gap:4px;border:1px dashed var(--line);border-radius:14px;padding:14px 16px}
+.next .lbl{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.next .t{font-weight:600}
+.foot{font-size:13px;color:var(--muted)}
+canvas#confetti{position:fixed;inset:0;pointer-events:none;width:100%;height:100%}
+/* faq */
+.faq details{border-top:1px solid var(--line);padding:12px 0}
+.faq details:last-of-type{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--accent);font-weight:600;flex:0 0 auto}
+.faq details[open] summary::after{content:"\2013"}
+.faq summary:focus-visible{outline:3px solid var(--warm);outline-offset:2px;border-radius:6px}
+.faq details p{margin:8px 0 0}
+@media (prefers-reduced-motion: reduce){.opt,.labbar .fill{transition:none}}
+</style>
+</head>
+<body>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<main class="wrap">
+  <div class="crumb">Learn AI the Right Way · Course 1 · Lesson 3</div>
+  <h1>Step one: Colab with a memory</h1>
+
+  <div class="ria">
+    <svg viewBox="100 100 200 200" role="img" aria-label="Ria">
+      <circle cx="200" cy="200" r="100" fill="var(--accent-soft)"/>
+      <path d="M112 230 q-6 -120 88 -128 q94 8 88 128 l0 40 l-176 0z" fill="#2B1B17"/>
+      <ellipse cx="200" cy="225" rx="78" ry="92" fill="#C98C5F"/>
+      <circle cx="172" cy="232" r="9" fill="#3B2A20"/><circle cx="232" cy="232" r="9" fill="#3B2A20"/>
+      <circle cx="175" cy="228" r="3" fill="#fff"/><circle cx="235" cy="228" r="3" fill="#fff"/>
+      <path d="M176 278 q24 22 48 0 q-24 9 -48 0z" fill="#8E2F3A"/>
+      <path d="M122 205 q8 -78 78 -82 q62 2 80 60 q-60 -10 -100 -48 q-20 36 -58 70z" fill="#2B1B17"/>
+    </svg>
+    <div class="bubble" id="say">First the lab, then a five-question quiz. Try each step yourself before opening a hint.</div>
+  </div>
+
+  <!-- Guided lab -->
+  <section class="card" id="lab" aria-labelledby="labh">
+    <h2 id="labh">Guided lab: a workbench that remembers</h2>
+    <p class="sub">About 20 minutes. You need a Google account and a browser. Hints open one at a time, and the lab never hands you a full program.</p>
+    <div class="labbar"><div class="track"><div class="fill" id="labFill"></div></div><span class="n" id="labN">0 of 6 done</span></div>
+    <div id="steps"></div>
+    <div class="row"><button class="btn ghost small" type="button" id="labReset">Start the lab again</button></div>
+  </section>
+
+  <!-- Quiz -->
+  <section class="card" id="quiz" aria-live="polite">
+    <h2>Quiz</h2>
+    <div class="progress" id="bar"></div>
+    <div class="qnum" id="qnum"></div>
+    <p class="q" id="q"></p>
+    <div class="opts" id="opts"></div>
+    <div class="why" id="why" hidden></div>
+    <div class="row" id="ctrl" hidden><button class="btn" id="nextBtn" type="button">Next question</button></div>
+  </section>
+
+  <section class="card" id="result" hidden aria-live="polite">
+    <div class="score" id="score"></div>
+    <p id="verdict" style="margin:0;font-weight:500"></p>
+    <div class="next" id="nextCard"></div>
+    <div class="row" id="resultBtns"></div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="card faq" id="faq" aria-labelledby="faqh">
+    <h2 id="faqh">Lesson 3 FAQ</h2>
+    <p class="sub">Answers to the questions learners ask most about this lesson.</p>
+    <div id="faqList"></div>
+  </section>
+
+  <p class="foot">Pass mark: 80% (4 out of 5). New here? <a href="https://youtu.be/W5zVEoP0nb0" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">Start here</a> · <a href="https://claude.ai/artifact/1S27dYy5tfBcnoW8L9NmsE" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">Course catalogue</a></p>
+</main>
+
+<script>
+/* ---------- guided lab ---------- */
+const LAB = [
+ {t:"Make your workbench folder in Google Drive",
+  goal:"Goal: My Drive has a folder called workbench, with three folders inside: data, notebooks and outputs.",
+  hints:["Open drive.google.com and look for the New button.",
+         "New → New folder → name it <code>workbench</code>. Open it, then make <code>data</code>, <code>notebooks</code> and <code>outputs</code> the same way."]},
+ {t:"Create a notebook and give it a name",
+  goal:"Goal: a notebook called lesson3_setup, saved in workbench/notebooks.",
+  hints:["Open colab.research.google.com and start a new notebook.",
+         "Click the title at the top left (it says Untitled) to rename it. Then use the File menu, Move, and pick <code>workbench/notebooks</code>."]},
+ {t:"Run your first cell",
+  goal:"Goal: a code cell prints a short greeting, and you see it under the cell.",
+  hints:["Python has a built-in function that shows text on the screen. Its name is a word meaning 'put on paper'.",
+         "The function is <code>print</code>. Text goes inside quotes, inside the brackets. Press the play button, or Shift+Enter, to run the cell."]},
+ {t:"Connect the notebook to your Drive",
+  goal:"Goal: your Drive appears inside the notebook, and you can see the workbench folder in the Files panel on the left.",
+  hints:["Colab has a helper module called <code>drive</code>, inside the <code>google.colab</code> package. It has a function called <code>mount</code>.",
+         "Import <code>drive</code> from <code>google.colab</code>, then call its <code>mount</code> function with the folder path <code>'/content/drive'</code>. Allow access when Google asks.",
+         "After mounting, your files are under <code>/content/drive/MyDrive/</code>. So your outputs folder is <code>/content/drive/MyDrive/workbench/outputs</code>."]},
+ {t:"Save a file to outputs",
+  goal:"Goal: a file called hello.txt in workbench/outputs, containing one line of text that you wrote from code.",
+  hints:["Python's <code>open</code> function opens a file. The second argument says what you want to do: <code>'w'</code> means write.",
+         "Use <code>with open(path, 'w') as f:</code> and, on the next line (indented), <code>f.write(...)</code>. Build <code>path</code> from the outputs folder in step 4 plus <code>hello.txt</code>.",
+         "Check it worked: open Google Drive in another tab and look inside workbench/outputs."]},
+ {t:"Prove it remembers",
+  goal:"Goal: after throwing the computer away, you can still read hello.txt.",
+  hints:["Runtime menu → Disconnect and delete runtime. Your Python variables and anything outside Drive are now gone.",
+         "Connect again, run your Drive cell from step 4 again, then open the file with <code>'r'</code> (read) instead of <code>'w'</code> and print what <code>f.read()</code> gives you.",
+         "Bonus: before deleting the runtime, also save a file to <code>/content/</code> (not Drive). Afterwards, look for it: it will be gone. That's why everything lives in Drive."]}
+];
+const KEY = "lairw-l3-lab";
+let lab = {done:[], shown:[]};
+try { const s = JSON.parse(localStorage.getItem(KEY)); if (s && s.done) lab = s; } catch(e) {}
+function saveLab(){ try { localStorage.setItem(KEY, JSON.stringify(lab)); } catch(e) {} }
+function drawLab(){
+  const box = document.getElementById("steps"); box.innerHTML = "";
+  LAB.forEach((st, k) => {
+    const done = !!lab.done[k], shown = lab.shown[k] || 0;
+    const el = document.createElement("div");
+    el.className = "step" + (done ? " done" : "");
+    let h = `<h3><span class="num">${done ? "✓" : k + 1}</span><span>${st.t}</span></h3><p class="goal">${st.goal}</p>`;
+    for (let j = 0; j < shown; j++) h += `<div class="hint"><b>Hint ${j + 1}</b><span>${st.hints[j]}</span></div>`;
+    h += `<div class="row">`;
+    if (shown < st.hints.length) h += `<button class="btn ghost small" type="button" data-hint="${k}">${shown ? "Next hint" : "Show a hint"}</button>`;
+    h += `<label class="check"><input type="checkbox" data-done="${k}" ${done ? "checked" : ""}> It works</label></div>`;
+    el.innerHTML = h; box.appendChild(el);
+  });
+  const n = lab.done.filter(Boolean).length;
+  document.getElementById("labFill").style.width = (100 * n / LAB.length) + "%";
+  document.getElementById("labN").textContent = `${n} of ${LAB.length} done`;
+}
+document.getElementById("steps").addEventListener("click", e => {
+  const b = e.target.closest("[data-hint]"); if (!b) return;
+  const k = +b.dataset.hint; lab.shown[k] = (lab.shown[k] || 0) + 1; saveLab(); drawLab();
+});
+document.getElementById("steps").addEventListener("change", e => {
+  const c = e.target.closest("[data-done]"); if (!c) return;
+  const k = +c.dataset.done, before = lab.done.filter(Boolean).length;
+  lab.done[k] = c.checked; saveLab(); drawLab();
+  const n = lab.done.filter(Boolean).length;
+  if (n === LAB.length && before < n) { document.getElementById("say").textContent = "Your workbench remembers. That's the habit that matters most. Now try the quiz."; confetti(); }
+  else if (c.checked) document.getElementById("say").textContent = "Nice. On to the next step.";
+});
+document.getElementById("labReset").onclick = () => { lab = {done:[], shown:[]}; saveLab(); drawLab(); document.getElementById("say").textContent = "Fresh start. Take it one step at a time."; };
+drawLab();
+
+/* ---------- quiz ---------- */
+const QUIZ = [
+  {q:"Why should your work live in Google Drive rather than on Colab's computer?", o:["Drive runs code faster","Colab's computer is temporary and is taken back","Colab can't open Python files","Drive gives you a free GPU"], a:1,
+   why:"Colab lends you a computer for a while. When it's taken back, files stored on it disappear. Drive keeps them."},
+  {q:"What does drive.mount do in a Colab notebook?", o:["Installs Python","Connects your Google Drive so code can read and save files there","Shares your notebook publicly","Turns on the GPU"], a:1,
+   why:"Mounting makes your Drive appear as a folder in the notebook, at /content/drive/MyDrive."},
+  {q:"Which folder in your workbench is for results such as charts?", o:["data","notebooks","outputs","Colab Notebooks"], a:2,
+   why:"Datasets go in data, your notebooks in notebooks, and anything your code produces in outputs."},
+  {q:"How do you prove your workbench remembers?", o:["Close the browser tab","Save a file, delete the runtime, reconnect and read it back","Rename the notebook","Turn on dark mode"], a:1,
+   why:"Deleting the runtime throws Colab's computer away. If the file is still readable after reconnecting, it lives in Drive."},
+  {q:"True or false: you need a free GPU for this course's first labs.", o:["True","False"], a:1,
+   why:"Early labs run fine without one. Free GPU time is limited and changes, so we switch it on when deep learning arrives."}
+];
+const PASS = Math.ceil(0.8 * QUIZ.length);
+const NEXT = {title:'Course 0: Linux basics', url:'https://claude.ai/artifact/1S27dYy5tfBcnoW8L9NmsE', foot:'Coming next · see the course catalogue'};
+const BASIC = {title:'Rewatch Lesson 3', url:'https://youtu.be/kGTMBFCdetA', foot:'Then try the quiz again'};
+const PRAISE = ["Spot on!","Exactly right.","Nailed it.","Yes, well done.","Perfect."];
+const NUDGE = ["Not quite. Here's why.","Close. Have a look at this.","Good try. Here's the idea."];
+let i=0, right=0, results=[];
+const $=id=>document.getElementById(id);
+function bar(){ $("bar").innerHTML = QUIZ.map((_,k)=>`<span class="${k<results.length?(results[k]?'ok':'miss'):(k===i?'done':'')}"></span>`).join(""); }
+function show(){
+  const it = QUIZ[i]; bar();
+  $("qnum").textContent = `Question ${i+1} of ${QUIZ.length}`;
+  $("q").textContent = it.q; $("why").hidden = true; $("ctrl").hidden = true; $("opts").innerHTML = "";
+  it.o.forEach((txt,k)=>{ const b=document.createElement("button"); b.className="opt"; b.type="button";
+    b.innerHTML=`<span class="key">${"ABCD"[k]}</span><span>${txt}</span>`; b.onclick=()=>pick(k); $("opts").appendChild(b); });
+}
+function pick(k){
+  const it=QUIZ[i], ok=k===it.a;
+  [...$("opts").children].forEach((b,j)=>{b.disabled=true; if(j===it.a) b.classList.add("right"); else if(j===k) b.classList.add("wrong");});
+  if(ok) right++; results.push(ok); bar();
+  $("why").innerHTML=`<b>${ok ? PRAISE[i%PRAISE.length] : NUDGE[i%NUDGE.length]}</b>${it.why}`; $("why").hidden=false;
+  $("say").textContent = ok ? "Lovely. On to the next one." : "No problem. That's what quizzes are for.";
+  $("nextBtn").textContent = i===QUIZ.length-1 ? "See my result" : "Next question";
+  $("ctrl").hidden=false; $("nextBtn").focus({preventScroll:true});
+}
+$("nextBtn").onclick=()=>{ i++; if(i<QUIZ.length) show(); else finish(); };
+function finish(){
+  $("quiz").hidden=true; $("result").hidden=false;
+  $("score").innerHTML=`${right}<small> / ${QUIZ.length}</small>`;
+  const pass = right>=PASS, btns=$("resultBtns"); btns.innerHTML="";
+  if(pass){
+    $("verdict").textContent = right===QUIZ.length ? "Brilliant, a perfect score. Your workbench has a memory." : "Well done, you passed. You've got the key habit.";
+    $("say").textContent = "Wonderful! You're ready for the next lesson.";
+    $("nextCard").innerHTML=`<span class="lbl">Up next</span><span class="t">${NEXT.title}</span><span class="foot">${NEXT.foot}</span>`;
+    btns.innerHTML=`<a class="btn" href="${NEXT.url}" target="_blank" rel="noopener">Open the catalogue</a><button class="btn ghost" type="button" id="again">Take the quiz again</button>`;
+    confetti();
+  } else {
+    $("verdict").textContent = "Nearly there. Most people need a second look at this, and that's normal.";
+    $("say").textContent = "Let's lock it in. Pick whichever helps you most.";
+    $("nextCard").innerHTML=`<span class="lbl">Try this first</span><span class="t">${BASIC.title}</span><span class="foot">${BASIC.foot}</span>`;
+    btns.innerHTML=`<a class="btn" href="${BASIC.url}" target="_blank" rel="noopener">Rewatch the lesson</a><button class="btn ghost" type="button" id="again">Try the quiz again</button>`;
+  }
+  $("again").onclick=()=>{ i=0; right=0; results=[]; $("result").hidden=true; $("quiz").hidden=false; $("say").textContent="Fresh start. You've got this."; show(); };
+}
+show();
+
+/* ---------- FAQ ---------- */
+const FAQ = [
+ ["Is Google Colab really free?","Yes. Colab says it is free of charge to use. Paid plans add more computing power and longer sessions, but you won't need them for this course."],
+ ["How long can a Colab session run?","Up to 12 hours on the free tier, and less if you leave it idle. Colab doesn't publish exact limits and they change, which is exactly why your work lives in Drive."],
+ ["My files disappeared. What happened?","They were probably saved on Colab's computer, under /content, rather than in your Drive. Mount your Drive and save under /content/drive/MyDrive/workbench instead."],
+ ["Is it safe to give Colab access to my Drive?","The permission is between your own Google account and Google's own Colab service. Only allow it for notebooks you created or trust, because a notebook with that access can read and change your Drive files."],
+ ["Do I have to mount Drive every time?","Yes, once per session. That's why the setup cell goes at the top of every notebook: after a restart, you rerun it first."],
+ ["Where is my notebook saved?","In your Google Drive. New notebooks go to a folder called Colab Notebooks unless you move them, which is why step 2 moves yours into workbench/notebooks."],
+ ["Should I turn on the GPU now?","No. The early labs don't need it, and free GPU time is limited and changes. We'll switch it on when deep learning arrives."],
+ ["Can I do this lab on a tablet or phone?","A tablet with a keyboard works. On a phone, Colab is hard to use, so use a laptop or desktop if you can."],
+ ["Why won't the lab just give me the full code?","Because you learn by building it. The hints get more specific each time you open one, so you're never stuck for long."],
+ ["Can I ask a question or get help from a mentor?","There's no live support or mentoring. <a href=\"https://claude.ai/artifact/6ykEguQuoSDHw2rMSKryVF\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--accent);font-weight:600\">Ask Arjun</a>, our FAQ guide: describe your problem in your own words and he finds the matching answers from every lesson's FAQ. Not answered? Leave a comment on the video; common questions are added to the FAQ."]
+];
+document.getElementById("faqList").innerHTML = FAQ.map(([q,a])=>`<details><summary>${q}</summary><p>${a}</p></details>`).join("");
+
+/* ---------- confetti ---------- */
+function confetti(){
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const c=$("confetti"), x=c.getContext("2d"), dpr=window.devicePixelRatio||1;
+  c.width=innerWidth*dpr; c.height=innerHeight*dpr; x.setTransform(dpr,0,0,dpr,0,0);
+  const css=getComputedStyle(document.documentElement);
+  const cols=["--accent","--warm","--good","--bad"].map(v=>css.getPropertyValue(v).trim());
+  const P=Array.from({length:140},()=>({x:innerWidth/2,y:innerHeight/3,vx:(Math.random()-.5)*12,vy:Math.random()*-11-3,r:Math.random()*6+3,c:cols[Math.floor(Math.random()*cols.length)],a:Math.random()*6}));
+  let t=0;(function f(){x.clearRect(0,0,innerWidth,innerHeight);
+    P.forEach(p=>{p.vy+=.35;p.x+=p.vx;p.y+=p.vy;p.a+=.2;x.save();x.translate(p.x,p.y);x.rotate(p.a);x.fillStyle=p.c;x.fillRect(-p.r/2,-p.r/4,p.r,p.r/2);x.restore();});
+    if(++t<150) requestAnimationFrame(f); else x.clearRect(0,0,innerWidth,innerHeight);})();
+}
+</script>
+</body>
+</html>

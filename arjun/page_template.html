@@ -1,0 +1,227 @@
+<title>Ask Arjun</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Lexend:wght@400;500;600&display=swap">
+<style>
+/* Layout: Arjun and his speech bubble on top, the question box under him, matched FAQ answers as cards below. Navy accent sets him apart from Ria's teal. */
+:root{
+  --bg:#F2F4F8; --surface:#FFFFFF; --ink:#1B2433; --muted:#5B6578; --line:#D8DEE8;
+  --accent:#2A5384; --accent-ink:#FFFFFF; --accent-soft:#E3EAF4; --deep:#1F3F66;
+  --warm:#E8A33A; --warm-soft:#FCEFD9; --good:#1E8B4C; --good-soft:#DFF3E6;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Lexend","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#10141B; --surface:#182030; --ink:#E5EAF2; --muted:#9BA6B8; --line:#2A3446;
+  --accent:#7FA7DA; --accent-ink:#0E1420; --accent-soft:#1F2C42; --deep:#A9C4E8;
+  --warm:#F0B95A; --warm-soft:#3A2D16; --good:#5BCB86; --good-soft:#163222; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10141B; --surface:#182030; --ink:#E5EAF2; --muted:#9BA6B8; --line:#2A3446;
+  --accent:#7FA7DA; --accent-ink:#0E1420; --accent-soft:#1F2C42; --deep:#A9C4E8;
+  --warm:#F0B95A; --warm-soft:#3A2D16; --good:#5BCB86; --good-soft:#163222; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px}
+.wrap{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+.crumb{font-size:13px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,6vw,38px);line-height:1.1;margin:2px 0 0;color:var(--deep);text-wrap:balance}
+.who{display:flex;gap:14px;align-items:flex-end}
+.face{flex:0 0 96px;width:96px;height:112px;border-radius:20px;background:var(--accent-soft);overflow:hidden}
+.face svg{width:100%;height:100%;display:block}
+.bubble{position:relative;min-width:0;flex:1;background:var(--surface);border:1px solid var(--line);border-radius:18px 18px 18px 4px;padding:14px 16px;font-weight:500}
+.bubble .tag{display:block;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+.spk{float:right;margin:-4px -6px 4px 10px;font:inherit;font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-soft);border:0;border-radius:999px;padding:6px 12px;cursor:pointer}
+.spk:focus-visible,.btn:focus-visible,.chip:focus-visible,textarea:focus-visible{outline:3px solid var(--warm);outline-offset:2px}
+.ask{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:12px}
+label.lbl{font-weight:600}
+textarea{width:100%;min-height:92px;resize:vertical;font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:12px;padding:12px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{font:inherit;font-weight:600;border-radius:12px;padding:11px 18px;cursor:pointer;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.small{padding:7px 12px;font-size:14px;border-radius:10px}
+.hint{font-size:13px;color:var(--muted)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.scope{font-size:13px;color:var(--muted);margin-right:2px}
+.res{display:flex;flex-direction:column;gap:12px}
+.ans{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.ans.top{border-left-color:var(--warm)}
+.ans h3{font-family:var(--display);font-weight:600;font-size:19px;line-height:1.3;margin:0;text-wrap:balance}
+.ans p{margin:0;max-width:65ch}
+.ans code{font-family:ui-monospace,"Cascadia Mono",Consolas,monospace;font-size:.9em;background:var(--accent-soft);border-radius:6px;padding:1px 5px;overflow-wrap:anywhere}
+.ans .src{font-size:13px;color:var(--muted)}
+.ans .src a{color:var(--accent);font-weight:600}
+.rank{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.fb{border:1px dashed var(--line);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:10px}
+.copy{background:var(--warm-soft);border-radius:12px;padding:10px 12px;font-size:14px;word-break:break-word}
+.foot{font-size:13px;color:var(--muted)}
+.foot b{color:var(--ink)}
+</style>
+
+<main class="wrap">
+  <div>
+    <div class="crumb">Learn AI the Right Way · FAQ guide</div>
+    <h1>Ask Arjun</h1>
+  </div>
+
+  <div class="who">
+    <div class="face" aria-hidden="true"><svg viewBox="150 160 300 350" preserveAspectRatio="xMidYMin slice">__ARJUN__</svg></div>
+    <div class="bubble" aria-live="polite"><button class="spk" id="spk" type="button" hidden>▶ Hear Arjun</button><span class="tag">Arjun · FAQ guide · answers come from the course lessons and FAQs</span><span id="say"></span></div>
+  </div>
+
+  <form class="ask" id="form" autocomplete="off">
+    <label class="lbl" for="qbox">What went wrong, or what do you want to know?</label>
+    <textarea id="qbox" placeholder="Example: Lesson 3, my files disappeared after Colab restarted"></textarea>
+    <div class="row"><span class="scope">Look in:</span><div class="chips" id="scope"></div></div>
+    <div class="row">
+      <button class="btn" type="submit">Ask Arjun</button>
+      <span class="hint">Naming the lesson helps.</span>
+    </div>
+    <div class="row"><span class="scope">Common:</span><div class="chips" id="quick"></div></div>
+  </form>
+
+  <section class="res" id="res" aria-live="polite"></section>
+
+  <p class="foot"><b>Arjun is not a live mentor.</b> He searches the FAQs of every published lesson. Questions he can't answer belong in the comments under the lesson's video, and common ones get added to the FAQ. <span id="count"></span></p>
+</main>
+
+<script>
+const DATA = __DATA__;
+const LINES = {
+  hello:"Hi, I'm Arjun, the FAQ guide for Learn AI the Right Way. I'm not a live mentor, but I know every lesson's FAQ. Tell me what went wrong, in your own words, and I'll find the answers that match.",
+  how:"It helps to name the lesson, and say exactly what you saw. For example: Lesson three, drive mount asks for permission, and then shows an error.",
+  found:"Here's what I found. Start with the top answer. If it doesn't fix things, try the next one.",
+  none:"I couldn't find a matching answer yet. Try different words, or name the lesson. If it's still not covered, ask in the comments under that lesson's video. Common questions get added to the FAQ.",
+  nohelp:"Sorry that didn't solve it. Check that you followed the lab steps in order, then rerun your notebook from the top. Still stuck? Post your question in the lesson's comments, with the exact error message.",
+  worked:"Great, glad that worked. Back to the lesson, and good luck with the quiz.",
+  start:"Not sure where to start? Take the entrance quiz in the course catalogue. It tells you exactly which parts of Course zero you need, and which you can skip.",
+  pay:"For prices and refunds, see What it costs in the course catalogue. Everything you need to learn is free, and every purchase comes with a seven-day refund."
+};
+const CLIP = {hello:1,how:2,found:3,none:4,nohelp:5,worked:6,start:7,pay:8};
+const $ = id => document.getElementById(id);
+
+/* ---- voice: plays recorded clips when they are published beside the page; text always shows ---- */
+let current = null, lastLine = "hello";
+const HAVE = new Set();
+Object.entries(CLIP).forEach(([k,n]) => {
+  const a = new Audio(); a.preload = "metadata";
+  a.addEventListener("loadedmetadata", () => { HAVE.add(k); if(k===lastLine) $("spk").hidden = false; });
+  a.src = `audio/arjun_${String(n).padStart(2,"0")}.mp3`;
+});
+function play(key){
+  if(!HAVE.has(key)) return;
+  try{ if(current){ current.pause(); } current = new Audio(`audio/arjun_${String(CLIP[key]).padStart(2,"0")}.mp3`); current.play().catch(()=>{}); }catch(e){}
+}
+function say(key, speak){ lastLine = key; $("say").textContent = LINES[key]; $("spk").hidden = !HAVE.has(key); if(speak) play(key); }
+$("spk").onclick = () => play(lastLine);
+
+/* ---- search ---- */
+const STOP = new Set("a an the and or but if then so to of in on at by for with from into about is are was were be been being am do does did doing have has had i me my we our you your it its this that these those there here what which who whom how why when where can could should would will shall may might must not no yes just very too also still get got gets getting want need know please help hi hello thanks thank lesson course one any some all".split(" "));
+const SYN = {
+  disappear:"lost", vanish:"lost", gone:"lost", missing:"lost", lost:"lost", deleted:"lost", delet:"lost",
+  free:"free", cost:"price", price:"price", pay:"price", paid:"price", fee:"price", money:"price", rupee:"price", inr:"price", dollar:"price", buy:"price", purchase:"price", discount:"student",
+  refund:"refund", "money-back":"refund", cancel:"refund",
+  gpu:"gpu", graphic:"gpu", cuda:"gpu", nvidia:"gpu",
+  drive:"drive", gdrive:"drive", mount:"mount", mounting:"mount", connect:"mount", permission:"permission", allow:"permission", access:"permission", safe:"permission", secure:"permission",
+  colab:"colab", notebook:"notebook", ipynb:"notebook",
+  error:"error", fail:"error", failed:"error", crash:"error", broken:"error", stuck:"stuck", disconnect:"restart", disconnected:"restart", restart:"restart", timeout:"restart", idle:"restart", session:"restart", runtime:"restart",
+  phone:"phone", mobile:"phone", tablet:"phone", ipad:"phone",
+  laptop:"laptop", computer:"laptop", pc:"laptop", ram:"memory", memory:"memory", gb:"memory",
+  quiz:"quiz", test:"quiz", exam:"quiz", entrance:"entrance", placement:"entrance", fail_quiz:"entrance",
+  start:"start", begin:"start", beginner:"start",
+  mentor:"mentor", human:"mentor", person:"mentor", teacher:"mentor", support:"mentor", contact:"mentor",
+  certificate:"certificate", cert:"certificate",
+  github:"github", git:"github", repo:"repository", repository:"repository",
+  linux:"linux", sudo:"linux", terminal:"linux", command:"linux",
+  python:"python", ml:"machine", machine:"machine", deep:"deep", dl:"deep", ai:"ai", chatgpt:"chatgpt", claude:"chatgpt", llm:"chatgpt",
+  overseas:"overseas", international:"overseas", abroad:"overseas", usa:"overseas", outside:"overseas",
+  student:"student", college:"student", university:"student",
+  hint:"hint", code:"code", solution:"code", answer:"code"
+};
+function stem(w){
+  w = w.replace(/'s$/,"");
+  if(SYN[w]) return SYN[w];
+  for(const suf of ["ing","ed","es","s"]){ if(w.length>4 && w.endsWith(suf)){ const b=w.slice(0,-suf.length); if(SYN[b]) return SYN[b]; if(suf!=="es") return b; } }
+  return w;
+}
+function toks(s){ return (s.toLowerCase().match(/[a-z0-9][a-z0-9\-]*/g)||[]).filter(w=>!STOP.has(w) && !/^\d$/.test(w)).map(stem); }
+const DOCS = DATA.faq.map(f => ({...f, tq:new Set(toks(f.q)), ta:new Set(toks(f.a))}));
+const DF = {}; DOCS.forEach(d => new Set([...d.tq,...d.ta]).forEach(t => DF[t]=(DF[t]||0)+1));
+const N = DOCS.length, idf = t => Math.log(1 + N/((DF[t]||0)+0.5));
+
+let scope = "all";
+function search(text){
+  const m = text.toLowerCase().match(/\b(?:lesson|l)\s*(\d+)\b/);
+  const named = m ? m[1] : null;
+  const q = [...new Set(toks(text))];
+  const scored = DOCS.map(d => {
+    let s = 0;
+    q.forEach(t => { if(d.tq.has(t)) s += 2*idf(t); else if(d.ta.has(t)) s += idf(t); });
+    const L = String(d.l);
+    if(named && L===named) s *= 1.6;
+    if(L==="0" && intent(text)) s *= 1.6;
+    if(scope!=="all" && !(scope==="c0" ? L.startsWith("c0l") : L===scope)) s = 0;
+    return {d, s};
+  }).filter(x => x.s>0).sort((a,b)=>b.s-a.s);
+  const best = scored.length ? scored[0].s : 0;
+  if(best < 2.2) return [];
+  const seen = new Set();
+  return scored.filter(x => x.s >= best*0.45 && !seen.has(x.d.q) && seen.add(x.d.q)).slice(0,3).map(x=>x.d);
+}
+function intent(text){
+  const t = toks(text);
+  if(t.some(w=>["price","refund","overseas","student"].includes(w))) return "pay";
+  if(t.includes("start")) return "start";
+  return null;
+}
+
+/* ---- render ---- */
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const code = s => s.replace(/`([^`]+)`/g,"<code>$1</code>");
+function render(text){
+  const hits = search(text), it = intent(text), box = $("res");
+  if(!hits.length){
+    say(it || "none", true);
+    box.innerHTML = it ? "" : `<div class="fb"><span>Not covered yet? Ask under the lesson's video. You can copy your question:</span><div class="copy" id="cp">${esc(text)}</div><div class="row"><button class="btn small ghost" type="button" id="cpb">Copy my question</button></div></div>`;
+    if(!it) $("cpb").onclick = copyQ;
+    return;
+  }
+  say(it || "found", true);
+  box.innerHTML = hits.map((d,k)=>{
+    const L = DATA.lessons[String(d.l)];
+    return `<article class="ans${k===0?" top":""}"><span class="rank">${k===0?"Best match":"Also try"}</span><h3>${esc(d.q)}</h3><p>${code(esc(d.a))}</p><span class="src">From <a href="${L.u}" target="_blank" rel="noopener">${esc(L.t)}</a></span></article>`;
+  }).join("") + `<div class="fb"><span>Did that answer it?</span><div class="row"><button class="btn small" type="button" id="yes">Yes, it worked</button><button class="btn small ghost" type="button" id="no">No, still stuck</button></div></div>`;
+  $("yes").onclick = () => { say("worked", true); $("res").querySelector(".fb").innerHTML = "<span>Glad that worked.</span>"; };
+  $("no").onclick = () => {
+    say("nohelp", true);
+    $("res").querySelector(".fb").innerHTML = `<span>Post it in the lesson's comments, with the exact error message. Your question, ready to copy:</span><div class="copy" id="cp">${esc(text)}</div><div class="row"><button class="btn small ghost" type="button" id="cpb">Copy my question</button></div>`;
+    $("cpb").onclick = copyQ;
+  };
+}
+function copyQ(){
+  const el = $("cp"), b = $("cpb");
+  const ok = () => { b.textContent = "Copied"; };
+  const fallback = () => { const r=document.createRange(); r.selectNodeContents(el); const s=getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Selected: press Ctrl+C"; };
+  try{ navigator.clipboard.writeText(el.textContent).then(ok, fallback); }catch(e){ fallback(); }
+}
+
+$("form").addEventListener("submit", e => {
+  e.preventDefault();
+  const t = $("qbox").value.trim();
+  if(!t){ say("how", true); $("qbox").focus(); return; }
+  render(t);
+});
+
+const LBL = k => k==="0" ? "Getting started & costs" : k==="py" ? "Python basics" : k.startsWith("c0l") ? `Course 0 · L${k.slice(3)}` : `Lesson ${k}`;
+const SC = [["all","All"]].concat(Object.keys(DATA.lessons).filter(k=>/^\d+$/.test(k)&&k!=="0").map(k=>[k,LBL(k)])).concat([["c0","Course 0"],["py",LBL("py")],["0",LBL("0")]]);
+$("scope").innerHTML = SC.map(([k,t]) => `<button class="chip" type="button" data-k="${k}" aria-pressed="${k==="all"}">${t}</button>`).join("");
+$("scope").onclick = e => { const b=e.target.closest(".chip"); if(!b) return; scope=b.dataset.k; [...$("scope").children].forEach(c=>c.setAttribute("aria-pressed", c===b)); const t=$("qbox").value.trim(); if(t) render(t); };
+const QK = ["Where do I start?","My files disappeared","Pass by value or reference?","Do I need a GPU?","How do refunds work?","Can I talk to a mentor?"];
+$("quick").innerHTML = QK.map(q=>`<button class="chip" type="button">${q}</button>`).join("");
+$("quick").onclick = e => { const b=e.target.closest(".chip"); if(!b) return; $("qbox").value=b.textContent; render(b.textContent); };
+
+$("count").textContent = `Right now he knows ${DATA.faq.length} answers: Lessons ${Object.keys(DATA.lessons).filter(k=>/^\d+$/.test(k)&&k!=="0").join(", ")}, Course 0 Linux basics, Python basics, and getting started.`;
+say("hello", false);
+</script>

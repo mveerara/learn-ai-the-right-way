@@ -1,0 +1,180 @@
+{
+ "mp3": "/home/claude/l02/audio/part2.mp3",
+ "duration": 122.671,
+ "sents": [
+  {
+   "slide": 6,
+   "text": "As your data grows, your workbench grows with it, in five steps.",
+   "start": 0.0,
+   "end": 2.848
+  },
+  {
+   "slide": 6,
+   "text": "Step one: Google Colab with Google Drive, free in your browser.",
+   "start": 3.151,
+   "end": 7.749
+  },
+  {
+   "slide": 6,
+   "text": "Step two: Python on your own laptop.",
+   "start": 7.978,
+   "end": 10.317
+  },
+  {
+   "slide": 6,
+   "text": "Step three: a dev container, which is the exact same setup packed into a box, so it runs identically anywhere.",
+   "start": 10.801,
+   "end": 20.372
+  },
+  {
+   "slide": 6,
+   "text": "Step four: Databricks Free Edition, for real big data with Spark.",
+   "start": 20.94,
+   "end": 25.627
+  },
+  {
+   "slide": 6,
+   "text": "And step five: the BigQuery sandbox, for running SQL on huge public datasets.",
+   "start": 26.174,
+   "end": 32.218
+  },
+  {
+   "slide": 6,
+   "text": "You don't need all five today.",
+   "start": 32.75,
+   "end": 34.231
+  },
+  {
+   "slide": 6,
+   "text": "Each one arrives in the course that needs it.",
+   "start": 34.658,
+   "end": 36.881
+  },
+  {
+   "slide": 7,
+   "text": "Why five steps?",
+   "start": 37.446,
+   "end": 38.689
+  },
+  {
+   "slide": 7,
+   "text": "Because the right tool depends on the size of your data.",
+   "start": 39.215,
+   "end": 41.987
+  },
+  {
+   "slide": 7,
+   "text": "Small data fits in your computer's memory, and Colab or a laptop handles it easily.",
+   "start": 42.543,
+   "end": 47.788
+  },
+  {
+   "slide": 7,
+   "text": "Medium data, tens of gigabytes, still works on a laptop with fast tools like DuckDB and Polars.",
+   "start": 48.32,
+   "end": 55.096
+  },
+  {
+   "slide": 7,
+   "text": "Big data needs many machines working together, and that's what Spark clusters do.",
+   "start": 55.629,
+   "end": 60.439
+  },
+  {
+   "slide": 7,
+   "text": "And very big data, terabytes, lives in cloud warehouses.",
+   "start": 60.974,
+   "end": 65.337
+  },
+  {
+   "slide": 7,
+   "text": "Same habits, bigger tools.",
+   "start": 65.792,
+   "end": 67.701
+  },
+  {
+   "slide": 8,
+   "text": "And every step matches something used in real companies.",
+   "start": 68.238,
+   "end": 71.507
+  },
+  {
+   "slide": 8,
+   "text": "Colab is a cousin of the hosted notebooks big cloud providers sell.",
+   "start": 72.03,
+   "end": 76.076
+  },
+  {
+   "slide": 8,
+   "text": "Your laptop setup is a developer's workstation.",
+   "start": 76.604,
+   "end": 79.245
+  },
+  {
+   "slide": 8,
+   "text": "Dev containers are how teams make sure everyone runs the same environment.",
+   "start": 79.766,
+   "end": 83.989
+  },
+  {
+   "slide": 8,
+   "text": "Databricks is used by thousands of companies for data engineering.",
+   "start": 84.532,
+   "end": 88.208
+  },
+  {
+   "slide": 8,
+   "text": "And BigQuery is a cloud data warehouse.",
+   "start": 88.654,
+   "end": 91.193
+  },
+  {
+   "slide": 8,
+   "text": "So when you finish this series, you won't just know AI.",
+   "start": 91.722,
+   "end": 95.163
+  },
+  {
+   "slide": 8,
+   "text": "You'll already know the tools of the job.",
+   "start": 95.585,
+   "end": 97.707
+  },
+  {
+   "slide": 9,
+   "text": "Here's a promise.",
+   "start": 98.271,
+   "end": 99.091
+  },
+  {
+   "slide": 9,
+   "text": "The offline tools, Python, VS Code, Jupyter and Git, are open source.",
+   "start": 99.61,
+   "end": 105.287
+  },
+  {
+   "slide": 9,
+   "text": "They're free, and they're yours forever, whatever any company decides.",
+   "start": 105.805,
+   "end": 110.374
+  },
+  {
+   "slide": 9,
+   "text": "The online tools are free tiers, and their limits can change.",
+   "start": 110.913,
+   "end": 114.675
+  },
+  {
+   "slide": 9,
+   "text": "That's exactly why your work lives in GitHub.",
+   "start": 115.226,
+   "end": 117.709
+  },
+  {
+   "slide": 9,
+   "text": "If one service changes its rules, you simply carry on somewhere else.",
+   "start": 118.222,
+   "end": 122.671
+  }
+ ]
+}

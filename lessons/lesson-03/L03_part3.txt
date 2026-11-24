@@ -1,0 +1,7 @@
+One more thing worth knowing. Colab can sometimes give you a free graphics card, a GPU, from the Runtime menu. You don't need one yet. Most early labs run perfectly well without it, and free GPU time is limited and changes from day to day. We'll switch one on when deep learning arrives.
+
+A few habits to start now. Name notebooks clearly. Keep datasets in data, and results in outputs. Put the setup cell at the top of every notebook, so you can rerun everything after a restart. And if Colab ever disconnects, don't panic. Reconnect, rerun from the top, and carry on.
+
+Your turn. Open the guided lab linked in the description. It walks you through each step with prompts and hints, but it won't hand you the full code. Try each step yourself, peek at a hint only when you're stuck, and tick it off when it works.
+
+Let's recap. Colab runs Python in your browser for free. Its computer is temporary, so your work lives in Google Drive, in a workbench folder with data, notebooks and outputs. You connect them with drive mount, and you test it by saving, throwing the runtime away, and reading back. Do the lab in the description, then take the quiz. Next, before step two, a short prep course: Course zero, starting with Linux, the system almost every AI tool runs on. The entrance quiz tells you which parts you can skip. See you there.

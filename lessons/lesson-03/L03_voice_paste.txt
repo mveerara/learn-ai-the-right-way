@@ -1,0 +1,33 @@
+===== PART 1: slides 1-5 =====
+
+Welcome back. Today you set up step one of your workbench: Google Colab, connected to Google Drive. By the end of this lesson, you'll have run your first Python code, and saved your work somewhere that remembers it.
+
+Google Colab is a free service from Google that runs Python in your web browser. You write code in a notebook, press run, and Google's computers do the work. Nothing to install, and it works on almost any computer. All you need is a Google account.
+
+A notebook is a page made of cells. Code cells hold Python that you can run, one cell at a time. Text cells hold notes and headings, so your code explains itself. Run a cell, and its result appears right underneath. That's why data scientists love notebooks: the code, the results and the story sit together.
+
+Now here's the catch that trips up almost every beginner. The computer Colab gives you is temporary. Leave it idle, or keep it running for many hours, and Colab takes it back. Any file you saved on that computer disappears with it. So the golden rule is simple: anything you want to keep goes into Google Drive.
+
+Here's what we'll set up together. First, a folder in your Google Drive called workbench. Second, a notebook saved inside it. Third, a connection from the notebook to your Drive, so code can read and save files there. Do these three things once, and every lab in this course starts from the same place.
+
+
+===== PART 2: slides 6-9 =====
+
+Step one. Open Google Drive and create a new folder called workbench. Inside it, make three more folders: data, for datasets; notebooks, for your work; and outputs, for results like charts and files. Keeping things in the same place every time saves you hours later.
+
+Step two. Go to colab dot research dot google dot com, and create a new notebook. Give it a sensible name, like lesson three setup. Then, from the File menu, move it into your workbench notebooks folder. Colab saves notebooks to your Drive as you work.
+
+Step three. Connect the notebook to your Drive. Colab has a small built-in command for this, called drive dot mount. When you run it, Google asks your permission. Say yes, and your Drive appears as a folder the notebook can use. The guided lab shows you exactly where to find it.
+
+Now test it. Write a short line of text into a file in your outputs folder. Then, from the Runtime menu, disconnect and delete the runtime. That's like switching the computer off and throwing it away. Connect again, reconnect your Drive, and read the file back. If it's still there, your workbench remembers. Congratulations: that's the most important habit in this whole series.
+
+
+===== PART 3: slides 10-13 =====
+
+One more thing worth knowing. Colab can sometimes give you a free graphics card, a GPU, from the Runtime menu. You don't need one yet. Most early labs run perfectly well without it, and free GPU time is limited and changes from day to day. We'll switch one on when deep learning arrives.
+
+A few habits to start now. Name notebooks clearly. Keep datasets in data, and results in outputs. Put the setup cell at the top of every notebook, so you can rerun everything after a restart. And if Colab ever disconnects, don't panic. Reconnect, rerun from the top, and carry on.
+
+Your turn. Open the guided lab linked in the description. It walks you through each step with prompts and hints, but it won't hand you the full code. Try each step yourself, peek at a hint only when you're stuck, and tick it off when it works.
+
+Let's recap. Colab runs Python in your browser for free. Its computer is temporary, so your work lives in Google Drive, in a workbench folder with data, notebooks and outputs. You connect them with drive mount, and you test it by saving, throwing the runtime away, and reading back. Do the lab in the description, then take the quiz. Next, before step two, a short prep course: Course zero, starting with Linux, the system almost every AI tool runs on. The entrance quiz tells you which parts you can skip. See you there.

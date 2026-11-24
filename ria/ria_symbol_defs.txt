@@ -1,0 +1,6 @@
+
+ <linearGradient id="r4bgp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E7F3F1"/><stop offset="1" stop-color="#CFE6E2"/></linearGradient>
+ <radialGradient id="r4glowp" cx=".5" cy=".42" r=".5"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".9"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+ <linearGradient id="r4blzp" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7F868E"/><stop offset=".5" stop-color="#A3A9AF"/><stop offset="1" stop-color="#7C838B"/></linearGradient>
+ <radialGradient id="r4facep" cx=".45" cy=".38" r=".75"><stop offset="0" stop-color="#E4B48E"/><stop offset=".65" stop-color="#CF9A72"/><stop offset="1" stop-color="#B07A55"/></radialGradient>
+ <linearGradient id="r4hairp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D241A"/><stop offset="1" stop-color="#2B1912"/></linearGradient>

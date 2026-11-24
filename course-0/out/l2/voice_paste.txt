@@ -1,0 +1,37 @@
+COURSE 0 · LESSON 2: Moving Around: Files and Folders  (voice: Bella, same settings)
+
+
+
+===== PART 1: slides 1-5 =====
+
+Last time you met the terminal. Today you learn to move around in it: where files live, how to get from one folder to another, and how to make, copy, move and delete things, all without a mouse.
+
+Linux keeps everything in one big tree. At the very top is the root folder, written as a single forward slash. Everything else hangs below it: home folders for users, settings in a folder called etc, programs in usr. In Colab, your work sits in slash content.
+
+A path is the address of a file. An absolute path starts from the root, with a slash, and works from anywhere. A relative path starts from where you are now. If you're already in slash content, then sample data, slash, README dot md points to the same file.
+
+Three shortcuts save a lot of typing. A single dot means the folder you're in. Two dots mean the folder one level up. And the tilde means your home folder. So cd dot dot moves you up one level, and cd tilde takes you home.
+
+cd means change directory. Give it a path, and you're there; check with pwd. One catch in Colab: every line that starts with an exclamation mark runs in a fresh shell, so a cd there is forgotten on the very next line. Use percent cd instead, and Colab remembers where you are.
+
+
+===== PART 2: slides 6-9 =====
+
+ls has options worth knowing. Dash l gives details: permissions, owner, size and date. Dash a shows hidden files, whose names start with a dot. Dash h, together with l, shows sizes in kilobytes and megabytes. And dash t sorts by time, newest first. You can combine them, like ls dash l h.
+
+mkdir makes a directory. Add dash p, and it makes a whole chain of folders at once, without complaining if some of them already exist. touch creates an empty file, or updates the time stamp on a file that's already there.
+
+cp copies a file. To copy a whole folder, add dash r, for recursive. mv moves a file. And since renaming is just moving to a new name, mv renames too.
+
+Now, careful. rm removes a file, and rm dash r removes a folder and everything in it. There is no recycle bin: it's gone. So look before you delete. Run ls on the same path first, use dash i to be asked each time, and keep anything precious in your Drive workbench.
+
+
+===== PART 3: slides 10-13 =====
+
+To look inside a file, cat prints the whole thing. For big files, head shows the first lines and tail the last ones; dash n sets how many. And wc dash l counts the lines, which is a quick way to see how many rows a data file has.
+
+Three keys make you fast in any terminal. Tab completes file and folder names, so you rarely type them in full. The up arrow brings back your last command. And Control C stops a command that's running, or one that's taking too long.
+
+In the lab, you'll explore Colab's sample data, build a project folder, copy a dataset into it and count its rows, all from the terminal. Prompts and hints, never the full answer.
+
+Let's recap. Linux is one tree starting at slash, and paths are absolute or relative, with dot, dot dot and tilde as shortcuts. You move with cd, look with ls, make with mkdir and touch, copy and move with cp and mv, and read with cat, head, tail and wc. And rm has no recycle bin, so look first. Next time: wildcards, pipes and redirection, where the terminal gets powerful.

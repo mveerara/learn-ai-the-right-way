@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Launch Go/No-Go</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Lexend:wght@400;500;600&display=swap">
+<style>
+/* VOICE: calm pre-flight check, plain words, one decision at the top.
+   IDEA: a launch-control board: each line gets a Pass or Fail, the board lights GO only when every must-pass line is green.
+   PICTURE: the verdict panel with a ring of progress and the count of must-pass items left.
+   COLOUR and TYPE: the channel's deep teal and white, amber for pending, red for a failed must; Archivo headings, Lexend text.
+   LAYOUT: verdict band first, then sections in run order, each row: check, owner, Pass/Fail. */
+:root{color-scheme:light dark;
+  --bg:light-dark(#F4F8F7,#0E1716);--surface:light-dark(#FFFFFF,#16211F);--ink:light-dark(#14211F,#E4EEEC);--muted:light-dark(#566866,#9DB1AE);
+  --line:light-dark(#D5E1DF,#283735);--teal:light-dark(#0B5F5B,#4CC2B9);--teal-soft:light-dark(#DCEFEC,#1A3431);
+  --go:light-dark(#1C8A4A,#5BCB86);--go-soft:light-dark(#DFF3E6,#16301F);--no:light-dark(#B23A2A,#F08A74);--no-soft:light-dark(#FBE5E0,#3A1D17);
+  --wait:light-dark(#B87914,#F0B95A);--wait-soft:light-dark(#FCEFD8,#382A12)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Lexend","Segoe UI",system-ui,sans-serif;overflow-x:clip}
+.band{padding:clamp(24px,4vw,48px) max(5vw,16px)}
+.wrap{max-width:860px;margin:0 auto}
+h1,h2{font-family:"Archivo","Segoe UI",system-ui,sans-serif;font-weight:800;text-wrap:balance;margin:0}
+h1{font-size:clamp(30px,5vw,42px);line-height:1.05}
+h2{font-size:20px;line-height:1.2}
+.top{background:var(--teal);color:#fff}
+.top p{margin:8px 0 0;max-width:62ch;opacity:.92}
+.verdict{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:center;margin-top:24px;background:var(--surface);color:var(--ink);border-radius:18px;padding:20px 22px;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.ring{width:108px;height:108px}
+.ring circle{fill:none;stroke-width:10}
+.ring .bgc{stroke:var(--line)}
+.ring .fg{stroke:var(--wait);stroke-linecap:round;transition:stroke-dashoffset .4s}
+.ring text{font:800 26px "Archivo",sans-serif;fill:var(--ink)}
+.state{font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1;color:var(--wait)}
+.verdict.go .state{color:var(--go)} .verdict.go .fg{stroke:var(--go)}
+.verdict.no .state{color:var(--no)} .verdict.no .fg{stroke:var(--no)}
+.vsub{margin-top:6px;color:var(--muted)}
+.vsub b{color:var(--ink)}
+section{margin-top:26px}
+.sh{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:10px}
+.sh span{font-size:14px;color:var(--muted);white-space:nowrap}
+.list{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 16px;align-items:center;padding:14px 16px;border-top:1px solid var(--line)}
+.item:first-child{border-top:0}
+.item.pass{background:var(--go-soft)} .item.fail{background:var(--no-soft)}
+.what{font-weight:500}
+.how{font-size:14px;color:var(--muted);margin-top:2px}
+.how a{color:var(--teal);font-weight:600}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.tag{font-size:13px;border-radius:999px;padding:1px 9px;background:var(--teal-soft);color:var(--teal);font-weight:600}
+.tag.must{background:var(--wait-soft);color:var(--wait)}
+.tag.cl{background:var(--line);color:var(--ink)}
+.btns{display:flex;gap:6px}
+.btns button{font:600 15px "Lexend",sans-serif;min-height:44px;min-width:68px;border-radius:10px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.btns button[aria-pressed=true].p{background:var(--go);border-color:var(--go);color:#fff}
+.btns button[aria-pressed=true].f{background:var(--no);border-color:var(--no);color:#fff}
+button:focus-visible,a:focus-visible{outline:3px solid var(--wait);outline-offset:2px}
+.foot{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:26px;color:var(--muted);font-size:14px}
+.reset{font:600 15px "Lexend",sans-serif;min-height:44px;border-radius:10px;border:2px solid var(--line);background:transparent;color:var(--ink);padding:0 14px;cursor:pointer}
+.confirm{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+@media(max-width:600px){.verdict{grid-template-columns:1fr;justify-items:start}.item{grid-template-columns:1fr}.btns button{flex:1}}
+@media(prefers-reduced-motion:reduce){.ring .fg{transition:none}}
+</style>
+</head>
+<body>
+<header class="band top"><div class="wrap">
+  <h1>Launch go/no-go</h1>
+  <p>Learn AI the Right Way, Saturday 21 November. Mark each line Pass or Fail as you check it. The board shows GO only when every must-pass line is green.</p>
+  <div class="verdict" id="verdict" aria-live="polite">
+    <svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="bgc" cx="60" cy="60" r="50"/><circle class="fg" id="arc" cx="60" cy="60" r="50" transform="rotate(-90 60 60)" stroke-dasharray="314.16" stroke-dashoffset="314.16"/><text id="pct" x="60" y="69" text-anchor="middle">0%</text></svg>
+    <div><div class="state" id="state">Checking</div><div class="vsub" id="vsub"></div></div>
+  </div>
+</div></header>
+
+<main class="band"><div class="wrap" id="board"></div>
+  <div class="wrap foot">
+    <span>Ticks are saved in this browser only.</span>
+    <span id="resetBox"><button class="reset" type="button" id="reset">Clear all ticks</button></span>
+  </div>
+</main>
+
+<script>
+{
+const L = {
+  cat:"https://claude.ai/artifact/1S27dYy5tfBcnoW8L9NmsE", quiz:"https://claude.ai/artifact/F48KAj4ELKBGXpcbHCFGnz",
+  arjun:"https://claude.ai/artifact/6ykEguQuoSDHw2rMSKryVF", l1:"https://claude.ai/artifact/1NKfwA6VeMyb9MLXLfQZQ2",
+  l2:"https://claude.ai/artifact/3W59cNDxfdPycH1sGNxNW8", l3:"https://claude.ai/artifact/YYsMi7EGrFmaS6KAUNU679"
+};
+const a = (k,t) => `<a href="${L[k]}" target="_blank" rel="noopener">${t}</a>`;
+const S = [
+ {t:"Videos", n:"YouTube Studio", items:[
+  ["v1",1,"You","All 4 videos uploaded and finished processing","Start Here, Lessons 1, 2 and 3; HD shows as available"],
+  ["v2",1,"You","Titles, thumbnails and chapters right on all 4","Chapters pasted into each description; thumbnail set"],
+  ["v3",1,"You","Playlist order: Start Here, Lesson 1, Lesson 2, Lesson 3",""],
+  ["v4",1,"You","Each video plays to the end with sound and captions","Skip to the last 20 seconds of each"],
+  ["v5",0,"You","Audience “not made for kids”, category Education","Same AI-voice setting on all 4"]]},
+ {t:"Pages", n:"Share menu → anyone with the link", items:[
+  ["p1",1,"You","Course catalogue is public", a("cat","Open catalogue")+" in a private (incognito) window"],
+  ["p2",1,"You","Entrance quiz is public", a("quiz","Open entrance quiz")+" in a private window"],
+  ["p3",1,"You","Ask Arjun is public", a("arjun","Open Ask Arjun")+" in a private window"],
+  ["p4",1,"You","Lesson 1, 2 and 3 pages are public", a("l1","Lesson 1")+" · "+a("l2","Lesson 2")+" · "+a("l3","Lesson 3")],
+  ["p5",0,"You","Pages look right on your phone","Open two of them on your phone"]]},
+ {t:"Student journey", n:"Walk it as a new student", items:[
+  ["j1",1,"You","Catalogue → Take the entrance quiz → result → Copy result and register","The form opens and the result line pastes into Entrance quiz result"],
+  ["j2",1,"You","Lesson page works: lab hints open, quiz passes at 4 of 5, FAQ opens","Try it on the Lesson 3 page"],
+  ["j3",0,"You","Arjun answers “my files disappeared” and speaks","Press Ask Arjun, not Hear Arjun"]]},
+ {t:"Registration", n:"Google Form", items:[
+  ["r1",1,"You","Form is accepting responses","Responses tab: the toggle is on"],
+  ["r2",1,"You","A test registration arrives, then is deleted","So the first response is a real student"],
+  ["r3",0,"You","Spare copy of the form moved to the bin","The one in the subfolder, last edited 29 Oct"]]},
+ {t:"Payments", n:"Razorpay", items:[
+  ["m1",1,"Claude","No page takes payment yet; paid packs say they open later","Catalogue: “Paid packs open as each course is released”"],
+  ["m2",0,"You","Razorpay account active, settlements to your bank","No change needed for launch"]]},
+ {t:"Wiring", n:"After the pages are public", items:[
+  ["w1",1,"You","Send Claude the 4 YouTube video links","Copy each from the video's Share button"],
+  ["w2",1,"Claude","Next-lesson buttons point to the real videos","Lesson 1, 2 and 3 pages"],
+  ["w3",1,"You","Final descriptions with real links pasted on all 4 videos","Claude sends the text"]]},
+ {t:"Go", n:"Only when the board shows GO", items:[
+  ["g1",1,"You","Switch the 4 videos and the playlist to Public",""],
+  ["g2",0,"You","First 48 hours: read the comments and send Claude new questions","They become FAQ answers for Arjun"]]}
+];
+const KEY = "lairw-golive-2026-11-21";
+let st = {};
+try { st = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch(e) { st = {}; }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch(e) {} };
+const board = document.getElementById("board");
+
+function render(){
+  board.innerHTML = S.map(sec => {
+    const done = sec.items.filter(i=>st[i[0]]==="pass").length;
+    return `<section><div class="sh"><h2>${sec.t}</h2><span>${sec.n} · ${done}/${sec.items.length}</span></div><div class="list">${
+      sec.items.map(([id,must,who,what,how]) => `<div class="item ${st[id]||""}"><div><div class="what">${what}</div>${how?`<div class="how">${how}</div>`:""}<div class="tags">${must?'<span class="tag must">Must pass</span>':'<span class="tag">Should</span>'}<span class="tag cl">${who}</span></div></div><div class="btns"><button class="p" type="button" data-id="${id}" data-v="pass" aria-pressed="${st[id]==="pass"}">Pass</button><button class="f" type="button" data-id="${id}" data-v="fail" aria-pressed="${st[id]==="fail"}">Fail</button></div></div>`).join("")
+    }</div></section>`;
+  }).join("");
+  const all = S.flatMap(s=>s.items), musts = all.filter(i=>i[1]);
+  const before = musts.filter(i=>i[0]!=="g1");
+  const failed = musts.filter(i=>st[i[0]]==="fail");
+  const left = before.filter(i=>st[i[0]]!=="pass");
+  const pct = Math.round(100*all.filter(i=>st[i[0]]==="pass").length/all.length);
+  document.getElementById("pct").textContent = pct+"%";
+  document.getElementById("arc").setAttribute("stroke-dashoffset", (314.16*(1-pct/100)).toFixed(1));
+  const v = document.getElementById("verdict"), s = document.getElementById("state"), sub = document.getElementById("vsub");
+  v.className = "verdict";
+  if(failed.length){ v.classList.add("no"); s.textContent = "NO-GO"; sub.innerHTML = `<b>${failed.length} must-pass ${failed.length>1?"items have":"item has"} failed:</b> ${failed.map(i=>i[3]).join("; ")}. Fix it or set a new date.`; }
+  else if(!left.length){ v.classList.add("go"); s.textContent = "GO"; sub.innerHTML = `<b>Every must-pass check is green.</b> Switch the videos and playlist to Public.`; }
+  else { s.textContent = "Checking"; sub.innerHTML = `<b>${left.length} of ${before.length}</b> must-pass checks still to confirm before the go decision.`; }
+}
+board.addEventListener("click", e => {
+  const b = e.target.closest("button[data-id]"); if(!b) return;
+  st[b.dataset.id] = st[b.dataset.id]===b.dataset.v ? undefined : b.dataset.v;
+  if(!st[b.dataset.id]) delete st[b.dataset.id];
+  save(); render();
+  const again = board.querySelector(`button[data-id="${b.dataset.id}"][data-v="${b.dataset.v}"]`); if(again) again.focus();
+});
+const box = document.getElementById("resetBox");
+function resetUI(){
+  box.innerHTML = '<button class="reset" type="button" id="reset">Clear all ticks</button>';
+  document.getElementById("reset").onclick = () => {
+    box.innerHTML = '<span class="confirm">Clear every tick? <button class="reset" type="button" id="yes">Yes, clear</button><button class="reset" type="button" id="no">Keep</button></span>';
+    document.getElementById("yes").onclick = () => { st = {}; save(); render(); resetUI(); };
+    document.getElementById("no").onclick = resetUI;
+  };
+}
+resetUI(); render();
+}
+</script>
+</body>
+</html>

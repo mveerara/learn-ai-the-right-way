@@ -1,0 +1,25 @@
+Where will you actually do the hands-on work in an AI course? This lesson sets out your workbench: one setup, online and offline, that serves every course in this series and real jobs too.
+
+▶ Quiz and FAQ for this lesson: https://claude.ai/artifact/3W59cNDxfdPycH1sGNxNW8
+▶ Stuck? Ask Arjun, our FAQ guide: https://claude.ai/artifact/6ykEguQuoSDHw2rMSKryVF
+▶ New here? Start with: https://youtu.be/W5zVEoP0nb0
+▶ Next: Lesson 3, Colab with Google Drive: https://youtu.be/kGTMBFCdetA
+
+Chapters
+0:00 Welcome
+0:15 Where will you do the work?
+0:35 What is a workbench?
+1:00 Two kinds of place: online and offline
+1:27 The one rule: one repository
+1:54 Five steps, as your data grows
+2:32 Same habits, bigger tools
+3:03 Every step is a real job tool
+3:34 Yours for good
+3:59 What you need
+4:20 How the labs work
+4:45 Simpler wins, again
+5:02 Recap and quiz
+
+Ria is the channel's animated presenter, with an AI-generated voice. The course is written and designed by Mukund Veeraraghavan.
+
+#LearnAI #MachineLearning #DataScience

@@ -1,0 +1,156 @@
+{
+ "mp3": "/home/claude/l02/audio/part1.mp3",
+ "duration": 110.210563,
+ "sents": [
+  {
+   "slide": 1,
+   "text": "Welcome back to Learn AI the Right Way.",
+   "start": 0.0,
+   "end": 2.495
+  },
+  {
+   "slide": 1,
+   "text": "In the last lesson, you learned what AI, machine learning and deep learning actually are.",
+   "start": 3.117,
+   "end": 8.548
+  },
+  {
+   "slide": 1,
+   "text": "Today we answer a very practical question: where will you actually do the work?",
+   "start": 9.135,
+   "end": 14.358
+  },
+  {
+   "slide": 2,
+   "text": "Every course in this series has hands-on labs.",
+   "start": 15.007,
+   "end": 17.734
+  },
+  {
+   "slide": 2,
+   "text": "You'll write code, run it, load data and save your results.",
+   "start": 18.142,
+   "end": 22.057
+  },
+  {
+   "slide": 2,
+   "text": "So before any of that, you need a place to work.",
+   "start": 22.464,
+   "end": 25.347
+  },
+  {
+   "slide": 2,
+   "text": "And here's the twist: the place you set up today is the same one you'll use for every course, and for real jobs too.",
+   "start": 25.84,
+   "end": 32.877
+  },
+  {
+   "slide": 3,
+   "text": "Think of a carpenter's workbench.",
+   "start": 33.589,
+   "end": 35.105
+  },
+  {
+   "slide": 3,
+   "text": "The tools hang in the same place every day.",
+   "start": 35.515,
+   "end": 38.031
+  },
+  {
+   "slide": 3,
+   "text": "Every job starts there, and nothing gets lost between jobs.",
+   "start": 38.478,
+   "end": 42.314
+  },
+  {
+   "slide": 3,
+   "text": "Your AI workbench is the same idea.",
+   "start": 42.911,
+   "end": 45.285
+  },
+  {
+   "slide": 3,
+   "text": "It has four parts: somewhere to write code, somewhere to run it, somewhere to keep your data, and somewhere that remembers your work.",
+   "start": 45.743,
+   "end": 53.482
+  },
+  {
+   "slide": 3,
+   "text": "Get those four right once, and you never set up from scratch again.",
+   "start": 54.11,
+   "end": 57.977
+  },
+  {
+   "slide": 4,
+   "text": "Your workbench can live in two kinds of place.",
+   "start": 58.658,
+   "end": 61.207
+  },
+  {
+   "slide": 4,
+   "text": "Online means in your web browser.",
+   "start": 61.711,
+   "end": 63.693
+  },
+  {
+   "slide": 4,
+   "text": "There's nothing to install, the computer is Google's, and you can often get a free graphics card for deep learning.",
+   "start": 64.174,
+   "end": 70.147
+  },
+  {
+   "slide": 4,
+   "text": "Offline means on your own laptop.",
+   "start": 70.815,
+   "end": 72.935
+  },
+  {
+   "slide": 4,
+   "text": "It works without the internet, it's private, and the tools are yours for good.",
+   "start": 73.391,
+   "end": 77.957
+  },
+  {
+   "slide": 4,
+   "text": "Neither is better.",
+   "start": 78.519,
+   "end": 79.469
+  },
+  {
+   "slide": 4,
+   "text": "We use both, and you'll set up each one in the next two lessons.",
+   "start": 79.906,
+   "end": 83.627
+  },
+  {
+   "slide": 5,
+   "text": "Here's the one rule that makes it all work.",
+   "start": 84.282,
+   "end": 86.605
+  },
+  {
+   "slide": 5,
+   "text": "All your code lives in one place: a repository called workbench, on GitHub.",
+   "start": 87.169,
+   "end": 92.391
+  },
+  {
+   "slide": 5,
+   "text": "A repository is simply a folder that remembers every change you make.",
+   "start": 93.071,
+   "end": 97.194
+  },
+  {
+   "slide": 5,
+   "text": "Because your work lives there, it opens unchanged in the browser, on your laptop, or inside a container.",
+   "start": 97.777,
+   "end": 104.282
+  },
+  {
+   "slide": 5,
+   "text": "Switch machines, switch jobs, lose a laptop: your work is safe.",
+   "start": 104.813,
+   "end": 110.211
+  }
+ ]
+}

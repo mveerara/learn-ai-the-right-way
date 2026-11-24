@@ -1,0 +1,144 @@
+{
+ "mp3": "/home/claude/l03/audio/part3.mp3",
+ "duration": 93.962438,
+ "sents": [
+  {
+   "slide": 10,
+   "text": "One more thing worth knowing.",
+   "start": 0.0,
+   "end": 1.478
+  },
+  {
+   "slide": 10,
+   "text": "Colab can sometimes give you a free graphics card, a GPU, from the Runtime menu.",
+   "start": 2.127,
+   "end": 7.494
+  },
+  {
+   "slide": 10,
+   "text": "You don't need one yet.",
+   "start": 8.097,
+   "end": 9.111
+  },
+  {
+   "slide": 10,
+   "text": "Most early labs run perfectly well without it, and free GPU time is limited and changes from day to day.",
+   "start": 9.611,
+   "end": 16.356
+  },
+  {
+   "slide": 10,
+   "text": "We'll switch one on when deep learning arrives.",
+   "start": 16.996,
+   "end": 19.199
+  },
+  {
+   "slide": 11,
+   "text": "A few habits to start now.",
+   "start": 19.919,
+   "end": 21.412
+  },
+  {
+   "slide": 11,
+   "text": "Name notebooks clearly.",
+   "start": 22.035,
+   "end": 23.495
+  },
+  {
+   "slide": 11,
+   "text": "Keep datasets in data, and results in outputs.",
+   "start": 24.022,
+   "end": 27.347
+  },
+  {
+   "slide": 11,
+   "text": "Put the setup cell at the top of every notebook, so you can rerun everything after a restart.",
+   "start": 27.955,
+   "end": 33.361
+  },
+  {
+   "slide": 11,
+   "text": "And if Colab ever disconnects, don't panic.",
+   "start": 33.949,
+   "end": 36.744
+  },
+  {
+   "slide": 11,
+   "text": "Reconnect, rerun from the top, and carry on.",
+   "start": 37.257,
+   "end": 40.486
+  },
+  {
+   "slide": 12,
+   "text": "Your turn.",
+   "start": 41.24,
+   "end": 41.899
+  },
+  {
+   "slide": 12,
+   "text": "Open the guided lab linked in the description.",
+   "start": 42.498,
+   "end": 44.768
+  },
+  {
+   "slide": 12,
+   "text": "It walks you through each step with prompts and hints, but it won't hand you the full code.",
+   "start": 45.278,
+   "end": 50.105
+  },
+  {
+   "slide": 12,
+   "text": "Try each step yourself, peek at a hint only when you're stuck, and tick it off when it works.",
+   "start": 50.708,
+   "end": 56.148
+  },
+  {
+   "slide": 13,
+   "text": "Let's recap.",
+   "start": 57.033,
+   "end": 57.775
+  },
+  {
+   "slide": 13,
+   "text": "Colab runs Python in your browser for free.",
+   "start": 58.418,
+   "end": 61.141
+  },
+  {
+   "slide": 13,
+   "text": "Its computer is temporary, so your work lives in Google Drive, in a workbench folder with data, notebooks and outputs.",
+   "start": 61.694,
+   "end": 69.187
+  },
+  {
+   "slide": 13,
+   "text": "You connect them with drive mount, and you test it by saving, throwing the runtime away, and reading back.",
+   "start": 69.767,
+   "end": 75.947
+  },
+  {
+   "slide": 13,
+   "text": "Do the lab in the description, then take the quiz.",
+   "start": 76.68,
+   "end": 79.46
+  },
+  {
+   "slide": 13,
+   "text": "Next, before step two, a short prep course: Course zero, starting with Linux, the system almost every AI tool runs on.",
+   "start": 80.306,
+   "end": 89.416
+  },
+  {
+   "slide": 13,
+   "text": "The entrance quiz tells you which parts you can skip.",
+   "start": 89.975,
+   "end": 92.548
+  },
+  {
+   "slide": 13,
+   "text": "See you there.",
+   "start": 93.107,
+   "end": 93.962
+  }
+ ]
+}

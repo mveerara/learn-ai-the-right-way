@@ -1,0 +1,249 @@
+<title>Entrance Quiz</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Lexend:wght@400;500;600&display=swap">
+<style>
+/* Layout: same learning card as the lesson quizzes. Intro card, then one question at a time, then a result card with a per-area breakdown and the student's plan. */
+:root{
+  --bg:#F3F7F6; --surface:#FFFFFF; --ink:#1D2A2C; --muted:#5A6B6E; --line:#D6E2E0;
+  --accent:#0F7C77; --accent-ink:#FFFFFF; --accent-soft:#DDF0EE; --deep:#0B4F4C;
+  --good:#1E8B4C; --good-soft:#DFF3E6; --bad:#B4462F; --bad-soft:#FBE6E0; --warm:#E8A33A; --warm-soft:#FCEFD9;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Lexend","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101819; --surface:#182324; --ink:#E6EFEE; --muted:#9DB0AF; --line:#2B3B3C;
+  --accent:#3FB8B0; --accent-ink:#0C1515; --accent-soft:#1C3534; --deep:#8FD3CC;
+  --good:#5BCB86; --good-soft:#163222; --bad:#EE8A71; --bad-soft:#3A1F18; --warm:#F0B95A; --warm-soft:#3A2D16; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101819; --surface:#182324; --ink:#E6EFEE; --muted:#9DB0AF; --line:#2B3B3C;
+  --accent:#3FB8B0; --accent-ink:#0C1515; --accent-soft:#1C3534; --deep:#8FD3CC;
+  --good:#5BCB86; --good-soft:#163222; --bad:#EE8A71; --bad-soft:#3A1F18; --warm:#F0B95A; --warm-soft:#3A2D16; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px}
+.wrap{max-width:660px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+.crumb{font-size:13px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,6vw,38px);line-height:1.1;margin:2px 0 0;color:var(--deep);text-wrap:balance}
+h2{font-family:var(--display);font-weight:800;font-size:22px;margin:0;text-wrap:balance}
+.ria{display:flex;gap:12px;align-items:flex-end}
+.ria svg{flex:0 0 64px;width:64px;height:64px}
+.bubble{background:var(--accent-soft);border-radius:16px 16px 16px 4px;padding:12px 16px;min-width:0;font-weight:500}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:16px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.fact{background:var(--bg);border-radius:12px;padding:10px 12px;min-width:0}
+.fact b{display:block;font-family:var(--display);font-size:22px;color:var(--accent);font-variant-numeric:tabular-nums}
+.fact span{font-size:13px;color:var(--muted)}
+.areas{display:flex;flex-wrap:wrap;gap:6px}
+.areas span{font-size:13px;background:var(--accent-soft);color:var(--deep);border-radius:999px;padding:3px 10px}
+.progress{display:flex;gap:4px}
+.progress span{flex:1;height:6px;border-radius:3px;background:var(--line)}
+.progress span.done{background:var(--accent)}
+.qmeta{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.q{font-family:var(--display);font-weight:600;font-size:21px;line-height:1.3;margin:0;text-wrap:balance}
+.q code,.why code,.opt code{font-family:ui-monospace,"Cascadia Mono",Consolas,monospace;font-size:.88em;background:var(--accent-soft);border-radius:6px;padding:1px 5px}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:12px;align-items:center;width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--surface);
+  border:2px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;transition:border-color .15s}
+.opt:hover{border-color:var(--accent)}
+.opt .key{flex:0 0 28px;height:28px;border-radius:8px;display:grid;place-items:center;font-weight:600;font-size:14px;background:var(--accent-soft);color:var(--accent)}
+.opt:focus-visible,.btn:focus-visible{outline:3px solid var(--warm);outline-offset:2px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{font:inherit;font-weight:600;border-radius:12px;padding:12px 18px;cursor:pointer;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn.ghost{background:transparent;color:var(--accent)}
+.score{font-family:var(--display);font-weight:800;font-size:56px;line-height:1;font-variant-numeric:tabular-nums}
+.score small{font-size:22px;color:var(--muted);font-weight:600}
+.verdict{margin:0;font-weight:600;font-size:18px}
+.bars{display:flex;flex-direction:column;gap:8px}
+.bar{display:grid;grid-template-columns:minmax(0,1fr) 54px;gap:10px;align-items:center;font-size:14px}
+.bar .lbl{display:flex;flex-direction:column;gap:3px;min-width:0}
+.bar .track{height:8px;border-radius:4px;background:var(--line);overflow:hidden}
+.bar .fill{height:100%;background:var(--good)}
+.bar.miss .fill{background:var(--warm)}
+.bar.weak .fill{background:var(--bad)}
+.bar .n{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+.plan{border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.plan.ok{background:var(--good-soft)} .plan.no{background:var(--warm-soft)}
+.plan ul{margin:0;padding-left:20px}
+.code{font-family:ui-monospace,"Cascadia Mono",Consolas,monospace;font-size:14px;background:var(--bg);border:1px dashed var(--line);border-radius:10px;padding:10px 12px;word-break:break-word}
+.review details{border-top:1px solid var(--line);padding:10px 0}
+.review summary{cursor:pointer;font-weight:600}
+.review .why{margin:6px 0 0}
+.review .ans{color:var(--good);font-weight:600}
+.note{font-size:13px;color:var(--muted)}
+@media (max-width:520px){.facts{grid-template-columns:1fr}}
+@media (prefers-reduced-motion: reduce){.opt{transition:none}}
+</style>
+
+<main class="wrap">
+  <div>
+    <div class="crumb">Learn AI the Right Way · Placement</div>
+    <h1>Entrance Quiz</h1>
+  </div>
+
+  <div class="ria">
+    <svg viewBox="100 100 200 200" role="img" aria-label="Ria">
+      <circle cx="200" cy="200" r="100" fill="var(--accent-soft)"/>
+      <path d="M112 230 q-6 -120 88 -128 q94 8 88 128 l0 40 l-176 0z" fill="#2B1B17"/>
+      <ellipse cx="200" cy="225" rx="78" ry="92" fill="#C98C5F"/>
+      <circle cx="172" cy="232" r="9" fill="#3B2A20"/><circle cx="232" cy="232" r="9" fill="#3B2A20"/>
+      <circle cx="175" cy="228" r="3" fill="#fff"/><circle cx="235" cy="228" r="3" fill="#fff"/>
+      <path d="M176 278 q24 22 48 0 q-24 9 -48 0z" fill="#8E2F3A"/>
+      <path d="M122 205 q8 -78 78 -82 q62 2 80 60 q-60 -10 -100 -48 q-20 36 -58 70z" fill="#2B1B17"/>
+    </svg>
+    <div class="bubble" id="say">This quiz tells you where to start. It's placement, not a filter: whatever your score, there's a path for you.</div>
+  </div>
+
+  <section class="card" id="intro">
+    <div class="facts">
+      <div class="fact"><b id="nq">22</b><span>easy questions</span></div>
+      <div class="fact"><b>~15 min</b><span>no time limit</span></div>
+      <div class="fact"><b>80%</b><span>to pass, with no weak area</span></div>
+    </div>
+    <div><h2>What it covers</h2></div>
+    <div class="areas" id="areaList"></div>
+    <p style="margin:0">Answer from what you know; don't look things up. A wrong answer just shows which Course 0 module will help you. You can retake the quiz as often as you like.</p>
+    <div class="row"><button class="btn" type="button" id="startBtn">Start the quiz</button></div>
+  </section>
+
+  <section class="card" id="quiz" hidden aria-live="polite">
+    <div class="progress" id="bar"></div>
+    <div class="qmeta"><span id="qnum"></span><span id="qarea"></span></div>
+    <p class="q" id="q"></p>
+    <div class="opts" id="opts"></div>
+    <div class="row"><button class="btn ghost" type="button" id="backBtn">Back</button></div>
+  </section>
+
+  <section class="card" id="result" hidden aria-live="polite">
+    <div class="score" id="score"></div>
+    <p class="verdict" id="verdict"></p>
+    <div class="bars" id="bars"></div>
+    <div class="plan" id="plan"></div>
+    <div>
+      <h2 style="font-size:18px">Your result, for registration</h2>
+      <p class="note" style="margin:4px 0 8px">Copy this into the registration form's "Entrance quiz result" box.</p>
+      <div class="code" id="resCode"></div>
+    </div>
+    <div class="row" id="resBtns"></div>
+    <div class="review" id="review"></div>
+  </section>
+
+  <p class="note">The quiz runs in your browser; nothing is sent anywhere until you choose to register. Course 0 lessons are listed in the <a href="https://claude.ai/artifact/1S27dYy5tfBcnoW8L9NmsE" target="_blank" rel="noopener" style="color:var(--accent)">course catalogue</a>. Questions? <a href="https://claude.ai/artifact/6ykEguQuoSDHw2rMSKryVF" target="_blank" rel="noopener" style="color:var(--accent)">Ask Arjun</a>.</p>
+</main>
+
+<script>
+const FORM_URL = "https://docs.google.com/forms/d/1HYfqCCMrzRNKoVHteKT4N8LLGWY-J-LAuONSdqlDN14/viewform";
+const AREAS = {
+  linux:{name:"Linux and the terminal", mods:["Linux and the terminal"]},
+  perm:{name:"Permissions and sudo", mods:["Users, permissions and sudo"]},
+  env:{name:"Installing software and the environment", mods:["Installing software","The environment"]},
+  net:{name:"SSH and remote machines", mods:["Networks and remote machines"]},
+  git:{name:"Git and GitHub", mods:["Git and GitHub"]},
+  cloud:{name:"Containers and cloud", mods:["Containers","Cloud basics"]},
+  gpu:{name:"The GPU stack", mods:["The GPU stack"]},
+  py:{name:"Python basics", mods:["Python basics","Python next steps"]}
+};
+// Each question: area, text, options (first is correct; shuffled at runtime), why.
+const BANK = [
+ ["linux","Which command shows the folder you are currently in?",["<code>pwd</code>","<code>ls</code>","<code>cd</code>","<code>whoami</code>"],"<code>pwd</code> prints the working directory. <code>ls</code> lists what's in it, <code>cd</code> moves you, <code>whoami</code> shows your user name."],
+ ["linux","What does <code>ls -l</code> do?",["Lists files with details such as size, owner and permissions","Deletes the files in a folder","Logs you out of the terminal","Locks the screen"],"<code>-l</code> means long format: one file per line, with permissions, owner, size and date."],
+ ["linux","What does <code>cat log.txt | grep error</code> do?",["Shows only the lines of log.txt that contain \"error\"","Deletes the lines that contain \"error\"","Copies log.txt to a file called error","Counts the files in the folder"],"The pipe <code>|</code> sends cat's output into grep, which keeps only the matching lines."],
+ ["perm","A file's permissions are <code>-rwxr-xr--</code>. What can other users (not the owner or group) do?",["Read it only","Read and write it","Read and run it","Nothing at all"],"The three groups are owner <code>rwx</code>, group <code>r-x</code>, others <code>r--</code>. Others can only read."],
+ ["perm","In <code>sudo apt install git</code>, what does <code>sudo</code> do?",["Runs the command with administrator (root) rights","Makes the download faster","Checks the package for viruses","Runs the command in the background"],"sudo runs one command as the administrator, which installing system software needs. Use it only when a command needs it."],
+ ["env","What is the usual way to install a Python package such as pandas into your environment?",["<code>pip install pandas</code>","<code>ssh pandas</code>","<code>git push pandas</code>","<code>chmod pandas</code>"],"pip is Python's package installer. Run it inside your virtual environment so projects stay separate."],
+ ["env","You type <code>python</code> and get \"command not found\", but Python is installed. What is the most likely cause?",["Python's folder isn't on your PATH","Your internet is down","Your GPU is missing","Your home folder is read-only"],"The shell finds programs by searching the folders listed in PATH. If Python's folder isn't listed, the shell can't find it."],
+ ["env","What is an environment variable?",["A named value that the shell and programs can read, such as HOME or PATH","A variable inside a Python script","A file that stores passwords","A setting on your cloud account"],"Environment variables carry settings to every program you start: where to find programs (PATH), your home folder (HOME), and so on."],
+ ["net","What is SSH used for?",["Logging in securely to another computer and running commands there","Making your internet faster","Sharing your screen in a video call","Compressing large files"],"SSH gives you an encrypted terminal on a remote machine, such as a cloud server with a GPU."],
+ ["net","You made an SSH key pair. Which file must you never share with anyone?",["The private key (for example <code>id_ed25519</code>)","The public key (the file ending in <code>.pub</code>)","The server's address","Your user name on the server"],"The public key goes on servers; the private key stays on your machine. Anyone holding your private key can log in as you."],
+ ["git","What does <code>git commit</code> do?",["Saves a snapshot of your staged changes in your local repository","Uploads your code to GitHub","Downloads other people's changes","Deletes old versions of your files"],"A commit is a saved snapshot on your own machine. Sending it to GitHub is a separate step."],
+ ["git","You made commits on your laptop. Which command sends them to GitHub?",["<code>git push</code>","<code>git pull</code>","<code>git clone</code>","<code>git init</code>"],"push sends your commits up; pull brings others' commits down; clone copies a repository; init starts a new one."],
+ ["git","Why would you create a branch in Git?",["To work on a change separately without disturbing the main code","To delete the project's history","To make the repository private","To make Git run faster"],"A branch is a separate line of work. When it's ready, you merge it back, often through a pull request."],
+ ["cloud","What is the difference between a Docker image and a container?",["An image is the packaged template; a container is a running copy of it","They are two names for the same thing","A container is the template; an image is the running copy","An image is for Windows; a container is for Linux"],"You build or download an image once, then start as many containers from it as you need."],
+ ["cloud","You've finished with a cloud GPU machine for the day. What avoids a surprise bill?",["Stop or delete the machine, and check its disks too","Close the browser tab","Log out of the cloud website","Turn off your own laptop"],"Cloud machines keep running, and billing, until you stop them. Stored disks can still cost money, so check those as well."],
+ ["gpu","What is CUDA?",["NVIDIA's platform that lets programs compute on NVIDIA GPUs","A Python library for drawing charts","A type of computer memory","A version of Linux"],"Deep learning libraries such as PyTorch use CUDA to run their maths on NVIDIA graphics cards."],
+ ["gpu","PyTorch says no GPU is available, though the machine has an NVIDIA GPU. What is the most likely cause?",["The driver and the PyTorch build don't match, or a CPU-only PyTorch is installed","The disk is nearly full","The internet connection is slow","Python 3 is too new"],"The driver, CUDA and PyTorch versions must fit together. A mismatch, or a CPU-only install, is the usual cause."],
+ ["py","After <code>nums = [3, 1, 2]</code>, what is <code>nums[0]</code>?",["<code>3</code>","<code>1</code>","<code>2</code>","An error"],"Python counts from 0, so <code>nums[0]</code> is the first item."],
+ ["py","After <code>ages = {\"Ria\": 25}</code>, how do you read Ria's age?",["<code>ages[\"Ria\"]</code>","<code>ages(\"Ria\")</code>","<code>ages.Ria</code>","<code>ages[0]</code>"],"Dictionaries are read by key, in square brackets."],
+ ["py","What does <code>for i in range(3): print(i)</code> print?",["0, 1, 2 (one per line)","1, 2, 3","0, 1, 2, 3","Just 3"],"<code>range(3)</code> starts at 0 and stops before 3."],
+ ["py","After <code>def double(x): return x * 2</code>, what is <code>double(4)</code>?",["<code>8</code>","<code>6</code>","<code>44</code>","<code>None</code>"],"The function returns its input times 2. (<code>\"4\" * 2</code> would give <code>\"44\"</code>, but 4 is a number here.)"],
+ ["py","What does <code>[x * 2 for x in [1, 2, 3]]</code> give?",["<code>[2, 4, 6]</code>","<code>[1, 2, 3, 1, 2, 3]</code>","<code>12</code>","An error"],"A list comprehension builds a new list by applying <code>x * 2</code> to each item."]
+];
+const PASS_RATE = 0.8;
+const $ = id => document.getElementById(id);
+const shuffle = a => { a = a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+
+$("nq").textContent = BANK.length;
+$("areaList").innerHTML = Object.values(AREAS).map(a=>`<span>${a.name}</span>`).join("");
+
+let Q = [], ans = [], i = 0;
+function start(){
+  // keep areas together in a fixed order, shuffle within each area and shuffle options
+  Q = Object.keys(AREAS).flatMap(k => shuffle(BANK.filter(b=>b[0]===k))).map(([area,q,o,why]) => {
+    const order = shuffle(o.map((t,k)=>({t,right:k===0})));
+    return {area,q,why,opts:order,correct:o[0]};
+  });
+  ans = new Array(Q.length).fill(null); i = 0;
+  $("intro").hidden = true; $("result").hidden = true; $("quiz").hidden = false;
+  $("say").textContent = "Take your time. There's no clock, and you can go back.";
+  show();
+}
+function show(){
+  const it = Q[i];
+  $("bar").innerHTML = Q.map((_,k)=>`<span class="${ans[k]!==null||k===i?'done':''}"></span>`).join("");
+  $("qnum").textContent = `Question ${i+1} of ${Q.length}`;
+  $("qarea").textContent = AREAS[it.area].name;
+  $("q").innerHTML = it.q;
+  $("opts").innerHTML = it.opts.map((o,k)=>`<button class="opt" type="button" data-k="${k}" aria-pressed="${ans[i]===k}"><span class="key">${"ABCD"[k]}</span><span>${o.t}</span></button>`).join("");
+  $("backBtn").hidden = i===0;
+  $("opts").firstElementChild.focus({preventScroll:true});
+}
+$("opts").addEventListener("click", e => {
+  const b = e.target.closest(".opt"); if(!b) return;
+  ans[i] = +b.dataset.k;
+  if(i < Q.length-1){ i++; show(); } else finish();
+});
+$("backBtn").onclick = () => { if(i>0){ i--; show(); } };
+$("startBtn").onclick = start;
+
+function finish(){
+  $("quiz").hidden = true; $("result").hidden = false;
+  const per = {}; Object.keys(AREAS).forEach(k=>per[k]={r:0,n:0});
+  let right = 0;
+  Q.forEach((it,k)=>{ const ok = it.opts[ans[k]].right; per[it.area].n++; if(ok){ per[it.area].r++; right++; } });
+  const weak = Object.keys(per).filter(k=>per[k].r/per[k].n < 0.5);
+  const missed = Object.keys(per).filter(k=>per[k].r<per[k].n);
+  const pass = right >= Math.ceil(PASS_RATE*Q.length) && weak.length===0;
+  $("score").innerHTML = `${right}<small> / ${Q.length}</small>`;
+  $("verdict").textContent = pass ? "Passed. You're ready for Course 1." : (right >= Math.ceil(PASS_RATE*Q.length) ? "Good score, but one area needs work first." : "Not yet, and that's fine. Here's your plan.");
+  $("say").textContent = pass ? "Wonderful! Register, and I'll see you in Course 1." : "Nobody is turned away. Take the modules below, then come back and retake the quiz.";
+  $("bars").innerHTML = Object.keys(AREAS).map(k=>{
+    const p = per[k], cls = p.r/p.n<0.5 ? "weak" : (p.r<p.n ? "miss" : "");
+    return `<div class="bar ${cls}"><div class="lbl"><span>${AREAS[k].name}</span><div class="track"><div class="fill" style="width:${100*p.r/p.n}%"></div></div></div><span class="n">${p.r}/${p.n}</span></div>`;
+  }).join("");
+  const mods = ks => ks.flatMap(k=>AREAS[k].mods);
+  if(pass){
+    $("plan").className = "plan ok";
+    $("plan").innerHTML = missed.length
+      ? `<b>Your plan: register and start Course 1.</b><span>Optional refresher from Course 0:</span><ul>${mods(missed).map(m=>`<li>${m}</li>`).join("")}</ul>`
+      : `<b>Your plan: register and start Course 1.</b><span>A clean sweep: you can skip Course 0 entirely.</span>`;
+  } else {
+    $("plan").className = "plan no";
+    $("plan").innerHTML = `<b>Your plan: take these Course 0 modules, then retake the quiz.</b><ul>${mods(missed).map(m=>`<li>${m}${weak.some(w=>AREAS[w].mods.includes(m))?" <b>(start here)</b>":""}</li>`).join("")}</ul><span>You can register now too; your plan is saved with your registration.</span>`;
+  }
+  const SHORT = {linux:"Linux", perm:"Permissions", env:"Install", net:"SSH", git:"Git", cloud:"Cloud", gpu:"GPU", py:"Python"};
+  const areaTxt = Object.keys(AREAS).map(k=>`${SHORT[k]} ${per[k].r}/${per[k].n}`).join(", ");
+  const codeTxt = `Entrance quiz ${right}/${Q.length} · ${pass?"PASSED":"NOT YET"} · Areas: ${areaTxt}${missed.length?` · Course 0: ${mods(missed).join(", ")}`:""}`;
+  $("resCode").textContent = codeTxt;
+  $("resBtns").innerHTML = `<button class="btn" type="button" id="copyReg">Copy result and register</button><button class="btn ghost" type="button" id="again">Retake the quiz</button>`;
+  $("copyReg").onclick = () => {
+    const go = () => { const a=document.createElement("a"); a.href=FORM_URL; a.target="_blank"; a.rel="noopener"; document.body.appendChild(a); a.click(); a.remove(); };
+    try{ navigator.clipboard.writeText(codeTxt).then(()=>{ $("copyReg").textContent="Copied. Opening the form…"; go(); }, ()=>{ selectCode(); go(); }); }catch(e){ selectCode(); go(); }
+  };
+  $("again").onclick = start;
+  const wrong = Q.map((it,k)=>({it,k})).filter(x=>!x.it.opts[ans[x.k]].right);
+  $("review").innerHTML = wrong.length ? `<h2 style="font-size:18px">Questions to review</h2>` + wrong.map(({it,k})=>`<details><summary>${it.q.replace(/<[^>]+>/g,"")}</summary><p class="why">You chose: ${it.opts[ans[k]].t}<br><span class="ans">Answer: ${it.correct}</span><br>${it.why}</p></details>`).join("") : "";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function selectCode(){ const r=document.createRange(); r.selectNodeContents($("resCode")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); $("copyReg").textContent="Result selected: copy it, then fill in the form"; }
+</script>

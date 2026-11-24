@@ -1,0 +1,167 @@
+COURSE 0 VOICE SCRIPTS: Lessons 1-5 (15 parts)
+Voice: Bella, same settings as before. One take per part.
+Name each download by lesson and part (for example C0L1_part1) so they can't get mixed up.
+
+
+
+################ COURSE 0 · LESSON 1: Why Linux Runs AI ################
+
+===== C0L1 PART 1 (slides 1-4) =====
+
+Welcome to Course zero, the prep course. Before we train a single model, we learn the ground every AI tool stands on, and it starts with Linux. In this lesson: what Linux is, why almost all AI runs on it, and how to open a Linux terminal in two minutes, for free.
+
+Linux is an operating system, like Windows or macOS: the layer that runs a computer's hardware and its programs. It's free and open source, which means anyone can use it, read its code and change it. You may never have seen it, but you use it every day: it runs most of the web's servers, and Android is built on it.
+
+Now here's why it matters for AI. When you train a model in the cloud, rent a GPU machine, or run a notebook in Colab, the computer underneath is almost always Linux. For years now, every one of the world's five hundred fastest supercomputers has run Linux. So the instructions you'll meet in tutorials, papers and real jobs are written for Linux.
+
+Why Linux? It costs nothing, so it can run on thousands of machines at once. It was built for servers, so it works well with no screen at all. GPU and AI tools are built and tested for it. And everything in Linux can be done by typing commands, which means it can be written into scripts and repeated exactly.
+
+===== C0L1 PART 2 (slides 5-8) =====
+
+On a server, there's no mouse and no desktop. You talk to the computer through the terminal: you type a command, press Enter, and it answers in text. It looks old-fashioned, but it's fast and exact, and it works the same on your laptop, in Colab, or on a GPU server on the other side of the world.
+
+Every command has the same shape. First the command itself: the action. Then options, which start with a dash and change how it behaves. Then arguments: what to act on, like a folder or a file. So ls, dash l, slash content means: list, in long form, the folder called content.
+
+You don't need to install anything. The Colab notebook from Lesson three already runs on a Linux computer. In a code cell, start a line with an exclamation mark, and Colab sends it to Linux instead of Python. Try exclamation pwd, and exclamation whoami.
+
+Here are your first three. pwd prints the working directory: where you are. ls lists what's in it. And whoami tells you which user you are. In Colab, whoami answers root: the all-powerful administrator. We'll see why that matters in the lesson on sudo.
+
+===== C0L1 PART 3 (slides 9-12) =====
+
+Later, you'll want Linux on your own laptop. On Windows, the Windows Subsystem for Linux gives you a real Ubuntu terminal, installed with a single command. A Mac's Terminal is a close cousin of Linux and works almost the same way. But for now, Colab is all you need.
+
+You never have to memorise everything. Most commands explain themselves: add dash dash help after a command to see its options. On a full Linux system, man, short for manual, opens the complete guide; press q to leave it. Reading help is a real skill, and every engineer uses it every day.
+
+Your lab is in the description. You'll open Colab, run your first Linux commands, and find out exactly what kind of machine Google is lending you. Prompts and hints, never the full answer.
+
+Let's recap. Linux runs almost all AI computing, from Colab to supercomputers. You talk to it through the terminal, with commands made of an action, options and arguments. And you've met pwd, ls, whoami and dash dash help. Take the quiz in the description, then next time, we learn to move around the file system. See you there.
+
+
+################ COURSE 0 · LESSON 2: Moving Around: Files and Folders ################
+
+===== C0L2 PART 1 (slides 1-5) =====
+
+Last time you met the terminal. Today you learn to move around in it: where files live, how to get from one folder to another, and how to make, copy, move and delete things, all without a mouse.
+
+Linux keeps everything in one big tree. At the very top is the root folder, written as a single forward slash. Everything else hangs below it: home folders for users, settings in a folder called etc, programs in usr. In Colab, your work sits in slash content.
+
+A path is the address of a file. An absolute path starts from the root, with a slash, and works from anywhere. A relative path starts from where you are now. If you're already in slash content, then sample data, slash, README dot md points to the same file.
+
+Three shortcuts save a lot of typing. A single dot means the folder you're in. Two dots mean the folder one level up. And the tilde means your home folder. So cd dot dot moves you up one level, and cd tilde takes you home.
+
+cd means change directory. Give it a path, and you're there; check with pwd. One catch in Colab: every line that starts with an exclamation mark runs in a fresh shell, so a cd there is forgotten on the very next line. Use percent cd instead, and Colab remembers where you are.
+
+===== C0L2 PART 2 (slides 6-9) =====
+
+ls has options worth knowing. Dash l gives details: permissions, owner, size and date. Dash a shows hidden files, whose names start with a dot. Dash h, together with l, shows sizes in kilobytes and megabytes. And dash t sorts by time, newest first. You can combine them, like ls dash l h.
+
+mkdir makes a directory. Add dash p, and it makes a whole chain of folders at once, without complaining if some of them already exist. touch creates an empty file, or updates the time stamp on a file that's already there.
+
+cp copies a file. To copy a whole folder, add dash r, for recursive. mv moves a file. And since renaming is just moving to a new name, mv renames too.
+
+Now, careful. rm removes a file, and rm dash r removes a folder and everything in it. There is no recycle bin: it's gone. So look before you delete. Run ls on the same path first, use dash i to be asked each time, and keep anything precious in your Drive workbench.
+
+===== C0L2 PART 3 (slides 10-13) =====
+
+To look inside a file, cat prints the whole thing. For big files, head shows the first lines and tail the last ones; dash n sets how many. And wc dash l counts the lines, which is a quick way to see how many rows a data file has.
+
+Three keys make you fast in any terminal. Tab completes file and folder names, so you rarely type them in full. The up arrow brings back your last command. And Control C stops a command that's running, or one that's taking too long.
+
+In the lab, you'll explore Colab's sample data, build a project folder, copy a dataset into it and count its rows, all from the terminal. Prompts and hints, never the full answer.
+
+Let's recap. Linux is one tree starting at slash, and paths are absolute or relative, with dot, dot dot and tilde as shortcuts. You move with cd, look with ls, make with mkdir and touch, copy and move with cp and mv, and read with cat, head, tail and wc. And rm has no recycle bin, so look first. Next time: wildcards, pipes and redirection, where the terminal gets powerful.
+
+
+################ COURSE 0 · LESSON 3: Wildcards, Pipes and Redirection ################
+
+===== C0L3 PART 1 (slides 1-5) =====
+
+So far: one command, one job. Today, commands start working together. Wildcards let one command handle many files. Redirection saves output to a file. And pipes chain commands into a little assembly line. This is where the terminal becomes a power tool.
+
+A wildcard is a pattern that matches file names. The star matches any run of characters, so star dot csv means every file ending in dot csv. The question mark matches exactly one character. And square brackets match one character from a set, like day one, two or three.
+
+The shell expands the pattern before the command even runs, so any command can use it. ls star dot csv lists them; cp star dot csv data slash copies them all at once. And rm with a wildcard deletes them all at once, so always run ls with the same pattern first, to see exactly what will go.
+
+Every command has three streams. Standard input, where it reads from. Standard output, where its normal results go. And standard error, where error messages go. Normally, both outputs land on your screen. Redirection and pipes let you send them somewhere else.
+
+The greater-than sign sends output into a file instead of the screen. Careful: a single greater-than replaces whatever was in the file. Two of them, greater-than greater-than, add to the end instead. The number two followed by greater-than sends just the error messages. And less-than feeds a file in as input.
+
+===== C0L3 PART 2 (slides 6-8) =====
+
+For example: ls dash l, greater-than, listing dot txt saves the listing. echo, run two done, double greater-than log dot txt adds a line to a log. And python train dot py, two greater-than errors dot txt keeps the errors in their own file, so you can read them later.
+
+The vertical bar is a pipe. It takes the output of the command on the left and feeds it straight in as the input of the command on the right, with no temporary files. cat data dot csv, pipe, head dash n three shows just the first three lines.
+
+Pipes shine with small tools. grep keeps only the lines that contain a word. sort puts lines in order. uniq dash c counts repeated lines, but only when they sit next to each other, so sort first. And wc dash l counts what's left.
+
+===== C0L3 PART 3 (slides 9-12) =====
+
+Put them together, and one line answers a real question. ls slash content slash sample data, pipe, grep csv, pipe, wc dash l: how many CSV files are in Colab's sample data? Read it left to right: list, keep the CSV lines, count them.
+
+One more tool. find searches a whole tree of folders. find slash content dash name, then star dot csv in quotes, lists every CSV file under content, however deep. The quotes stop the shell expanding the star too early. And find dot dash size plus ten M finds files bigger than ten megabytes, which is handy when a disk fills up.
+
+In the lab, you'll count files with wildcards, save a listing to a file, and answer a question about the MNIST digits dataset with a single pipeline. Prompts and hints, never the full answer.
+
+Let's recap. Wildcards match many files with star, question mark and square brackets. Greater-than saves output, double greater-than appends, and two greater-than catches errors. The pipe chains commands, and grep, sort, uniq and wc turn them into answers. Next, a new module: who owns a file, and who's allowed to touch it.
+
+
+################ COURSE 0 · LESSON 4: Owners and Permissions ################
+
+===== C0L4 PART 1 (slides 1-4) =====
+
+Every file on Linux belongs to someone, and comes with rules about who can read it, change it or run it. Most permission denied errors you'll ever see come from these rules. Today you learn to read them and change them.
+
+Linux is built for many people sharing one machine. Each person has a user account. Users can belong to groups, like a team. And one special user, root, is the administrator, who can do anything. Every file has one owner user and one owner group.
+
+Run ls dash l, and the first column is the permission string. The first character is the type: a dash for a file, d for a directory. Then come three groups of three letters: for the owner, for the group, and for everyone else. After that you see the owner's name, the group's name, the size, and the file name.
+
+Each group has three letters. r is read: see what's inside. w is write: change it. x is execute: for a file, run it as a program; for a folder, enter it with cd. A dash means that permission is missing. So r w x, r dash x, r dash dash means: the owner can do everything, the group can read and run, and everyone else can only read.
+
+===== C0L4 PART 2 (slides 5-8) =====
+
+chmod changes permissions. Say who: u for the user who owns it, g for group, o for others, a for all. Then plus to add, or minus to remove. Then the letters. chmod u plus x train dot sh lets you run your script. chmod o minus r secrets dot txt stops everyone else from reading it.
+
+You'll often see permissions as numbers. Read is four, write is two, execute is one, and you add them up. Seven is read, write and execute; six is read and write; five is read and execute; four is read only. Three digits mean owner, group and others. So seven five five is the usual setting for programs and folders, six four four for normal files, and six hundred for private files, like keys.
+
+Here's the classic case. You write a script, try to run it with dot slash train dot sh, and get permission denied: the file isn't marked as executable yet. chmod u plus x, run it again, and it works. The dot slash just means: the file in this folder.
+
+chown changes the owner and the group: user, colon, group. Only the administrator can give files away, so chown usually needs sudo, which is next lesson's topic. You'll meet chown when files created by one program have to be used by another.
+
+===== C0L4 PART 3 (slides 9-11) =====
+
+Why does this matter for AI work? SSH refuses to use a private key that others can read, so keys must be six hundred. On a shared GPU server, permissions keep your data and other people's apart. Scripts need the execute bit before they run. And with containers and mounted disks, permission denied is one of the first errors you'll meet. Now you can read it.
+
+In the lab, you'll create a tiny script, watch it fail with permission denied, fix it with chmod, and practise both the letter form and the number form. Prompts and hints, never the full answer.
+
+Let's recap. Every file has an owner, a group, and three sets of permissions: read, write and execute, for the owner, the group and everyone else. ls dash l shows them; chmod changes them, with letters or with numbers like seven five five and six four four; and chown changes the owner. Next: sudo and root, and how to use that power safely.
+
+
+################ COURSE 0 · LESSON 5: sudo, root and staying safe ################
+
+===== C0L5 PART 1 (slides 1-4) =====
+
+Root is the user who can do anything on a Linux machine, and sudo is how you borrow that power for one command. You'll type it often when you install GPU drivers and tools. Today: what it does, and how not to hurt yourself with it.
+
+A normal user can work with their own files, but can't change the system. That's a safety net: mistakes stay small. Root has no safety net. Root can install anything, change any file, and delete the whole system with one wrong command.
+
+sudo stands for superuser do. Put it in front of a command, and that one command runs as root. Linux asks for your own password, not root's, and only users on an approved list are allowed to use it. Then you're back to normal. That's much safer than logging in as root and staying there.
+
+Use sudo when you change the system: installing packages with apt, installing GPU drivers, changing system settings, or touching files that root owns. Don't use it for your own work: pip installs inside your virtual environment, editing your own files, running your Python scripts, or git. If a command works without sudo, run it without sudo.
+
+===== C0L5 PART 2 (slides 5-8) =====
+
+One mistake is so common it gets its own slide: sudo pip install. It installs packages into the system's own Python, which the operating system itself depends on, and it can break it. Instead, activate your project's virtual environment and run pip without sudo.
+
+Because sudo removes the safety net, read the whole command before you press Enter. Only paste commands from sources you trust. Be very wary of anything that downloads a script from the internet and pipes it straight into sudo bash. And check every path twice, especially with rm dash r.
+
+Here's why checking matters. rm dash r, tilde slash old project, deletes one folder. Add a single space after the slash, and the same command deletes your entire home folder, and then anything called old project. Linux does exactly what you type, not what you meant.
+
+Remember that whoami in Colab answered root? Colab gives you a throwaway machine, so it runs you as root, and you don't need sudo there. That makes it a safe place to practise. On real servers and on your own laptop, you'll be a normal user, and sudo is how you ask for more.
+
+===== C0L5 PART 3 (slides 9-11) =====
+
+Four habits keep you safe. Use the least power that works. Read before you run. Keep Python packages in virtual environments. And keep your work backed up in Drive and Git, so a mistake is an inconvenience, not a disaster.
+
+In the lab, you'll check who you are, install a small tool with apt, and practise reading commands before you run them. Prompts and hints, never the full answer.
+
+Let's recap. Root can do anything, and sudo borrows that power for one command. Use it to change the system, not for pip or your own files. Read every command before you run it, and check your paths. Colab runs you as root, so it's your safe practice ground. That completes Linux basics. Next, a new module: Git.

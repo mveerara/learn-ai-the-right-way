@@ -1,0 +1,138 @@
+{
+ "mp3": "/home/claude/l03/audio/part1.mp3",
+ "duration": 95.63425,
+ "sents": [
+  {
+   "slide": 1,
+   "text": "Welcome back.",
+   "start": 0.0,
+   "end": 0.771
+  },
+  {
+   "slide": 1,
+   "text": "Today you set up step one of your workbench: Google Colab, connected to Google Drive.",
+   "start": 1.216,
+   "end": 6.702
+  },
+  {
+   "slide": 1,
+   "text": "By the end of this lesson, you'll have run your first Python code, and saved your work somewhere that remembers it.",
+   "start": 7.246,
+   "end": 13.321
+  },
+  {
+   "slide": 2,
+   "text": "Google Colab is a free service from Google that runs Python in your web browser.",
+   "start": 14.134,
+   "end": 18.948
+  },
+  {
+   "slide": 2,
+   "text": "You write code in a notebook, press run, and Google's computers do the work.",
+   "start": 19.53,
+   "end": 23.907
+  },
+  {
+   "slide": 2,
+   "text": "Nothing to install, and it works on almost any computer.",
+   "start": 24.462,
+   "end": 27.83
+  },
+  {
+   "slide": 2,
+   "text": "All you need is a Google account.",
+   "start": 28.368,
+   "end": 30.019
+  },
+  {
+   "slide": 3,
+   "text": "A notebook is a page made of cells.",
+   "start": 30.928,
+   "end": 33.096
+  },
+  {
+   "slide": 3,
+   "text": "Code cells hold Python that you can run, one cell at a time.",
+   "start": 33.616,
+   "end": 37.596
+  },
+  {
+   "slide": 3,
+   "text": "Text cells hold notes and headings, so your code explains itself.",
+   "start": 38.26,
+   "end": 42.335
+  },
+  {
+   "slide": 3,
+   "text": "Run a cell, and its result appears right underneath.",
+   "start": 42.934,
+   "end": 46.055
+  },
+  {
+   "slide": 3,
+   "text": "That's why data scientists love notebooks: the code, the results and the story sit together.",
+   "start": 46.656,
+   "end": 52.992
+  },
+  {
+   "slide": 4,
+   "text": "Now here's the catch that trips up almost every beginner.",
+   "start": 54.032,
+   "end": 56.937
+  },
+  {
+   "slide": 4,
+   "text": "The computer Colab gives you is temporary.",
+   "start": 57.538,
+   "end": 59.988
+  },
+  {
+   "slide": 4,
+   "text": "Leave it idle, or keep it running for many hours, and Colab takes it back.",
+   "start": 60.501,
+   "end": 65.154
+  },
+  {
+   "slide": 4,
+   "text": "Any file you saved on that computer disappears with it.",
+   "start": 65.775,
+   "end": 69.008
+  },
+  {
+   "slide": 4,
+   "text": "So the golden rule is simple: anything you want to keep goes into Google Drive.",
+   "start": 69.578,
+   "end": 74.46
+  },
+  {
+   "slide": 5,
+   "text": "Here's what we'll set up together.",
+   "start": 75.451,
+   "end": 77.717
+  },
+  {
+   "slide": 5,
+   "text": "First, a folder in your Google Drive called workbench.",
+   "start": 78.013,
+   "end": 80.67
+  },
+  {
+   "slide": 5,
+   "text": "Second, a notebook saved inside it.",
+   "start": 81.168,
+   "end": 83.607
+  },
+  {
+   "slide": 5,
+   "text": "Third, a connection from the notebook to your Drive, so code can read and save files there.",
+   "start": 84.136,
+   "end": 89.884
+  },
+  {
+   "slide": 5,
+   "text": "Do these three things once, and every lab in this course starts from the same place.",
+   "start": 90.577,
+   "end": 95.634
+  }
+ ]
+}

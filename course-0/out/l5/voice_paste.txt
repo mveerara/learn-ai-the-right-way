@@ -1,0 +1,33 @@
+COURSE 0 · LESSON 5: sudo, root and staying safe  (voice: Bella, same settings)
+
+
+
+===== PART 1: slides 1-4 =====
+
+Root is the user who can do anything on a Linux machine, and sudo is how you borrow that power for one command. You'll type it often when you install GPU drivers and tools. Today: what it does, and how not to hurt yourself with it.
+
+A normal user can work with their own files, but can't change the system. That's a safety net: mistakes stay small. Root has no safety net. Root can install anything, change any file, and delete the whole system with one wrong command.
+
+sudo stands for superuser do. Put it in front of a command, and that one command runs as root. Linux asks for your own password, not root's, and only users on an approved list are allowed to use it. Then you're back to normal. That's much safer than logging in as root and staying there.
+
+Use sudo when you change the system: installing packages with apt, installing GPU drivers, changing system settings, or touching files that root owns. Don't use it for your own work: pip installs inside your virtual environment, editing your own files, running your Python scripts, or git. If a command works without sudo, run it without sudo.
+
+
+===== PART 2: slides 5-8 =====
+
+One mistake is so common it gets its own slide: sudo pip install. It installs packages into the system's own Python, which the operating system itself depends on, and it can break it. Instead, activate your project's virtual environment and run pip without sudo.
+
+Because sudo removes the safety net, read the whole command before you press Enter. Only paste commands from sources you trust. Be very wary of anything that downloads a script from the internet and pipes it straight into sudo bash. And check every path twice, especially with rm dash r.
+
+Here's why checking matters. rm dash r, tilde slash old project, deletes one folder. Add a single space after the slash, and the same command deletes your entire home folder, and then anything called old project. Linux does exactly what you type, not what you meant.
+
+Remember that whoami in Colab answered root? Colab gives you a throwaway machine, so it runs you as root, and you don't need sudo there. That makes it a safe place to practise. On real servers and on your own laptop, you'll be a normal user, and sudo is how you ask for more.
+
+
+===== PART 3: slides 9-11 =====
+
+Four habits keep you safe. Use the least power that works. Read before you run. Keep Python packages in virtual environments. And keep your work backed up in Drive and Git, so a mistake is an inconvenience, not a disaster.
+
+In the lab, you'll check who you are, install a small tool with apt, and practise reading commands before you run them. Prompts and hints, never the full answer.
+
+Let's recap. Root can do anything, and sudo borrows that power for one command. Use it to change the system, not for pip or your own files. Read every command before you run it, and check your paths. Colab runs you as root, so it's your safe practice ground. That completes Linux basics. Next, a new module: Git.

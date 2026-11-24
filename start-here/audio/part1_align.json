@@ -1,0 +1,114 @@
+{
+ "mp3": "/home/claude/l00/audio/part1.mp3",
+ "duration": 81.711,
+ "sents": [
+  {
+   "slide": 1,
+   "text": "Hello, and welcome to Learn AI the Right Way.",
+   "start": 0.0,
+   "end": 3.243
+  },
+  {
+   "slide": 1,
+   "text": "I'm Ria.",
+   "start": 3.664,
+   "end": 4.184
+  },
+  {
+   "slide": 1,
+   "text": "Before any lesson begins, let me take five minutes to show you the whole map: what you'll learn, how each lesson works, and the one short quiz you take before you start.",
+   "start": 4.785,
+   "end": 14.761
+  },
+  {
+   "slide": 2,
+   "text": "Here's the idea behind the name.",
+   "start": 15.345,
+   "end": 16.871
+  },
+  {
+   "slide": 2,
+   "text": "Most people jump straight to the exciting part, and get stuck on the basics underneath it.",
+   "start": 17.393,
+   "end": 22.211
+  },
+  {
+   "slide": 2,
+   "text": "We go the other way.",
+   "start": 22.782,
+   "end": 23.748
+  },
+  {
+   "slide": 2,
+   "text": "We build the foundations first, you practise everything with your own hands, and you check your understanding at every step.",
+   "start": 24.194,
+   "end": 31.249
+  },
+  {
+   "slide": 3,
+   "text": "Everything is laid out in the course catalogue, linked in the description.",
+   "start": 31.822,
+   "end": 35.509
+  },
+  {
+   "slide": 3,
+   "text": "There are thirteen short courses, in six tracks.",
+   "start": 36.106,
+   "end": 39.22
+  },
+  {
+   "slide": 3,
+   "text": "Getting Started sets up your tools.",
+   "start": 39.755,
+   "end": 41.603
+  },
+  {
+   "slide": 3,
+   "text": "Python for Data teaches the Python, charts and statistics you need.",
+   "start": 42.028,
+   "end": 46.148
+  },
+  {
+   "slide": 3,
+   "text": "Then come Classical Machine Learning, and Neural Networks and Deep Learning.",
+   "start": 46.67,
+   "end": 51.012
+  },
+  {
+   "slide": 3,
+   "text": "Running Real ML Projects shows how real work gets done.",
+   "start": 51.492,
+   "end": 55.206
+  },
+  {
+   "slide": 3,
+   "text": "And the last track takes you into large language models and generative AI.",
+   "start": 55.694,
+   "end": 59.92
+  },
+  {
+   "slide": 4,
+   "text": "Before all of that sits Course zero, the prep course.",
+   "start": 60.51,
+   "end": 63.781
+  },
+  {
+   "slide": 4,
+   "text": "It covers the tools every AI engineer uses daily: the Linux command line, file permissions, Git, how a GPU and its drivers fit together, and Python basics.",
+   "start": 64.255,
+   "end": 75.73
+  },
+  {
+   "slide": 4,
+   "text": "The harder topics get a video.",
+   "start": 76.281,
+   "end": 77.846
+  },
+  {
+   "slide": 4,
+   "text": "The rest come as a one-page cheatsheet with a short quiz.",
+   "start": 78.285,
+   "end": 81.711
+  }
+ ]
+}

@@ -1,0 +1,88 @@
+COURSE 0 YOUTUBE DETAILS: Lessons 1-5
+Video links between lessons get filled in once the videos are uploaded.
+
+
+==================== COURSE 0 · LESSON 1 ====================
+Title: Why Linux Runs AI | Course 0, Lesson 1 for Complete Beginners
+
+Description:
+Why does almost all AI run on Linux? What Linux is, where AI actually runs, and how to open a free Linux terminal in Colab in two minutes.
+
+▶ Guided lab, quiz and FAQ: https://claude.ai/artifact/EkUfoCHwmwVLEPnA1RYo3U
+▶ Stuck? Ask Arjun, our FAQ guide: https://claude.ai/artifact/6ykEguQuoSDHw2rMSKryVF
+▶ New here? Start with: https://youtu.be/W5zVEoP0nb0
+▶ Next: Moving around: files and folders: [link once uploaded]
+
+Chapters: added after the voice is recorded.
+
+Ria is the channel's animated presenter, with an AI-generated voice. The course is written and designed by Mukund Veeraraghavan.
+
+#LearnAI #Linux #DataScience
+
+==================== COURSE 0 · LESSON 2 ====================
+Title: Moving Around in Linux: Files and Folders | Course 0, Lesson 2
+
+Description:
+Find your way around the Linux file system: paths, cd, ls, mkdir, cp, mv, and how to delete safely when there is no recycle bin.
+
+▶ Guided lab, quiz and FAQ: https://claude.ai/artifact/X9eRahk6qfETj7k7WjKaCU
+▶ Stuck? Ask Arjun, our FAQ guide: https://claude.ai/artifact/6ykEguQuoSDHw2rMSKryVF
+▶ New here? Start with: https://youtu.be/W5zVEoP0nb0
+▶ Next: Wildcards, pipes and redirection: [link once uploaded]
+
+Chapters: added after the voice is recorded.
+
+Ria is the channel's animated presenter, with an AI-generated voice. The course is written and designed by Mukund Veeraraghavan.
+
+#LearnAI #Linux #DataScience
+
+==================== COURSE 0 · LESSON 3 ====================
+Title: Wildcards, Pipes and Redirection in Linux | Course 0, Lesson 3
+
+Description:
+Make Linux commands work together: wildcards for many files, redirection to save output, and pipes that answer real questions in one line.
+
+▶ Guided lab, quiz and FAQ: https://claude.ai/artifact/6Y4TiiuFiKP5nYK7BaioPM
+▶ Stuck? Ask Arjun, our FAQ guide: https://claude.ai/artifact/6ykEguQuoSDHw2rMSKryVF
+▶ New here? Start with: https://youtu.be/W5zVEoP0nb0
+▶ Next: Owners and permissions: [link once uploaded]
+
+Chapters: added after the voice is recorded.
+
+Ria is the channel's animated presenter, with an AI-generated voice. The course is written and designed by Mukund Veeraraghavan.
+
+#LearnAI #Linux #DataScience
+
+==================== COURSE 0 · LESSON 4 ====================
+Title: Linux File Permissions Explained: chmod and chown | Course 0, Lesson 4
+
+Description:
+Read and change Linux file permissions: owners, groups, r w x, chmod with letters and numbers, and how to fix Permission denied.
+
+▶ Guided lab, quiz and FAQ: https://claude.ai/artifact/VzxYBndyoeyFYSWsejhXiy
+▶ Stuck? Ask Arjun, our FAQ guide: https://claude.ai/artifact/6ykEguQuoSDHw2rMSKryVF
+▶ New here? Start with: https://youtu.be/W5zVEoP0nb0
+▶ Next: sudo, root and staying safe: [link once uploaded]
+
+Chapters: added after the voice is recorded.
+
+Ria is the channel's animated presenter, with an AI-generated voice. The course is written and designed by Mukund Veeraraghavan.
+
+#LearnAI #Linux #DataScience
+
+==================== COURSE 0 · LESSON 5 ====================
+Title: sudo and root in Linux: Use the Power Safely | Course 0, Lesson 5
+
+Description:
+sudo and root: what they are, when you need them, why you should never sudo pip, and the habits that keep you safe.
+
+▶ Guided lab, quiz and FAQ: https://claude.ai/artifact/VhDgxn7Fw2eRoCuRtdD2An
+▶ Stuck? Ask Arjun, our FAQ guide: https://claude.ai/artifact/6ykEguQuoSDHw2rMSKryVF
+▶ New here? Start with: https://youtu.be/W5zVEoP0nb0
+▶ Next: Git: commit, push and pull: [link once uploaded]
+
+Chapters: added after the voice is recorded.
+
+Ria is the channel's animated presenter, with an AI-generated voice. The course is written and designed by Mukund Veeraraghavan.
+
+#LearnAI #Linux #DataScience

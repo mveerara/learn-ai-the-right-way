@@ -1,0 +1,46 @@
+[
+ {
+  "n": 1,
+  "title": "Owners and permissions"
+ },
+ {
+  "n": 2,
+  "title": "Users, groups and root"
+ },
+ {
+  "n": 3,
+  "title": "Reading ls -l"
+ },
+ {
+  "n": 4,
+  "title": "r, w and x"
+ },
+ {
+  "n": 5,
+  "title": "Changing permissions: chmod"
+ },
+ {
+  "n": 6,
+  "title": "The number form"
+ },
+ {
+  "n": 7,
+  "title": "The classic error"
+ },
+ {
+  "n": 8,
+  "title": "Changing owners: chown"
+ },
+ {
+  "n": 9,
+  "title": "Why it matters for AI work"
+ },
+ {
+  "n": 10,
+  "title": "Your guided lab"
+ },
+ {
+  "n": 11,
+  "title": "Recap and your quiz"
+ }
+]

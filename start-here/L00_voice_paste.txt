@@ -1,0 +1,29 @@
+===== PART 1: slides 1-4 =====
+
+Hello, and welcome to Learn AI the Right Way. I'm Ria. Before any lesson begins, let me take five minutes to show you the whole map: what you'll learn, how each lesson works, and the one short quiz you take before you start.
+
+Here's the idea behind the name. Most people jump straight to the exciting part, and get stuck on the basics underneath it. We go the other way. We build the foundations first, you practise everything with your own hands, and you check your understanding at every step.
+
+Everything is laid out in the course catalogue, linked in the description. There are thirteen short courses, in six tracks. Getting Started sets up your tools. Python for Data teaches the Python, charts and statistics you need. Then come Classical Machine Learning, and Neural Networks and Deep Learning. Running Real ML Projects shows how real work gets done. And the last track takes you into large language models and generative AI.
+
+Before all of that sits Course zero, the prep course. It covers the tools every AI engineer uses daily: the Linux command line, file permissions, Git, how a GPU and its drivers fit together, and Python basics. The harder topics get a video. The rest come as a one-page cheatsheet with a short quiz.
+
+
+===== PART 2: slides 5-8 =====
+
+Every lesson follows the same pattern. You watch a short video. You do a guided lab, which gives you prompts and hints, but never the full code, because you learn by typing it yourself. Then you take a quiz, and the pass mark is eighty percent. And each lesson has its own FAQ, for the questions people ask most.
+
+Now, the entrance quiz. Why have one at all? Because almost every AI tool stands on a few basics. If a lesson says, install the GPU driver with sudo, and sudo is a mystery, you're stuck before the real lesson even starts. The quiz makes sure you have that ground under your feet. It's placement, not a filter. It tells you where to start.
+
+You'll find it in the course catalogue, under Where to start. Press the button that says, take the entrance quiz. It's about twenty easy questions, it takes around fifteen minutes, and it's free. If you learned these skills somewhere else, passing the quiz is all the proof you need.
+
+There are two outcomes. To pass, you need eighty percent overall, with no weak area. Then you register, and go straight to Course one. If you don't pass yet, that's completely fine. The quiz shows exactly which modules you missed. You take only those parts of Course zero, then retake the quiz. Nobody is turned away.
+
+
+===== PART 3: slides 9-11 =====
+
+What does it cost? Every video, quiz, cheatsheet and certificate is free. If you want extra practice, there are optional lab packs, with lower prices for students. The catalogue lists every price, and every purchase comes with a seven-day refund.
+
+And if you get stuck? There's no live support team. Instead, meet Arjun, our FAQ guide. Tell Arjun what went wrong, in your own words, and he'll point you to the matching answers from the lesson FAQs. If your question isn't answered yet, ask it in the comments, and common questions get added to the FAQ.
+
+So here's your first step. Open the catalogue in the description. Take the entrance quiz. Then follow your result: register and start Course one, or begin Course zero. Either way, I'll be with you in every lesson. See you there.

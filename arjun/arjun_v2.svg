@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800"><defs>
+ <radialGradient id="ajface" cx=".45" cy=".38" r=".75"><stop offset="0" stop-color="#C99470"/><stop offset=".65" stop-color="#B07C58"/><stop offset="1" stop-color="#8F5F40"/></radialGradient>
+ <linearGradient id="ajhair" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1E1714"/><stop offset="1" stop-color="#15100E"/></linearGradient>
+ <linearGradient id="ajshirt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1F3F66"/><stop offset=".5" stop-color="#2A5384"/><stop offset="1" stop-color="#1E3D63"/></linearGradient>
+</defs><rect width="600" height="800" fill="#EEF1F7"/>
+<!-- shirt -->
+<path d="M108 680 C 106 600, 118 532, 172 510 C 198 500, 222 494, 242 492 L 358 492 C 378 494, 402 500, 428 510 C 482 532, 494 600, 492 680 Z" fill="url(#ajshirt)"/>
+<path d="M146 524 C 162 590, 166 640, 164 680 M454 524 C 438 590, 434 640, 436 680" stroke="#18324F" stroke-width="3" fill="none" opacity=".7"/>
+<!-- neck -->
+<path d="M262 404 C 264 436, 262 452, 256 466 C 284 482, 316 482, 344 466 C 338 452, 336 436, 338 404 Z" fill="#8F5F40"/>
+<!-- open collar -->
+<path d="M240 494 L 300 540 L 360 494 L 342 470 L 300 506 L 258 470 Z" fill="#F2F4F7"/>
+<path d="M300 506 L 300 540" stroke="#C9D0DA" stroke-width="2"/>
+<path d="M256 466 C 278 484, 322 484, 344 466 L 300 506 Z" fill="#8F5F40"/>
+<!-- lanyard + badge -->
+<path d="M260 480 L 284 600 M340 480 L 316 600" stroke="#E8A33A" stroke-width="7" stroke-linecap="round" fill="none"/>
+<!-- head -->
+<path d="M300 204 C 366 204, 388 258, 386 316 C 384 372, 352 420, 300 426 C 248 420, 216 372, 214 316 C 212 258, 234 204, 300 204 Z" fill="url(#ajface)"/>
+<ellipse cx="216" cy="322" rx="11" ry="19" fill="#8F5F40"/><ellipse cx="384" cy="322" rx="11" ry="19" fill="#8F5F40"/>
+<!-- beard -->
+<path d="M222 336 C 226 392, 256 432, 300 434 C 344 432, 374 392, 378 336 C 368 364, 360 388, 340 396 C 324 384, 276 384, 260 396 C 240 388, 232 364, 222 336 Z" fill="#241A16" opacity=".9"/>
+<path d="M268 368 C 284 360, 316 360, 332 368 C 320 374, 280 374, 268 368 Z" fill="#241A16"/>
+<!-- mouth -->
+<path d="M274 384 q26 18 52 0 q-26 6 -52 0z" fill="#7A2F33"/>
+<path d="M280 385 q20 6 40 0 l-2 4 q-18 5 -36 0z" fill="#FFFFFF"/>
+<!-- nose -->
+<path d="M302 318 q-3 24 -12 32 q11 6 22 0" stroke="#7E5236" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+<!-- eyes -->
+<ellipse cx="264" cy="306" rx="16" ry="12" fill="#FFFFFF"/><ellipse cx="336" cy="306" rx="16" ry="12" fill="#FFFFFF"/>
+<circle cx="266" cy="307" r="9.5" fill="#3E2615"/><circle cx="338" cy="307" r="9.5" fill="#3E2615"/>
+<circle cx="266" cy="307" r="5" fill="#120B07"/><circle cx="338" cy="307" r="5" fill="#120B07"/>
+<circle cx="269" cy="303" r="3" fill="#fff"/><circle cx="341" cy="303" r="3" fill="#fff"/>
+<path d="M248 302 q16 -12 33 -2 M319 300 q17 -10 33 2" stroke="#1B110C" stroke-width="3" fill="none" stroke-linecap="round"/>
+<!-- brows: straight, thick -->
+<path d="M240 278 q24 -10 48 -4" stroke="#15100E" stroke-width="8" fill="none" stroke-linecap="round"/>
+<path d="M312 274 q24 -6 48 4" stroke="#15100E" stroke-width="8" fill="none" stroke-linecap="round"/>
+<!-- glasses -->
+<g stroke="#2B2F36" stroke-width="5" fill="none">
+ <rect x="236" y="286" width="58" height="42" rx="12"/><rect x="306" y="286" width="58" height="42" rx="12"/>
+ <path d="M294 302 q6 -5 12 0 M236 298 L 214 292 M364 298 L 386 292"/>
+</g>
+<!-- short hair -->
+<path d="M212 318 C 200 228, 246 176, 304 176 C 362 176, 404 222, 388 318 C 384 286, 378 262, 368 246 C 340 236, 300 232, 262 238 C 244 242, 232 248, 226 256 C 220 276, 214 296, 212 318 Z" fill="url(#ajhair)"/>
+<path d="M240 214 C 270 192, 330 188, 372 214 C 340 204, 280 204, 240 222 Z" fill="#3A2C26" opacity=".7"/>
+<!-- FAQ card held in hands -->
+<g transform="rotate(3 300 610)">
+ <rect x="236" y="566" width="128" height="88" rx="12" fill="#FFFFFF" stroke="#1F3F66" stroke-width="5"/>
+ <text x="300" y="624" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="34" fill="#1F3F66">FAQ</text>
+ <circle cx="352" cy="578" r="14" fill="#E8A33A"/><text x="352" y="586" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="20" fill="#fff">?</text>
+ <ellipse cx="246" cy="626" rx="12" ry="15" fill="#B07C58"/>
+ <ellipse cx="354" cy="626" rx="12" ry="15" fill="#B07C58"/>
+</g></svg>

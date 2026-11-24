@@ -1,0 +1,204 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Lesson Start here deck</title><style>
+:root{--teal:#0F7C77;--deep:#0B4F4C;--mint:#DDF0EE;--amber:#E8A33A;--ink:#1D2A2C;--paper:#F6FAF9}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;font-family:Inter,sans-serif;color:var(--ink)}
+.slide{position:relative;width:1920px;height:1080px;overflow:hidden;background:linear-gradient(180deg,#F6FAF9,#E7F3F1);margin:0 auto 20px}
+.hdr{position:absolute;left:0;right:0;top:0;height:74px;background:var(--deep);color:#DDF0EE;display:flex;align-items:center;justify-content:space-between;padding:0 56px;font:600 26px Inter}
+.hdr .br b{color:var(--amber)}
+.ttl{position:absolute;left:110px;top:120px;right:420px;font:700 68px 'Inter Display',Inter;color:var(--deep);letter-spacing:-.5px}
+.ttl:after{content:"";display:block;width:120px;height:8px;border-radius:4px;background:var(--amber);margin-top:22px}
+.body{position:absolute;left:110px;top:290px;right:420px;bottom:170px;display:flex;flex-direction:column;justify-content:center}
+.capzone{position:absolute;left:0;right:0;bottom:0;height:150px}
+.ria{position:absolute;right:40px;bottom:150px;width:340px;height:420px;border-radius:30px;overflow:hidden;background:linear-gradient(180deg,#E7F3F1,#CFE6E2);box-shadow:0 20px 50px rgba(0,0,0,.15);border:5px solid #fff}
+.ria .nm{position:absolute;left:0;right:0;bottom:0;background:var(--teal);color:#fff;font:600 24px Inter;text-align:center;padding:8px}
+.src{position:absolute;left:110px;bottom:118px;font:400 18px Inter;color:#7A9491}
+.bl{list-style:none;font-size:46px;line-height:1.35}
+.bl li{position:relative;padding-left:58px;margin:18px 0}
+.bl li:before{content:"";position:absolute;left:6px;top:22px;width:22px;height:22px;border-radius:6px;background:var(--teal)}
+.tiles{display:grid;gap:30px}
+.tile{background:#fff;border-radius:26px;padding:30px 30px 34px;box-shadow:0 14px 40px rgba(11,79,76,.10);display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.tl{font:700 38px Inter;color:var(--deep)}
+.ts{font:400 28px Inter;color:#4C6461}
+.quote{font:700 92px 'Inter Display',Inter;line-height:1.1;color:var(--deep)}
+.hl{color:var(--teal);background:linear-gradient(transparent 62%,rgba(232,163,58,.45) 62%)}
+.note{font:400 38px Inter;color:#3C5552;margin-top:40px;line-height:1.4}
+.note.c{text-align:center}
+.svt{font:700 40px Inter;fill:var(--deep)} .svt.w{fill:#fff}
+.svh{font:700 40px Inter;fill:var(--deep)} .svl{font:500 38px Inter;fill:var(--ink)} .svs{font:400 30px Inter;fill:#4C6461}.svs.w{fill:#DDF0EE}
+.terms{display:flex;flex-direction:column;gap:26px}
+.term{display:flex;gap:34px;align-items:center;background:#fff;border-radius:24px;padding:26px 34px;font-size:36px;line-height:1.35;box-shadow:0 10px 30px rgba(11,79,76,.08)}
+.tk{flex:0 0 120px;height:120px;border-radius:24px;background:var(--mint);color:var(--teal);font:800 50px Inter;display:grid;place-items:center;border:5px solid var(--teal)}
+.tk.dl{background:var(--teal);color:#fff}
+.two{display:flex;gap:60px;align-items:stretch}
+.cardx{flex:1;background:#fff;border-radius:28px;padding:44px;font-size:42px;line-height:1.45;border-top:16px solid}
+.cardx.bad{border-color:#B4462F}.cardx.good{border-color:#1E8B4C}
+.ch{font:800 54px Inter;margin-bottom:18px}
+.tb{border-collapse:separate;border-spacing:0;font-size:36px;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 10px 30px rgba(11,79,76,.08)}
+.tb th{background:var(--deep);color:#fff;padding:18px 28px;text-align:left}
+.tb td{padding:16px 28px;border-top:2px solid #E3ECEA}
+.tb .y{background:#FCEFD9}.tb th.y{background:var(--amber);color:var(--ink)}
+.tb.wide{width:100%}
+.kicker{font:600 34px Inter;color:var(--teal);letter-spacing:.5px;margin-bottom:26px}
+.big{font:800 112px 'Inter Display',Inter;line-height:1.02;color:var(--deep)}
+.sub{font:400 42px Inter;color:#3C5552;margin-top:34px}
+.quiz{margin-top:44px;background:var(--amber);border-radius:22px;padding:24px 34px;font:700 40px Inter;display:inline-block}
+.next{margin-top:26px;font-size:36px;color:#3C5552}
+.code{font:500 34px 'DejaVu Sans Mono',monospace;background:#0B2E2C;color:#DDF0EE;border-radius:20px;padding:26px 34px;line-height:1.5;white-space:pre}
+.code .c{color:#8FCBC3}
+.steps{counter-reset:s;list-style:none;font-size:40px;line-height:1.35}
+.steps li{counter-increment:s;position:relative;padding-left:84px;margin:20px 0}
+.steps li:before{content:counter(s);position:absolute;left:0;top:-2px;width:60px;height:60px;border-radius:16px;background:var(--teal);color:#fff;font:800 34px Inter;display:grid;place-items:center}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+ <linearGradient id="r4bgp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E7F3F1"/><stop offset="1" stop-color="#CFE6E2"/></linearGradient>
+ <radialGradient id="r4glowp" cx=".5" cy=".42" r=".5"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".9"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+ <linearGradient id="r4blzp" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7F868E"/><stop offset=".5" stop-color="#A3A9AF"/><stop offset="1" stop-color="#7C838B"/></linearGradient>
+ <radialGradient id="r4facep" cx=".45" cy=".38" r=".75"><stop offset="0" stop-color="#E4B48E"/><stop offset=".65" stop-color="#CF9A72"/><stop offset="1" stop-color="#B07A55"/></radialGradient>
+ <linearGradient id="r4hairp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D241A"/><stop offset="1" stop-color="#2B1912"/></linearGradient>
+<symbol id="ria" viewBox="0 0 600 800">
+<path d="M300 150 C 205 150, 180 225, 182 300 C 184 350, 168 380, 174 420 C 180 460, 160 490, 168 530 C 174 565, 188 585, 204 590 C 196 560, 208 535, 214 505 C 220 470, 212 440, 220 400 C 226 360, 216 320, 222 280 C 230 230, 260 200, 300 196 Z" fill="url(#r4hairp)"/>
+<path d="M300 150 C 395 150, 420 225, 418 300 C 416 350, 432 380, 426 420 C 420 460, 440 490, 432 530 C 426 565, 412 585, 396 590 C 404 560, 392 535, 386 505 C 380 470, 388 440, 380 400 C 374 360, 384 320, 378 280 C 370 230, 340 200, 300 196 Z" fill="url(#r4hairp)"/>
+<path d="M210 260 C 205 380, 214 520, 236 590 L 364 590 C 386 520, 395 380, 390 260 Z" fill="#2B1912"/>
+<path d="M118 680 C 116 610, 124 560, 176 540 C 200 532, 222 528, 240 526 L 360 526 C 378 528, 400 532, 424 540 C 476 560, 484 610, 482 680 Z" fill="url(#r4blzp)"/>
+<path d="M150 548 C 166 600, 170 640, 168 680 M450 548 C 434 600, 430 640, 432 680" stroke="#8A9097" stroke-width="3" fill="none" opacity=".6"/>
+<path d="M252 470 C 268 486, 332 486, 348 470 L 346 540 L 330 680 L 270 680 L 254 540 Z" fill="#1C1B21"/>
+<path d="M244 526 C 236 560, 236 600, 258 640 L 272 680 L 290 680 L 268 600 Z" fill="#B3B8BD" opacity=".6"/>
+<path d="M356 526 C 364 560, 364 600, 342 640 L 328 680 L 310 680 L 332 600 Z" fill="#B3B8BD" opacity=".6"/>
+<path d="M264 498 C 284 506, 316 506, 336 498" stroke="#9AA0A6" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M270 536 l -10 14 l 12 12 M330 536 l 10 14 l -12 12" stroke="#8A9097" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M276 410 C 278 440, 276 460, 270 476 C 290 490, 310 490, 330 476 C 324 460, 322 440, 324 410 Z" fill="#B07A55"/>
+<path d="M300 210 C 362 210, 384 262, 382 318 C 380 372, 348 416, 300 422 C 252 416, 220 372, 218 318 C 216 262, 238 210, 300 210 Z" fill="url(#r4facep)"/>
+<ellipse cx="220" cy="324" rx="10" ry="17" fill="#B07A55"/><ellipse cx="380" cy="324" rx="10" ry="17" fill="#B07A55"/>
+<circle cx="219" cy="348" r="5" fill="#E8C27A"/><circle cx="381" cy="348" r="5" fill="#E8C27A"/>
+<path d="M244 282 q22 -14 44 -5" stroke="#2B1912" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+<path d="M312 277 q22 -9 44 5" stroke="#2B1912" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+<ellipse cx="266" cy="310" rx="19" ry="15" fill="#FFFFFF"/>
+<ellipse cx="334" cy="310" rx="19" ry="15" fill="#FFFFFF"/>
+<circle cx="268" cy="311" r="11" fill="#5A3622"/><circle cx="336" cy="311" r="11" fill="#5A3622"/>
+<circle cx="268" cy="311" r="6" fill="#1D120C"/><circle cx="336" cy="311" r="6" fill="#1D120C"/>
+<circle cx="272" cy="306" r="3.5" fill="#fff"/><circle cx="340" cy="306" r="3.5" fill="#fff"/>
+<path d="M245 306 q21 -20 43 -2" stroke="#1B110C" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M312 304 q21 -18 43 2" stroke="#1B110C" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M246 304 l-6 -4 M354 304 l6 -4" stroke="#1B110C" stroke-width="3" stroke-linecap="round"/>
+<path d="M302 322 q-3 22 -10 30 q10 5 19 0" stroke="#B07A55" stroke-width="3" fill="none" stroke-linecap="round"/>
+<ellipse cx="250" cy="350" rx="16" ry="10" fill="#E07F6C" opacity=".25"/><ellipse cx="350" cy="350" rx="16" ry="10" fill="#E07F6C" opacity=".25"/>
+<path d="M268 372 q32 30 64 0 q-32 10 -64 0z" fill="#8E3B3E"/>
+<path d="M274 374 q26 9 52 0 l-2 5 q-24 7 -48 0z" fill="#FFFFFF"/>
+<path d="M268 372 q32 30 64 0" stroke="#B5605D" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M216 316 C 206 230, 252 182, 304 182 C 356 182, 396 222, 386 316 C 378 262, 356 228, 324 212 C 300 240, 262 258, 224 266 C 220 282, 218 300, 216 316 Z" fill="url(#r4hairp)"/>
+<path d="M320 196 C 296 226, 262 246, 232 254 C 252 218, 284 198, 320 190 Z" fill="#5A3626" opacity=".85"/>
+<path d="M226 420 C 210 460, 236 490, 222 530 C 214 556, 230 580, 252 590 C 240 560, 256 540, 250 510 C 244 480, 256 450, 246 420 Z" fill="url(#r4hairp)"/>
+<path d="M374 420 C 390 460, 364 490, 378 530 C 386 556, 370 580, 348 590 C 360 560, 344 540, 350 510 C 356 480, 344 450, 354 420 Z" fill="url(#r4hairp)"/>
+<g stroke="#5A3626" stroke-width="4" fill="none" stroke-linecap="round" opacity=".75">
+ <path d="M196 330 q-10 40 4 74 q10 30 -2 60"/><path d="M404 330 q10 40 -4 74 q-10 30 2 60"/>
+</g>
+<g transform="rotate(-4 300 600)">
+ <rect x="244" y="560" width="114" height="84" rx="10" fill="#2E3B40"/>
+ <rect x="253" y="569" width="96" height="66" rx="4" fill="#DDF0EE"/>
+ <path d="M262 621 L 286 600 L 302 611 L 322 588 L 338 595" stroke="#0F7C77" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <circle cx="338" cy="595" r="5" fill="#E8A33A"/>
+ <ellipse cx="256" cy="616" rx="11" ry="14" fill="#CF9A72"/>
+ <ellipse cx="346" cy="616" rx="11" ry="14" fill="#CF9A72"/>
+</g></symbol></defs></svg>
+<section class="slide" id="p1"><div class="hdr"><div class="br">Learn AI <b>the Right Way</b></div><div>Start here · 1/11</div></div>
+<div class="body" style="top:150px;right:760px">
+<div class="kicker">Learn AI the Right Way · Before Course 0</div>
+<h1 class="big">Start Here:<br>How This<br><span class="hl">Course Works</span></h1>
+<div class="sub">The map, the lessons, and your entrance quiz.</div></div><svg viewBox="60 120 480 680" style="position:absolute;right:120px;top:130px;width:620px;height:878px"><use href="#ria" x="0" y="0" width="600" height="800"/></svg><div class="capzone"></div></section><section class="slide" id="p2"><div class="hdr"><div class="br">Learn AI <b>the Right Way</b></div><div>Start here · 2/11</div></div>
+<div class="ttl">The right way: foundations first</div><div class="body"><div class="tiles" style="grid-template-columns:repeat(3,1fr)"><div class="tile"><svg viewBox="0 0 120 120" width="110" height="110" style="color:#0F7C77"><path d="M60 18 106 42 60 66 14 42z" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 62l46 24 46-24M14 82l46 24 46-24" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="tl">Foundations first</div><div class="ts">Basics before the exciting part</div></div><div class="tile"><svg viewBox="0 0 120 120" width="110" height="110" style="color:#0F7C77"><path d="M40 104V56a8 8 0 0 1 16 0v-24a8 8 0 0 1 16 0v26a8 8 0 0 1 16 0v8a8 8 0 0 1 16 0v18c0 14-10 26-26 26H58c-10 0-18-8-18-18z" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="tl">Hands on</div><div class="ts">You type every line</div></div><div class="tile"><svg viewBox="0 0 120 120" width="110" height="110" style="color:#0F7C77"><circle cx="60" cy="60" r="44" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M38 62l16 16 30-34" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="tl">Check as you go</div><div class="ts">A quiz after every lesson</div></div></div></div><div class="ria"><svg viewBox="70 165 460 570" style="width:100%;height:100%"><use href="#ria" x="0" y="0" width="600" height="800"/></svg><div class="nm">Ria</div></div><div class="capzone"></div></section><section class="slide" id="p3"><div class="hdr"><div class="br">Learn AI <b>the Right Way</b></div><div>Start here · 3/11</div></div>
+<div class="ttl">What you&#x27;ll learn: 13 courses, 6 tracks</div><div class="body"><table class="tb wide" style="font-size:32px"><tr><td style="width:60px;color:#0F7C77;font-weight:800">1</td><td><b>Getting Started</b></td><td style="color:#4C6461">Prep course, then your workbench</td></tr><tr><td style="width:60px;color:#0F7C77;font-weight:800">2</td><td><b>Python for Data</b></td><td style="color:#4C6461">Python, charts, statistics</td></tr><tr><td style="width:60px;color:#0F7C77;font-weight:800">3</td><td><b>Classical Machine Learning</b></td><td style="color:#4C6461">Machine learning from zero</td></tr><tr><td style="width:60px;color:#0F7C77;font-weight:800">4</td><td><b>Neural Networks & Deep Learning</b></td><td style="color:#4C6461">Networks, CNNs, sequences</td></tr><tr><td style="width:60px;color:#0F7C77;font-weight:800">5</td><td><b>Running Real ML Projects</b></td><td style="color:#4C6461">Strategy, big data, case studies</td></tr><tr><td style="width:60px;color:#0F7C77;font-weight:800">6</td><td><b>NLP, LLMs & Generative AI</b></td><td style="color:#4C6461">Large language models from zero</td></tr></table></div><div class="ria"><svg viewBox="70 165 460 570" style="width:100%;height:100%"><use href="#ria" x="0" y="0" width="600" height="800"/></svg><div class="nm">Ria</div></div><div class="capzone"></div></section><section class="slide" id="p4"><div class="hdr"><div class="br">Learn AI <b>the Right Way</b></div><div>Start here · 4/11</div></div>
+<div class="ttl">Course 0: the prep course</div><div class="body">
+<div class="two">
+ <div class="cardx good"><div class="ch">Video</div>Linux command line<br>File permissions<br>Git<br>The GPU stack<br>Python basics</div>
+ <div class="cardx" style="border-color:#E8A33A"><div class="ch">Cheatsheet + quiz</div>Installing software<br>Environments<br>Networks and SSH<br>Containers, cloud</div>
+</div></div><div class="ria"><svg viewBox="70 165 460 570" style="width:100%;height:100%"><use href="#ria" x="0" y="0" width="600" height="800"/></svg><div class="nm">Ria</div></div><div class="capzone"></div></section><section class="slide" id="p5"><div class="hdr"><div class="br">Learn AI <b>the Right Way</b></div><div>Start here · 5/11</div></div>
+<div class="ttl">How every lesson works</div><div class="body">
+<ol class="steps">
+ <li><b>Watch</b> a short video</li>
+ <li><b>Guided lab</b>: prompts and hints, never the full code</li>
+ <li><b>Quiz</b>: pass mark 80%</li>
+ <li><b>FAQ</b>: answers to the common questions</li>
+</ol></div><div class="ria"><svg viewBox="70 165 460 570" style="width:100%;height:100%"><use href="#ria" x="0" y="0" width="600" height="800"/></svg><div class="nm">Ria</div></div><div class="capzone"></div></section><section class="slide" id="p6"><div class="hdr"><div class="br">Learn AI <b>the Right Way</b></div><div>Start here · 6/11</div></div>
+<div class="ttl">Why an entrance quiz?</div><div class="body">
+<div class="code"><span class="c"># A real step from a later lesson</span>
+sudo apt install nvidia-driver</div>
+<div class="note">If <b>sudo</b> is a mystery, you are stuck before the lesson starts.</div>
+<div class="note c" style="margin-top:30px"><span class="hl">Placement, not a filter.</span> It tells you where to start.</div></div><div class="ria"><svg viewBox="70 165 460 570" style="width:100%;height:100%"><use href="#ria" x="0" y="0" width="600" height="800"/></svg><div class="nm">Ria</div></div><div class="capzone"></div></section><section class="slide" id="p7"><div class="hdr"><div class="br">Learn AI <b>the Right Way</b></div><div>Start here · 7/11</div></div>
+<div class="ttl">Where you take it</div><div class="body">
+<ol class="steps">
+ <li>Open the <b>course catalogue</b> (link in the description)</li>
+ <li>Under <b>Where to start</b>, press <b>Take the entrance quiz</b></li>
+ <li>About <b>20 easy questions</b>, 15 minutes, free</li>
+</ol>
+<div class="note">Learned it elsewhere? Passing is all the proof you need.</div></div><div class="ria"><svg viewBox="70 165 460 570" style="width:100%;height:100%"><use href="#ria" x="0" y="0" width="600" height="800"/></svg><div class="nm">Ria</div></div><div class="capzone"></div></section><section class="slide" id="p8"><div class="hdr"><div class="br">Learn AI <b>the Right Way</b></div><div>Start here · 8/11</div></div>
+<div class="ttl">Two outcomes</div><div class="body">
+<div class="two">
+ <div class="cardx good"><div class="ch">Passed</div>80% overall,<br>no weak area<br><b>Register, start Course 1</b></div>
+ <div class="cardx" style="border-color:#E8A33A"><div class="ch">Not yet</div>See the modules you missed<br>Take only those in Course 0<br><b>Retake the quiz</b></div>
+</div>
+<div class="note c">Nobody is turned away.</div></div><div class="ria"><svg viewBox="70 165 460 570" style="width:100%;height:100%"><use href="#ria" x="0" y="0" width="600" height="800"/></svg><div class="nm">Ria</div></div><div class="capzone"></div></section><section class="slide" id="p9"><div class="hdr"><div class="br">Learn AI <b>the Right Way</b></div><div>Start here · 9/11</div></div>
+<div class="ttl">What it costs</div><div class="body"><ul class="bl"><li>Videos, quizzes, cheatsheets, certificate: <b>free</b></li><li>Optional lab packs for extra practice</li><li><b>Lower prices for students</b></li><li>Every price in the catalogue · 7-day refund</li></ul></div><div class="ria"><svg viewBox="70 165 460 570" style="width:100%;height:100%"><use href="#ria" x="0" y="0" width="600" height="800"/></svg><div class="nm">Ria</div></div><div class="capzone"></div></section><section class="slide" id="p10"><div class="hdr"><div class="br">Learn AI <b>the Right Way</b></div><div>Start here · 10/11</div></div>
+<div class="ttl">Stuck? Ask Arjun</div><div class="body">
+<div class="two" style="align-items:center">
+ <div id="arjun" style="flex:0 0 360px;height:420px;background:#fff;border-radius:30px;overflow:hidden;box-shadow:0 14px 40px rgba(11,79,76,.10)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="70 140 460 540" width="360" height="420" preserveAspectRatio="xMidYMax slice"><defs>
+ <radialGradient id="ajface" cx=".45" cy=".38" r=".75"><stop offset="0" stop-color="#C99470"/><stop offset=".65" stop-color="#B07C58"/><stop offset="1" stop-color="#8F5F40"/></radialGradient>
+ <linearGradient id="ajhair" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1E1714"/><stop offset="1" stop-color="#15100E"/></linearGradient>
+ <linearGradient id="ajshirt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1F3F66"/><stop offset=".5" stop-color="#2A5384"/><stop offset="1" stop-color="#1E3D63"/></linearGradient>
+</defs><rect width="600" height="800" fill="#EEF1F7"/>
+<!-- shirt -->
+<path d="M108 680 C 106 600, 118 532, 172 510 C 198 500, 222 494, 242 492 L 358 492 C 378 494, 402 500, 428 510 C 482 532, 494 600, 492 680 Z" fill="url(#ajshirt)"/>
+<path d="M146 524 C 162 590, 166 640, 164 680 M454 524 C 438 590, 434 640, 436 680" stroke="#18324F" stroke-width="3" fill="none" opacity=".7"/>
+<!-- neck -->
+<path d="M262 404 C 264 436, 262 452, 256 466 C 284 482, 316 482, 344 466 C 338 452, 336 436, 338 404 Z" fill="#8F5F40"/>
+<!-- open collar -->
+<path d="M240 494 L 300 540 L 360 494 L 342 470 L 300 506 L 258 470 Z" fill="#F2F4F7"/>
+<path d="M300 506 L 300 540" stroke="#C9D0DA" stroke-width="2"/>
+<path d="M256 466 C 278 484, 322 484, 344 466 L 300 506 Z" fill="#8F5F40"/>
+<!-- lanyard + badge -->
+<path d="M260 480 L 284 600 M340 480 L 316 600" stroke="#E8A33A" stroke-width="7" stroke-linecap="round" fill="none"/>
+<!-- head -->
+<path d="M300 204 C 366 204, 388 258, 386 316 C 384 372, 352 420, 300 426 C 248 420, 216 372, 214 316 C 212 258, 234 204, 300 204 Z" fill="url(#ajface)"/>
+<ellipse cx="216" cy="322" rx="11" ry="19" fill="#8F5F40"/><ellipse cx="384" cy="322" rx="11" ry="19" fill="#8F5F40"/>
+<!-- beard -->
+<path d="M222 336 C 226 392, 256 432, 300 434 C 344 432, 374 392, 378 336 C 368 364, 360 388, 340 396 C 324 384, 276 384, 260 396 C 240 388, 232 364, 222 336 Z" fill="#241A16" opacity=".9"/>
+<path d="M268 368 C 284 360, 316 360, 332 368 C 320 374, 280 374, 268 368 Z" fill="#241A16"/>
+<!-- mouth -->
+<path d="M274 384 q26 18 52 0 q-26 6 -52 0z" fill="#7A2F33"/>
+<path d="M280 385 q20 6 40 0 l-2 4 q-18 5 -36 0z" fill="#FFFFFF"/>
+<!-- nose -->
+<path d="M302 318 q-3 24 -12 32 q11 6 22 0" stroke="#7E5236" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+<!-- eyes -->
+<ellipse cx="264" cy="306" rx="16" ry="12" fill="#FFFFFF"/><ellipse cx="336" cy="306" rx="16" ry="12" fill="#FFFFFF"/>
+<circle cx="266" cy="307" r="9.5" fill="#3E2615"/><circle cx="338" cy="307" r="9.5" fill="#3E2615"/>
+<circle cx="266" cy="307" r="5" fill="#120B07"/><circle cx="338" cy="307" r="5" fill="#120B07"/>
+<circle cx="269" cy="303" r="3" fill="#fff"/><circle cx="341" cy="303" r="3" fill="#fff"/>
+<path d="M248 302 q16 -12 33 -2 M319 300 q17 -10 33 2" stroke="#1B110C" stroke-width="3" fill="none" stroke-linecap="round"/>
+<!-- brows: straight, thick -->
+<path d="M240 278 q24 -10 48 -4" stroke="#15100E" stroke-width="8" fill="none" stroke-linecap="round"/>
+<path d="M312 274 q24 -6 48 4" stroke="#15100E" stroke-width="8" fill="none" stroke-linecap="round"/>
+<!-- glasses -->
+<g stroke="#2B2F36" stroke-width="5" fill="none">
+ <rect x="236" y="286" width="58" height="42" rx="12"/><rect x="306" y="286" width="58" height="42" rx="12"/>
+ <path d="M294 302 q6 -5 12 0 M236 298 L 214 292 M364 298 L 386 292"/>
+</g>
+<!-- short hair -->
+<path d="M212 318 C 200 228, 246 176, 304 176 C 362 176, 404 222, 388 318 C 384 286, 378 262, 368 246 C 340 236, 300 232, 262 238 C 244 242, 232 248, 226 256 C 220 276, 214 296, 212 318 Z" fill="url(#ajhair)"/>
+<path d="M240 214 C 270 192, 330 188, 372 214 C 340 204, 280 204, 240 222 Z" fill="#3A2C26" opacity=".7"/>
+<!-- FAQ card held in hands -->
+<g transform="rotate(3 300 610)">
+ <rect x="236" y="566" width="128" height="88" rx="12" fill="#FFFFFF" stroke="#1F3F66" stroke-width="5"/>
+ <text x="300" y="624" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="34" fill="#1F3F66">FAQ</text>
+ <circle cx="352" cy="578" r="14" fill="#E8A33A"/><text x="352" y="586" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="20" fill="#fff">?</text>
+ <ellipse cx="246" cy="626" rx="12" ry="15" fill="#B07C58"/>
+ <ellipse cx="354" cy="626" rx="12" ry="15" fill="#B07C58"/>
+</g></svg>
+</div>
+ <div style="flex:1"><ul class="bl"><li>Arjun is our <b>FAQ guide</b></li><li>Describe the problem in your words</li><li>He points you to matching FAQ answers</li><li>Not answered? Ask in the comments</li></ul></div>
+</div></div><div class="ria"><svg viewBox="70 165 460 570" style="width:100%;height:100%"><use href="#ria" x="0" y="0" width="600" height="800"/></svg><div class="nm">Ria</div></div><div class="capzone"></div></section><section class="slide" id="p11"><div class="hdr"><div class="br">Learn AI <b>the Right Way</b></div><div>Start here · 11/11</div></div>
+<div class="ttl">Your first step</div><div class="body" style="top:250px;bottom:150px;font-size:.9em">
+<style>#p11 .body{top:260px;bottom:auto;justify-content:flex-start}</style>
+<div class="terms">
+ <div class="term" style="padding:16px 30px"><div style="flex-basis:96px;height:96px" class="tk">1</div><div>Open the course catalogue in the description</div></div>
+ <div class="term" style="padding:16px 30px"><div style="flex-basis:96px;height:96px" class="tk">2</div><div>Take the entrance quiz</div></div>
+ <div class="term" style="padding:16px 30px"><div style="flex-basis:96px;height:96px" class="tk dl">3</div><div>Passed: register, start Course 1 · Not yet: begin Course 0</div></div>
+</div></div><div class="ria"><svg viewBox="70 165 460 570" style="width:100%;height:100%"><use href="#ria" x="0" y="0" width="600" height="800"/></svg><div class="nm">Ria</div></div><div class="capzone"></div></section></body></html>

@@ -1,0 +1,35 @@
+COURSE 0 · LESSON 1: Why Linux Runs AI  (voice: Bella, same settings)
+
+
+
+===== PART 1: slides 1-4 =====
+
+Welcome to Course zero, the prep course. Before we train a single model, we learn the ground every AI tool stands on, and it starts with Linux. In this lesson: what Linux is, why almost all AI runs on it, and how to open a Linux terminal in two minutes, for free.
+
+Linux is an operating system, like Windows or macOS: the layer that runs a computer's hardware and its programs. It's free and open source, which means anyone can use it, read its code and change it. You may never have seen it, but you use it every day: it runs most of the web's servers, and Android is built on it.
+
+Now here's why it matters for AI. When you train a model in the cloud, rent a GPU machine, or run a notebook in Colab, the computer underneath is almost always Linux. For years now, every one of the world's five hundred fastest supercomputers has run Linux. So the instructions you'll meet in tutorials, papers and real jobs are written for Linux.
+
+Why Linux? It costs nothing, so it can run on thousands of machines at once. It was built for servers, so it works well with no screen at all. GPU and AI tools are built and tested for it. And everything in Linux can be done by typing commands, which means it can be written into scripts and repeated exactly.
+
+
+===== PART 2: slides 5-8 =====
+
+On a server, there's no mouse and no desktop. You talk to the computer through the terminal: you type a command, press Enter, and it answers in text. It looks old-fashioned, but it's fast and exact, and it works the same on your laptop, in Colab, or on a GPU server on the other side of the world.
+
+Every command has the same shape. First the command itself: the action. Then options, which start with a dash and change how it behaves. Then arguments: what to act on, like a folder or a file. So ls, dash l, slash content means: list, in long form, the folder called content.
+
+You don't need to install anything. The Colab notebook from Lesson three already runs on a Linux computer. In a code cell, start a line with an exclamation mark, and Colab sends it to Linux instead of Python. Try exclamation pwd, and exclamation whoami.
+
+Here are your first three. pwd prints the working directory: where you are. ls lists what's in it. And whoami tells you which user you are. In Colab, whoami answers root: the all-powerful administrator. We'll see why that matters in the lesson on sudo.
+
+
+===== PART 3: slides 9-12 =====
+
+Later, you'll want Linux on your own laptop. On Windows, the Windows Subsystem for Linux gives you a real Ubuntu terminal, installed with a single command. A Mac's Terminal is a close cousin of Linux and works almost the same way. But for now, Colab is all you need.
+
+You never have to memorise everything. Most commands explain themselves: add dash dash help after a command to see its options. On a full Linux system, man, short for manual, opens the complete guide; press q to leave it. Reading help is a real skill, and every engineer uses it every day.
+
+Your lab is in the description. You'll open Colab, run your first Linux commands, and find out exactly what kind of machine Google is lending you. Prompts and hints, never the full answer.
+
+Let's recap. Linux runs almost all AI computing, from Colab to supercomputers. You talk to it through the terminal, with commands made of an action, options and arguments. And you've met pwd, ls, whoami and dash dash help. Take the quiz in the description, then next time, we learn to move around the file system. See you there.

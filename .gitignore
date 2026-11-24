@@ -1,0 +1,9 @@
+*.mp4
+*.wav
+*.pyc
+__pycache__/
+*.tar.gz
+.env
+*secret*
+*credentials*
+responses*.csv

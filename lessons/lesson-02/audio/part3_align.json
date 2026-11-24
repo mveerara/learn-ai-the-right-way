@@ -1,0 +1,156 @@
+{
+ "mp3": "/home/claude/l02/audio/part3.mp3",
+ "duration": 91.480813,
+ "sents": [
+  {
+   "slide": 10,
+   "text": "So what do you need?",
+   "start": 0.0,
+   "end": 1.123
+  },
+  {
+   "slide": 10,
+   "text": "For the next lesson, just a Google account and a web browser.",
+   "start": 1.609,
+   "end": 4.859
+  },
+  {
+   "slide": 10,
+   "text": "Soon, a free GitHub account.",
+   "start": 5.31,
+   "end": 7.027
+  },
+  {
+   "slide": 10,
+   "text": "And for the laptop lessons, any laptop with eight gigabytes of memory will do, and sixteen is comfortable.",
+   "start": 7.455,
+   "end": 13.585
+  },
+  {
+   "slide": 10,
+   "text": "No laptop?",
+   "start": 14.069,
+   "end": 14.729
+  },
+  {
+   "slide": 10,
+   "text": "No problem.",
+   "start": 15.191,
+   "end": 15.821
+  },
+  {
+   "slide": 10,
+   "text": "The first courses run entirely in your browser, even on a tablet.",
+   "start": 16.258,
+   "end": 20.154
+  },
+  {
+   "slide": 11,
+   "text": "Every lab in this series tells you which step of the workbench it uses.",
+   "start": 20.625,
+   "end": 24.49
+  },
+  {
+   "slide": 11,
+   "text": "Labs start on a small sample of data, then scale up, so you see for yourself why tools change with size.",
+   "start": 24.939,
+   "end": 31.834
+  },
+  {
+   "slide": 11,
+   "text": "And labs never hand you the full code.",
+   "start": 32.301,
+   "end": 34.428
+  },
+  {
+   "slide": 11,
+   "text": "Instead, they prompt you one step at a time: what to install, what to load, what to try next.",
+   "start": 34.85,
+   "end": 41.439
+  },
+  {
+   "slide": 11,
+   "text": "You build it, so you understand it.",
+   "start": 41.877,
+   "end": 43.937
+  },
+  {
+   "slide": 12,
+   "text": "One more thing, and it's the same lesson as last time.",
+   "start": 44.429,
+   "end": 47.351
+  },
+  {
+   "slide": 12,
+   "text": "Simpler wins.",
+   "start": 47.807,
+   "end": 48.962
+  },
+  {
+   "slide": 12,
+   "text": "Start in Colab.",
+   "start": 49.396,
+   "end": 50.527
+  },
+  {
+   "slide": 12,
+   "text": "Move to your laptop when you want to work offline.",
+   "start": 50.955,
+   "end": 53.398
+  },
+  {
+   "slide": 12,
+   "text": "And climb to the bigger steps only when your data truly needs them.",
+   "start": 53.822,
+   "end": 57.731
+  },
+  {
+   "slide": 12,
+   "text": "Don't build a data centre to analyse a spreadsheet.",
+   "start": 58.215,
+   "end": 60.739
+  },
+  {
+   "slide": 13,
+   "text": "Let's recap.",
+   "start": 61.281,
+   "end": 62.007
+  },
+  {
+   "slide": 13,
+   "text": "Your workbench is one setup for every course and every job.",
+   "start": 62.476,
+   "end": 66.297
+  },
+  {
+   "slide": 13,
+   "text": "It lives online and offline, and all your work sits in one GitHub repository called workbench.",
+   "start": 66.735,
+   "end": 73.264
+  },
+  {
+   "slide": 13,
+   "text": "It grows in five steps as your data grows, and every step mirrors the tools real companies use.",
+   "start": 73.743,
+   "end": 80.197
+  },
+  {
+   "slide": 13,
+   "text": "Now try the five-question quiz in the description.",
+   "start": 80.759,
+   "end": 83.351
+  },
+  {
+   "slide": 13,
+   "text": "Next time, we build step one: Google Colab with Google Drive, so your work is saved for good.",
+   "start": 83.842,
+   "end": 90.173
+  },
+  {
+   "slide": 13,
+   "text": "See you there.",
+   "start": 90.643,
+   "end": 91.481
+  }
+ ]
+}
