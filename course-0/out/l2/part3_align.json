@@ -1,0 +1,90 @@
+{
+ "mp3": "/home/claude/c00/out/l2/audio/part3.mp3",
+ "duration": 78.602438,
+ "sents": [
+  {
+   "slide": 10,
+   "text": "To look inside a file, cat prints the whole thing.",
+   "start": 0.0,
+   "end": 3.248
+  },
+  {
+   "slide": 10,
+   "text": "For big files, head shows the first lines and tail the last ones; dash n sets how many.",
+   "start": 3.839,
+   "end": 9.951
+  },
+  {
+   "slide": 10,
+   "text": "And wc dash l counts the lines, which is a quick way to see how many rows a data file has.",
+   "start": 10.417,
+   "end": 16.383
+  },
+  {
+   "slide": 11,
+   "text": "Three keys make you fast in any terminal.",
+   "start": 16.959,
+   "end": 19.608
+  },
+  {
+   "slide": 11,
+   "text": "Tab completes file and folder names, so you rarely type them in full.",
+   "start": 20.185,
+   "end": 24.406
+  },
+  {
+   "slide": 11,
+   "text": "The up arrow brings back your last command.",
+   "start": 24.997,
+   "end": 27.391
+  },
+  {
+   "slide": 11,
+   "text": "And Control C stops a command that's running, or one that's taking too long.",
+   "start": 27.837,
+   "end": 32.364
+  },
+  {
+   "slide": 12,
+   "text": "In the lab, you'll explore Colab's sample data, build a project folder, copy a dataset into it and count its rows, all from the terminal.",
+   "start": 33.039,
+   "end": 41.924
+  },
+  {
+   "slide": 12,
+   "text": "Prompts and hints, never the full answer.",
+   "start": 42.526,
+   "end": 45.38
+  },
+  {
+   "slide": 13,
+   "text": "Let's recap.",
+   "start": 45.965,
+   "end": 46.687
+  },
+  {
+   "slide": 13,
+   "text": "Linux is one tree starting at slash, and paths are absolute or relative, with dot, dot dot and tilde as shortcuts.",
+   "start": 47.27,
+   "end": 58.919
+  },
+  {
+   "slide": 13,
+   "text": "You move with cd, look with ls, make with mkdir and touch, copy and move with cp and mv, and read with cat, head, tail and wc.",
+   "start": 59.253,
+   "end": 68.204
+  },
+  {
+   "slide": 13,
+   "text": "And rm has no recycle bin, so look first.",
+   "start": 68.741,
+   "end": 70.927
+  },
+  {
+   "slide": 13,
+   "text": "Next time: wildcards, pipes and redirection, where the terminal gets powerful.",
+   "start": 71.175,
+   "end": 78.602
+  }
+ ]
+}

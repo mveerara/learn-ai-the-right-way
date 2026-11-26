@@ -1,0 +1,108 @@
+{
+ "mp3": "/home/claude/c00/out/l1/audio/part3.mp3",
+ "duration": 76.199125,
+ "sents": [
+  {
+   "slide": 9,
+   "text": "Later, you'll want Linux on your own laptop.",
+   "start": 0.0,
+   "end": 2.501
+  },
+  {
+   "slide": 9,
+   "text": "On Windows, the Windows Subsystem for Linux gives you a real Ubuntu terminal, installed with a single command.",
+   "start": 3.023,
+   "end": 9.836
+  },
+  {
+   "slide": 9,
+   "text": "A Mac's Terminal is a close cousin of Linux and works almost the same way.",
+   "start": 10.414,
+   "end": 15.866
+  },
+  {
+   "slide": 9,
+   "text": "But for now, Colab is all you need.",
+   "start": 16.149,
+   "end": 17.643
+  },
+  {
+   "slide": 10,
+   "text": "You never have to memorise everything.",
+   "start": 18.158,
+   "end": 22.455
+  },
+  {
+   "slide": 10,
+   "text": "Most commands explain themselves: add dash dash help after a command to see its options.",
+   "start": 22.958,
+   "end": 28.274
+  },
+  {
+   "slide": 10,
+   "text": "On a full Linux system, man, short for manual, opens the complete guide; press q to leave it.",
+   "start": 28.517,
+   "end": 33.679
+  },
+  {
+   "slide": 10,
+   "text": "Reading help is a real skill, and every engineer uses it every day.",
+   "start": 34.312,
+   "end": 38.8
+  },
+  {
+   "slide": 11,
+   "text": "Your lab is in the description.",
+   "start": 39.437,
+   "end": 41.019
+  },
+  {
+   "slide": 11,
+   "text": "You'll open Colab, run your first Linux commands, and find out exactly what kind of machine Google is lending you.",
+   "start": 41.459,
+   "end": 48.367
+  },
+  {
+   "slide": 11,
+   "text": "Prompts and hints, never the full answer.",
+   "start": 48.905,
+   "end": 51.681
+  },
+  {
+   "slide": 12,
+   "text": "Let's recap.",
+   "start": 52.229,
+   "end": 52.984
+  },
+  {
+   "slide": 12,
+   "text": "Linux runs almost all AI computing, from Colab to supercomputers.",
+   "start": 53.538,
+   "end": 58.39
+  },
+  {
+   "slide": 12,
+   "text": "You talk to it through the terminal, with commands made of an action, options and arguments.",
+   "start": 58.912,
+   "end": 66.12
+  },
+  {
+   "slide": 12,
+   "text": "And you've met pwd, ls, whoami and dash dash help.",
+   "start": 66.355,
+   "end": 69.29
+  },
+  {
+   "slide": 12,
+   "text": "Take the quiz in the description, then next time, we learn to move around the file system.",
+   "start": 69.92,
+   "end": 74.791
+  },
+  {
+   "slide": 12,
+   "text": "See you there.",
+   "start": 75.285,
+   "end": 75.963
+  }
+ ]
+}

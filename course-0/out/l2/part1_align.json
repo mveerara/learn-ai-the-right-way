@@ -1,0 +1,120 @@
+{
+ "mp3": "/home/claude/c00/out/l2/audio/part1.mp3",
+ "duration": 92.760813,
+ "sents": [
+  {
+   "slide": 1,
+   "text": "Last time you met the terminal.",
+   "start": 0.0,
+   "end": 1.516
+  },
+  {
+   "slide": 1,
+   "text": "Today you learn to move around in it: where files live, how to get from one folder to another, and how to make, copy, move and delete things, all without a mouse.",
+   "start": 1.934,
+   "end": 16.601
+  },
+  {
+   "slide": 2,
+   "text": "Linux keeps everything in one big tree.",
+   "start": 17.151,
+   "end": 19.147
+  },
+  {
+   "slide": 2,
+   "text": "At the very top is the root folder, written as a single forward slash.",
+   "start": 19.439,
+   "end": 23.536
+  },
+  {
+   "slide": 2,
+   "text": "Everything else hangs below it: home folders for users, settings in a folder called etc, programs in usr.",
+   "start": 23.989,
+   "end": 31.582
+  },
+  {
+   "slide": 2,
+   "text": "In Colab, your work sits in slash content.",
+   "start": 31.848,
+   "end": 34.007
+  },
+  {
+   "slide": 3,
+   "text": "A path is the address of a file.",
+   "start": 34.894,
+   "end": 36.897
+  },
+  {
+   "slide": 3,
+   "text": "An absolute path starts from the root, with a slash, and works from anywhere.",
+   "start": 37.389,
+   "end": 42.218
+  },
+  {
+   "slide": 3,
+   "text": "A relative path starts from where you are now.",
+   "start": 42.818,
+   "end": 45.316
+  },
+  {
+   "slide": 3,
+   "text": "If you're already in slash content, then sample data, slash, README dot md points to the same file.",
+   "start": 45.87,
+   "end": 53.269
+  },
+  {
+   "slide": 4,
+   "text": "Three shortcuts save a lot of typing.",
+   "start": 54.252,
+   "end": 56.524
+  },
+  {
+   "slide": 4,
+   "text": "A single dot means the folder you're in.",
+   "start": 57.069,
+   "end": 59.249
+  },
+  {
+   "slide": 4,
+   "text": "Two dots mean the folder one level up.",
+   "start": 59.743,
+   "end": 61.992
+  },
+  {
+   "slide": 4,
+   "text": "And the tilde means your home folder.",
+   "start": 62.401,
+   "end": 64.299
+  },
+  {
+   "slide": 4,
+   "text": "So cd dot dot moves you up one level, and cd tilde takes you home.",
+   "start": 64.847,
+   "end": 70.251
+  },
+  {
+   "slide": 5,
+   "text": "cd means change directory.",
+   "start": 71.153,
+   "end": 73.333
+  },
+  {
+   "slide": 5,
+   "text": "Give it a path, and you're there; check with pwd.",
+   "start": 73.857,
+   "end": 77.368
+  },
+  {
+   "slide": 5,
+   "text": "One catch in Colab: every line that starts with an exclamation mark runs in a fresh shell, so a cd there is forgotten on the very next line.",
+   "start": 78.268,
+   "end": 87.803
+  },
+  {
+   "slide": 5,
+   "text": "Use percent cd instead, and Colab remembers where you are.",
+   "start": 88.376,
+   "end": 92.529
+  }
+ ]
+}

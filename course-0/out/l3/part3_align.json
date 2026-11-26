@@ -1,0 +1,96 @@
+{
+ "mp3": "/home/claude/c00/out/l3/audio/part3.mp3",
+ "duration": 85.70775,
+ "sents": [
+  {
+   "slide": 9,
+   "text": "Put them together, and one line answers a real question.",
+   "start": 0.0,
+   "end": 3.496
+  },
+  {
+   "slide": 9,
+   "text": "ls slash content slash sample data, pipe, grep csv, pipe, wc dash l: how many CSV files are in Colab's sample data?",
+   "start": 4.063,
+   "end": 15.212
+  },
+  {
+   "slide": 9,
+   "text": "Read it left to right: list, keep the CSV lines, count them.",
+   "start": 15.768,
+   "end": 20.377
+  },
+  {
+   "slide": 10,
+   "text": "One more tool.",
+   "start": 21.164,
+   "end": 22.044
+  },
+  {
+   "slide": 10,
+   "text": "find searches a whole tree of folders.",
+   "start": 22.565,
+   "end": 25.023
+  },
+  {
+   "slide": 10,
+   "text": "find slash content dash name, then star dot csv in quotes, lists every CSV file under content, however deep.",
+   "start": 25.554,
+   "end": 33.754
+  },
+  {
+   "slide": 10,
+   "text": "The quotes stop the shell expanding the star too early.",
+   "start": 33.967,
+   "end": 38.257
+  },
+  {
+   "slide": 10,
+   "text": "And find dot dash size plus ten M finds files bigger than ten megabytes, which is handy when a disk fills up.",
+   "start": 38.813,
+   "end": 46.691
+  },
+  {
+   "slide": 11,
+   "text": "In the lab, you'll count files with wildcards, save a listing to a file, and answer a question about the MNIST digits dataset with a single pipeline.",
+   "start": 47.262,
+   "end": 57.194
+  },
+  {
+   "slide": 11,
+   "text": "Prompts and hints, never the full answer.",
+   "start": 57.724,
+   "end": 60.523
+  },
+  {
+   "slide": 12,
+   "text": "Let's recap.",
+   "start": 61.098,
+   "end": 61.831
+  },
+  {
+   "slide": 12,
+   "text": "Wildcards match many files with star, question mark and square brackets.",
+   "start": 62.368,
+   "end": 66.954
+  },
+  {
+   "slide": 12,
+   "text": "Greater-than saves output, double greater-than appends, and two greater-than catches errors.",
+   "start": 67.488,
+   "end": 73.654
+  },
+  {
+   "slide": 12,
+   "text": "The pipe chains commands, and grep, sort, uniq and wc turn them into answers.",
+   "start": 74.212,
+   "end": 80.409
+  },
+  {
+   "slide": 12,
+   "text": "Next, a new module: who owns a file, and who's allowed to touch it.",
+   "start": 80.935,
+   "end": 85.708
+  }
+ ]
+}

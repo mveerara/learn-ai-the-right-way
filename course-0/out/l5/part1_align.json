@@ -1,0 +1,96 @@
+{
+ "mp3": "/home/claude/c00/out/l5/audio/part1.mp3",
+ "duration": 79.151,
+ "sents": [
+  {
+   "slide": 1,
+   "text": "Root is the user who can do anything on a Linux machine, and sudo is how you borrow that power for one command.",
+   "start": 0.0,
+   "end": 7.036
+  },
+  {
+   "slide": 1,
+   "text": "You'll type it often when you install GPU drivers and tools.",
+   "start": 7.6,
+   "end": 11.066
+  },
+  {
+   "slide": 1,
+   "text": "Today: what it does, and how not to hurt yourself with it.",
+   "start": 11.935,
+   "end": 15.603
+  },
+  {
+   "slide": 2,
+   "text": "A normal user can work with their own files, but can't change the system.",
+   "start": 16.494,
+   "end": 20.511
+  },
+  {
+   "slide": 2,
+   "text": "That's a safety net: mistakes stay small.",
+   "start": 21.027,
+   "end": 23.843
+  },
+  {
+   "slide": 2,
+   "text": "Root has no safety net.",
+   "start": 24.451,
+   "end": 26.128
+  },
+  {
+   "slide": 2,
+   "text": "Root can install anything, change any file, and delete the whole system with one wrong command.",
+   "start": 26.631,
+   "end": 32.755
+  },
+  {
+   "slide": 3,
+   "text": "sudo stands for superuser do.",
+   "start": 33.66,
+   "end": 36.294
+  },
+  {
+   "slide": 3,
+   "text": "Put it in front of a command, and that one command runs as root.",
+   "start": 36.827,
+   "end": 40.611
+  },
+  {
+   "slide": 3,
+   "text": "Linux asks for your own password, not root's, and only users on an approved list are allowed to use it.",
+   "start": 41.288,
+   "end": 47.93
+  },
+  {
+   "slide": 3,
+   "text": "Then you're back to normal.",
+   "start": 48.466,
+   "end": 49.844
+  },
+  {
+   "slide": 3,
+   "text": "That's much safer than logging in as root and staying there.",
+   "start": 50.454,
+   "end": 53.645
+  },
+  {
+   "slide": 4,
+   "text": "Use sudo when you change the system: installing packages with apt, installing GPU drivers, changing system settings, or touching files that root owns.",
+   "start": 54.551,
+   "end": 65.016
+  },
+  {
+   "slide": 4,
+   "text": "Don't use it for your own work: pip installs inside your virtual environment, editing your own files, running your Python scripts, or git.",
+   "start": 65.649,
+   "end": 74.66
+  },
+  {
+   "slide": 4,
+   "text": "If a command works without sudo, run it without sudo.",
+   "start": 75.376,
+   "end": 78.919
+  }
+ ]
+}

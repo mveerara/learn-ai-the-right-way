@@ -1,0 +1,11 @@
+0:00 Course 0 · Lesson 5: sudo, root and staying safe
+0:17 root: the administrator
+0:35 sudo: root for one command
+0:56 When to use sudo
+1:22 Never sudo pip
+1:39 Read before you sudo
+2:04 One space, big difference
+2:22 Root in Colab
+2:42 Four habits that keep you safe
+2:59 Your guided lab
+3:10 Recap and your quiz

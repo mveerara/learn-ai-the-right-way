@@ -1,0 +1,13 @@
+0:00 Course 0 · Lesson 2: Moving around
+0:18 One big tree
+0:36 Paths: the address of a file
+0:56 Three shortcuts
+1:13 Moving: cd
+1:36 Looking: ls options
+1:59 Making things
+2:17 Copy, move, rename
+2:31 Deleting: there is no bin
+2:53 Looking inside files
+3:10 Three keys that make you fast
+3:27 Your guided lab
+3:41 Recap and your quiz

@@ -13,7 +13,19 @@ Why does almost all AI run on Linux? What Linux is, where AI actually runs, and 
 ▶ New here? Start with: https://youtu.be/W5zVEoP0nb0
 ▶ Next: Moving around: files and folders: [link once uploaded]
 
-Chapters: added after the voice is recorded.
+Chapters:
+0:00 Course 0 · Lesson 1: Why Linux runs AI
+0:20 What is Linux?
+0:43 Where AI actually runs
+1:09 Why AI chose Linux
+1:32 The terminal: talking in words
+1:52 Anatomy of a command
+2:17 Your free Linux machine: Colab
+2:36 Your first three commands
+2:57 Linux on your own laptop
+3:15 Help is built in
+3:37 Your guided lab
+3:51 Recap and your quiz
 
 Ria is the channel's animated presenter, with an AI-generated voice. The course is written and designed by Mukund Veeraraghavan.
 
@@ -30,7 +42,20 @@ Find your way around the Linux file system: paths, cd, ls, mkdir, cp, mv, and ho
 ▶ New here? Start with: https://youtu.be/W5zVEoP0nb0
 ▶ Next: Wildcards, pipes and redirection: [link once uploaded]
 
-Chapters: added after the voice is recorded.
+Chapters:
+0:00 Course 0 · Lesson 2: Moving around
+0:18 One big tree
+0:36 Paths: the address of a file
+0:56 Three shortcuts
+1:13 Moving: cd
+1:36 Looking: ls options
+1:59 Making things
+2:17 Copy, move, rename
+2:31 Deleting: there is no bin
+2:53 Looking inside files
+3:10 Three keys that make you fast
+3:27 Your guided lab
+3:41 Recap and your quiz
 
 Ria is the channel's animated presenter, with an AI-generated voice. The course is written and designed by Mukund Veeraraghavan.
 
@@ -47,7 +72,19 @@ Make Linux commands work together: wildcards for many files, redirection to save
 ▶ New here? Start with: https://youtu.be/W5zVEoP0nb0
 ▶ Next: Owners and permissions: [link once uploaded]
 
-Chapters: added after the voice is recorded.
+Chapters:
+0:00 Course 0 · Lesson 3: Wildcards, pipes and redirection
+0:20 Wildcards: patterns for names
+0:40 Wildcards in action
+1:05 Every command has three streams
+1:24 Redirection: output into files
+1:46 Redirection in practice
+2:10 Pipes: chain commands
+2:28 Four friends for pipes
+2:47 One line, one answer
+3:09 Finding files: find
+3:36 Your guided lab
+3:50 Recap and your quiz
 
 Ria is the channel's animated presenter, with an AI-generated voice. The course is written and designed by Mukund Veeraraghavan.
 
@@ -64,7 +101,18 @@ Read and change Linux file permissions: owners, groups, r w x, chmod with letter
 ▶ New here? Start with: https://youtu.be/W5zVEoP0nb0
 ▶ Next: sudo, root and staying safe: [link once uploaded]
 
-Chapters: added after the voice is recorded.
+Chapters:
+0:00 Course 0 · Lesson 4: Owners and permissions
+0:15 Users, groups and root
+0:34 Reading ls -l
+0:58 r, w and x
+1:28 Changing permissions: chmod
+1:54 The number form
+2:19 The classic error
+2:39 Changing owners: chown
+3:00 Why it matters for AI work
+3:26 Your guided lab
+3:40 Recap and your quiz
 
 Ria is the channel's animated presenter, with an AI-generated voice. The course is written and designed by Mukund Veeraraghavan.
 
@@ -81,7 +129,18 @@ sudo and root: what they are, when you need them, why you should never sudo pip,
 ▶ New here? Start with: https://youtu.be/W5zVEoP0nb0
 ▶ Next: Git: commit, push and pull: [link once uploaded]
 
-Chapters: added after the voice is recorded.
+Chapters:
+0:00 Course 0 · Lesson 5: sudo, root and staying safe
+0:17 root: the administrator
+0:35 sudo: root for one command
+0:56 When to use sudo
+1:22 Never sudo pip
+1:39 Read before you sudo
+2:04 One space, big difference
+2:22 Root in Colab
+2:42 Four habits that keep you safe
+2:59 Your guided lab
+3:10 Recap and your quiz
 
 Ria is the channel's animated presenter, with an AI-generated voice. The course is written and designed by Mukund Veeraraghavan.
 

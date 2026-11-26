@@ -1,0 +1,78 @@
+{
+ "mp3": "/home/claude/c00/out/l4/audio/part3.mp3",
+ "duration": 65.724063,
+ "sents": [
+  {
+   "slide": 9,
+   "text": "Why does this matter for AI work?",
+   "start": 0.0,
+   "end": 1.965
+  },
+  {
+   "slide": 9,
+   "text": "SSH refuses to use a private key that others can read, so keys must be six hundred.",
+   "start": 2.559,
+   "end": 8.289
+  },
+  {
+   "slide": 9,
+   "text": "On a shared GPU server, permissions keep your data and other people's apart.",
+   "start": 8.864,
+   "end": 13.472
+  },
+  {
+   "slide": 9,
+   "text": "Scripts need the execute bit before they run.",
+   "start": 14.018,
+   "end": 16.63
+  },
+  {
+   "slide": 9,
+   "text": "And with containers and mounted disks, permission denied is one of the first errors you'll meet.",
+   "start": 17.114,
+   "end": 24.132
+  },
+  {
+   "slide": 9,
+   "text": "Now you can read it.",
+   "start": 24.671,
+   "end": 25.318
+  },
+  {
+   "slide": 10,
+   "text": "In the lab, you'll create a tiny script, watch it fail with permission denied, fix it with chmod, and practise both the letter form and the number form.",
+   "start": 25.595,
+   "end": 34.678
+  },
+  {
+   "slide": 10,
+   "text": "Prompts and hints, never the full answer.",
+   "start": 35.305,
+   "end": 38.138
+  },
+  {
+   "slide": 11,
+   "text": "Let's recap.",
+   "start": 38.959,
+   "end": 39.657
+  },
+  {
+   "slide": 11,
+   "text": "Every file has an owner, a group, and three sets of permissions: read, write and execute, for the owner, the group and everyone else.",
+   "start": 40.254,
+   "end": 49.396
+  },
+  {
+   "slide": 11,
+   "text": "ls dash l shows them; chmod changes them, with letters or with numbers like seven five five and six four four; and chown changes the owner.",
+   "start": 50.048,
+   "end": 60.459
+  },
+  {
+   "slide": 11,
+   "text": "Next: sudo and root, and how to use that power safely.",
+   "start": 61.19,
+   "end": 65.724
+  }
+ ]
+}

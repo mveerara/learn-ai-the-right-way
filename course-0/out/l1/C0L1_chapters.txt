@@ -1,0 +1,12 @@
+0:00 Course 0 · Lesson 1: Why Linux runs AI
+0:20 What is Linux?
+0:43 Where AI actually runs
+1:09 Why AI chose Linux
+1:32 The terminal: talking in words
+1:52 Anatomy of a command
+2:17 Your free Linux machine: Colab
+2:36 Your first three commands
+2:57 Linux on your own laptop
+3:15 Help is built in
+3:37 Your guided lab
+3:51 Recap and your quiz

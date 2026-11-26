@@ -1,0 +1,11 @@
+0:00 Course 0 · Lesson 4: Owners and permissions
+0:15 Users, groups and root
+0:34 Reading ls -l
+0:58 r, w and x
+1:28 Changing permissions: chmod
+1:54 The number form
+2:19 The classic error
+2:39 Changing owners: chown
+3:00 Why it matters for AI work
+3:26 Your guided lab
+3:40 Recap and your quiz

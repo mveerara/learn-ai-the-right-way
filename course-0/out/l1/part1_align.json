@@ -1,0 +1,96 @@
+{
+ "mp3": "/home/claude/c00/out/l1/audio/part1.mp3",
+ "duration": 88.999125,
+ "sents": [
+  {
+   "slide": 1,
+   "text": "Welcome to Course zero, the prep course.",
+   "start": 0.0,
+   "end": 2.451
+  },
+  {
+   "slide": 1,
+   "text": "Before we train a single model, we learn the ground every AI tool stands on, and it starts with Linux.",
+   "start": 2.962,
+   "end": 7.817
+  },
+  {
+   "slide": 1,
+   "text": "In this lesson: what Linux is, why almost all AI runs on it, and how to open a Linux terminal in two minutes, for free.",
+   "start": 8.209,
+   "end": 18.767
+  },
+  {
+   "slide": 2,
+   "text": "Linux is an operating system, like Windows or macOS: the layer that runs a computer's hardware and its programs.",
+   "start": 19.49,
+   "end": 26.887
+  },
+  {
+   "slide": 2,
+   "text": "It's free and open source, which means anyone can use it, read its code and change it.",
+   "start": 27.374,
+   "end": 33.125
+  },
+  {
+   "slide": 2,
+   "text": "You may never have seen it, but you use it every day: it runs most of the web's servers, and Android is built on it.",
+   "start": 33.676,
+   "end": 40.947
+  },
+  {
+   "slide": 3,
+   "text": "Now here's why it matters for AI.",
+   "start": 41.521,
+   "end": 43.581
+  },
+  {
+   "slide": 3,
+   "text": "When you train a model in the cloud, rent a GPU machine, or run a notebook in Colab, the computer underneath is almost always Linux.",
+   "start": 44.269,
+   "end": 54.618
+  },
+  {
+   "slide": 3,
+   "text": "For years now, every one of the world's five hundred fastest supercomputers has run Linux.",
+   "start": 54.942,
+   "end": 59.934
+  },
+  {
+   "slide": 3,
+   "text": "So the instructions you'll meet in tutorials, papers and real jobs are written for Linux.",
+   "start": 60.463,
+   "end": 66.134
+  },
+  {
+   "slide": 4,
+   "text": "Why Linux?",
+   "start": 66.895,
+   "end": 67.846
+  },
+  {
+   "slide": 4,
+   "text": "It costs nothing, so it can run on thousands of machines at once.",
+   "start": 68.352,
+   "end": 72.5
+  },
+  {
+   "slide": 4,
+   "text": "It was built for servers, so it works well with no screen at all.",
+   "start": 73.038,
+   "end": 76.767
+  },
+  {
+   "slide": 4,
+   "text": "GPU and AI tools are built and tested for it.",
+   "start": 77.399,
+   "end": 81.107
+  },
+  {
+   "slide": 4,
+   "text": "And everything in Linux can be done by typing commands, which means it can be written into scripts and repeated exactly.",
+   "start": 81.678,
+   "end": 88.785
+  }
+ ]
+}

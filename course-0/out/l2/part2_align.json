@@ -1,0 +1,114 @@
+{
+ "mp3": "/home/claude/c00/out/l2/audio/part2.mp3",
+ "duration": 74.109375,
+ "sents": [
+  {
+   "slide": 6,
+   "text": "ls has options worth knowing.",
+   "start": 0.0,
+   "end": 2.186
+  },
+  {
+   "slide": 6,
+   "text": "Dash l gives details: permissions, owner, size and date.",
+   "start": 2.732,
+   "end": 7.251
+  },
+  {
+   "slide": 6,
+   "text": "Dash a shows hidden files, whose names start with a dot.",
+   "start": 7.832,
+   "end": 11.471
+  },
+  {
+   "slide": 6,
+   "text": "Dash h, together with l, shows sizes in kilobytes and megabytes.",
+   "start": 12.023,
+   "end": 16.737
+  },
+  {
+   "slide": 6,
+   "text": "And dash t sorts by time, newest first.",
+   "start": 17.232,
+   "end": 19.663
+  },
+  {
+   "slide": 6,
+   "text": "You can combine them, like ls dash l h.",
+   "start": 19.907,
+   "end": 22.155
+  },
+  {
+   "slide": 7,
+   "text": "mkdir makes a directory.",
+   "start": 22.41,
+   "end": 24.303
+  },
+  {
+   "slide": 7,
+   "text": "Add dash p, and it makes a whole chain of folders at once, without complaining if some of them already exist.",
+   "start": 24.927,
+   "end": 33.6
+  },
+  {
+   "slide": 7,
+   "text": "touch creates an empty file, or updates the time stamp on a file that's already there.",
+   "start": 34.192,
+   "end": 39.248
+  },
+  {
+   "slide": 8,
+   "text": "cp copies a file.",
+   "start": 39.857,
+   "end": 41.449
+  },
+  {
+   "slide": 8,
+   "text": "To copy a whole folder, add dash r, for recursive.",
+   "start": 41.937,
+   "end": 45.59
+  },
+  {
+   "slide": 8,
+   "text": "mv moves a file.",
+   "start": 46.209,
+   "end": 47.651
+  },
+  {
+   "slide": 8,
+   "text": "And since renaming is just moving to a new name, mv renames too.",
+   "start": 48.079,
+   "end": 52.365
+  },
+  {
+   "slide": 9,
+   "text": "Now, careful.",
+   "start": 53.035,
+   "end": 54.0
+  },
+  {
+   "slide": 9,
+   "text": "rm removes a file, and rm dash r removes a folder and everything in it.",
+   "start": 54.592,
+   "end": 60.111
+  },
+  {
+   "slide": 9,
+   "text": "There is no recycle bin: it's gone.",
+   "start": 60.663,
+   "end": 63.31
+  },
+  {
+   "slide": 9,
+   "text": "So look before you delete.",
+   "start": 63.81,
+   "end": 65.394
+  },
+  {
+   "slide": 9,
+   "text": "Run ls on the same path first, use dash i to be asked each time, and keep anything precious in your Drive workbench.",
+   "start": 65.957,
+   "end": 74.109
+  }
+ ]
+}

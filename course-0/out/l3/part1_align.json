@@ -1,0 +1,150 @@
+{
+ "mp3": "/home/claude/c00/out/l3/audio/part1.mp3",
+ "duration": 102.608938,
+ "sents": [
+  {
+   "slide": 1,
+   "text": "So far: one command, one job.",
+   "start": 0.0,
+   "end": 2.92
+  },
+  {
+   "slide": 1,
+   "text": "Today, commands start working together.",
+   "start": 3.535,
+   "end": 5.995
+  },
+  {
+   "slide": 1,
+   "text": "Wildcards let one command handle many files.",
+   "start": 6.52,
+   "end": 9.591
+  },
+  {
+   "slide": 1,
+   "text": "Redirection saves output to a file.",
+   "start": 10.075,
+   "end": 12.295
+  },
+  {
+   "slide": 1,
+   "text": "And pipes chain commands into a little assembly line.",
+   "start": 12.746,
+   "end": 15.8
+  },
+  {
+   "slide": 1,
+   "text": "This is where the terminal becomes a power tool.",
+   "start": 16.384,
+   "end": 19.018
+  },
+  {
+   "slide": 2,
+   "text": "A wildcard is a pattern that matches file names.",
+   "start": 19.536,
+   "end": 22.432
+  },
+  {
+   "slide": 2,
+   "text": "The star matches any run of characters, so star dot csv means every file ending in dot csv.",
+   "start": 22.914,
+   "end": 30.701
+  },
+  {
+   "slide": 2,
+   "text": "The question mark matches exactly one character.",
+   "start": 31.291,
+   "end": 34.111
+  },
+  {
+   "slide": 2,
+   "text": "And square brackets match one character from a set, like day one, two or three.",
+   "start": 34.56,
+   "end": 38.465
+  },
+  {
+   "slide": 3,
+   "text": "The shell expands the pattern before the command even runs, so any command can use it.",
+   "start": 38.705,
+   "end": 45.659
+  },
+  {
+   "slide": 3,
+   "text": "ls star dot csv lists them; cp star dot csv data slash copies them all at once.",
+   "start": 46.253,
+   "end": 53.897
+  },
+  {
+   "slide": 3,
+   "text": "And rm with a wildcard deletes them all at once, so always run ls with the same pattern first, to see exactly what will go.",
+   "start": 54.401,
+   "end": 62.983
+  },
+  {
+   "slide": 4,
+   "text": "Every command has three streams.",
+   "start": 63.502,
+   "end": 65.475
+  },
+  {
+   "slide": 4,
+   "text": "Standard input, where it reads from.",
+   "start": 65.939,
+   "end": 67.947
+  },
+  {
+   "slide": 4,
+   "text": "Standard output, where its normal results go.",
+   "start": 68.361,
+   "end": 70.976
+  },
+  {
+   "slide": 4,
+   "text": "And standard error, where error messages go.",
+   "start": 71.385,
+   "end": 74.122
+  },
+  {
+   "slide": 4,
+   "text": "Normally, both outputs land on your screen.",
+   "start": 74.745,
+   "end": 77.457
+  },
+  {
+   "slide": 4,
+   "text": "Redirection and pipes let you send them somewhere else.",
+   "start": 77.954,
+   "end": 80.819
+  },
+  {
+   "slide": 5,
+   "text": "The greater-than sign sends output into a file instead of the screen.",
+   "start": 81.306,
+   "end": 85.205
+  },
+  {
+   "slide": 5,
+   "text": "Careful: a single greater-than replaces whatever was in the file.",
+   "start": 85.761,
+   "end": 89.93
+  },
+  {
+   "slide": 5,
+   "text": "Two of them, greater-than greater-than, add to the end instead.",
+   "start": 90.48,
+   "end": 94.461
+  },
+  {
+   "slide": 5,
+   "text": "The number two followed by greater-than sends just the error messages.",
+   "start": 95.06,
+   "end": 99.12
+  },
+  {
+   "slide": 5,
+   "text": "And less-than feeds a file in as input.",
+   "start": 99.619,
+   "end": 102.609
+  }
+ ]
+}

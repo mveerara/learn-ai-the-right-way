@@ -1,0 +1,96 @@
+{
+ "mp3": "/home/claude/c00/out/l5/audio/part2.mp3",
+ "duration": 76.930563,
+ "sents": [
+  {
+   "slide": 5,
+   "text": "One mistake is so common it gets its own slide: sudo pip install.",
+   "start": 0.0,
+   "end": 3.187
+  },
+  {
+   "slide": 5,
+   "text": "It installs packages into the system's own Python, which the operating system itself depends on, and it can break it.",
+   "start": 3.603,
+   "end": 11.17
+  },
+  {
+   "slide": 5,
+   "text": "Instead, activate your project's virtual environment and run pip without sudo.",
+   "start": 11.615,
+   "end": 16.45
+  },
+  {
+   "slide": 6,
+   "text": "Because sudo removes the safety net, read the whole command before you press Enter.",
+   "start": 16.719,
+   "end": 23.739
+  },
+  {
+   "slide": 6,
+   "text": "Only paste commands from sources you trust.",
+   "start": 24.288,
+   "end": 26.799
+  },
+  {
+   "slide": 6,
+   "text": "Be very wary of anything that downloads a script from the internet and pipes it straight into sudo bash.",
+   "start": 27.327,
+   "end": 35.836
+  },
+  {
+   "slide": 6,
+   "text": "And check every path twice, especially with rm dash r.",
+   "start": 36.176,
+   "end": 40.296
+  },
+  {
+   "slide": 7,
+   "text": "Here's why checking matters.",
+   "start": 40.848,
+   "end": 42.083
+  },
+  {
+   "slide": 7,
+   "text": "rm dash r, tilde slash old project, deletes one folder.",
+   "start": 42.399,
+   "end": 45.62
+  },
+  {
+   "slide": 7,
+   "text": "Add a single space after the slash, and the same command deletes your entire home folder, and then anything called old project.",
+   "start": 46.11,
+   "end": 53.976
+  },
+  {
+   "slide": 7,
+   "text": "Linux does exactly what you type, not what you meant.",
+   "start": 54.524,
+   "end": 58.002
+  },
+  {
+   "slide": 8,
+   "text": "Remember that whoami in Colab answered root?",
+   "start": 58.544,
+   "end": 61.391
+  },
+  {
+   "slide": 8,
+   "text": "Colab gives you a throwaway machine, so it runs you as root, and you don't need sudo there.",
+   "start": 61.937,
+   "end": 67.443
+  },
+  {
+   "slide": 8,
+   "text": "That makes it a safe place to practise.",
+   "start": 67.971,
+   "end": 69.903
+  },
+  {
+   "slide": 8,
+   "text": "On real servers and on your own laptop, you'll be a normal user, and sudo is how you ask for more.",
+   "start": 70.43,
+   "end": 76.931
+  }
+ ]
+}

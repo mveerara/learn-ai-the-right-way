@@ -1,0 +1,114 @@
+{
+ "mp3": "/home/claude/c00/out/l4/audio/part1.mp3",
+ "duration": 84.924063,
+ "sents": [
+  {
+   "slide": 1,
+   "text": "Every file on Linux belongs to someone, and comes with rules about who can read it, change it or run it.",
+   "start": 0.0,
+   "end": 6.373
+  },
+  {
+   "slide": 1,
+   "text": "Most permission denied errors you'll ever see come from these rules.",
+   "start": 7.068,
+   "end": 10.853
+  },
+  {
+   "slide": 1,
+   "text": "Today you learn to read them and change them.",
+   "start": 11.407,
+   "end": 14.197
+  },
+  {
+   "slide": 2,
+   "text": "Linux is built for many people sharing one machine.",
+   "start": 15.112,
+   "end": 17.989
+  },
+  {
+   "slide": 2,
+   "text": "Each person has a user account.",
+   "start": 18.496,
+   "end": 20.261
+  },
+  {
+   "slide": 2,
+   "text": "Users can belong to groups, like a team.",
+   "start": 20.791,
+   "end": 23.229
+  },
+  {
+   "slide": 2,
+   "text": "And one special user, root, is the administrator, who can do anything.",
+   "start": 23.686,
+   "end": 28.482
+  },
+  {
+   "slide": 2,
+   "text": "Every file has one owner user and one owner group.",
+   "start": 29.23,
+   "end": 32.529
+  },
+  {
+   "slide": 3,
+   "text": "Run ls dash l, and the first column is the permission string.",
+   "start": 33.356,
+   "end": 37.455
+  },
+  {
+   "slide": 3,
+   "text": "The first character is the type: a dash for a file, d for a directory.",
+   "start": 38.026,
+   "end": 42.948
+  },
+  {
+   "slide": 3,
+   "text": "Then come three groups of three letters: for the owner, for the group, and for everyone else.",
+   "start": 43.591,
+   "end": 50.62
+  },
+  {
+   "slide": 3,
+   "text": "After that you see the owner's name, the group's name, the size, and the file name.",
+   "start": 50.876,
+   "end": 55.274
+  },
+  {
+   "slide": 4,
+   "text": "Each group has three letters.",
+   "start": 56.08,
+   "end": 57.679
+  },
+  {
+   "slide": 4,
+   "text": "r is read: see what's inside.",
+   "start": 58.174,
+   "end": 60.523
+  },
+  {
+   "slide": 4,
+   "text": "w is write: change it.",
+   "start": 61.001,
+   "end": 62.187
+  },
+  {
+   "slide": 4,
+   "text": "x is execute: for a file, run it as a program; for a folder, enter it with cd.",
+   "start": 62.514,
+   "end": 70.126
+  },
+  {
+   "slide": 4,
+   "text": "A dash means that permission is missing.",
+   "start": 70.911,
+   "end": 73.067
+  },
+  {
+   "slide": 4,
+   "text": "So r w x, r dash x, r dash dash means: the owner can do everything, the group can read and run, and everyone else can only read.",
+   "start": 73.519,
+   "end": 84.924
+  }
+ ]
+}

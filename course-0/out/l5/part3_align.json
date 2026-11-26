@@ -1,0 +1,90 @@
+{
+ "mp3": "/home/claude/c00/out/l5/audio/part3.mp3",
+ "duration": 50.755875,
+ "sents": [
+  {
+   "slide": 9,
+   "text": "Four habits keep you safe.",
+   "start": 0.0,
+   "end": 1.733
+  },
+  {
+   "slide": 9,
+   "text": "Use the least power that works.",
+   "start": 2.31,
+   "end": 4.247
+  },
+  {
+   "slide": 9,
+   "text": "Read before you run.",
+   "start": 4.72,
+   "end": 6.014
+  },
+  {
+   "slide": 9,
+   "text": "Keep Python packages in virtual environments.",
+   "start": 6.545,
+   "end": 9.247
+  },
+  {
+   "slide": 9,
+   "text": "And keep your work backed up in Drive and Git, so a mistake is an inconvenience, not a disaster.",
+   "start": 9.694,
+   "end": 15.925
+  },
+  {
+   "slide": 10,
+   "text": "In the lab, you'll check who you are, install a small tool with apt, and practise reading commands before you run them.",
+   "start": 16.576,
+   "end": 23.366
+  },
+  {
+   "slide": 10,
+   "text": "Prompts and hints, never the full answer.",
+   "start": 23.95,
+   "end": 26.809
+  },
+  {
+   "slide": 11,
+   "text": "Let's recap.",
+   "start": 27.448,
+   "end": 28.161
+  },
+  {
+   "slide": 11,
+   "text": "Root can do anything, and sudo borrows that power for one command.",
+   "start": 28.701,
+   "end": 33.021
+  },
+  {
+   "slide": 11,
+   "text": "Use it to change the system, not for pip or your own files.",
+   "start": 33.552,
+   "end": 37.21
+  },
+  {
+   "slide": 11,
+   "text": "Read every command before you run it, and check your paths.",
+   "start": 37.738,
+   "end": 41.12
+  },
+  {
+   "slide": 11,
+   "text": "Colab runs you as root, so it's your safe practice ground.",
+   "start": 41.681,
+   "end": 45.214
+  },
+  {
+   "slide": 11,
+   "text": "That completes Linux basics.",
+   "start": 45.901,
+   "end": 47.637
+  },
+  {
+   "slide": 11,
+   "text": "Next, a new module: Git.",
+   "start": 48.155,
+   "end": 50.756
+  }
+ ]
+}

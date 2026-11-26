@@ -1,0 +1,12 @@
+0:00 Course 0 · Lesson 3: Wildcards, pipes and redirection
+0:20 Wildcards: patterns for names
+0:40 Wildcards in action
+1:05 Every command has three streams
+1:24 Redirection: output into files
+1:46 Redirection in practice
+2:10 Pipes: chain commands
+2:28 Four friends for pipes
+2:47 One line, one answer
+3:09 Finding files: find
+3:36 Your guided lab
+3:50 Recap and your quiz

@@ -1,0 +1,114 @@
+{
+ "mp3": "/home/claude/c00/out/l1/audio/part2.mp3",
+ "duration": 82.128938,
+ "sents": [
+  {
+   "slide": 5,
+   "text": "On a server, there's no mouse and no desktop.",
+   "start": 0.0,
+   "end": 3.066
+  },
+  {
+   "slide": 5,
+   "text": "You talk to the computer through the terminal: you type a command, press Enter, and it answers in text.",
+   "start": 3.648,
+   "end": 9.655
+  },
+  {
+   "slide": 5,
+   "text": "It looks old-fashioned, but it's fast and exact, and it works the same on your laptop, in Colab, or on a GPU server on the other side of the world.",
+   "start": 10.209,
+   "end": 19.535
+  },
+  {
+   "slide": 6,
+   "text": "Every command has the same shape.",
+   "start": 20.48,
+   "end": 22.351
+  },
+  {
+   "slide": 6,
+   "text": "First the command itself: the action.",
+   "start": 22.869,
+   "end": 25.469
+  },
+  {
+   "slide": 6,
+   "text": "Then options, which start with a dash and change how it behaves.",
+   "start": 25.988,
+   "end": 30.094
+  },
+  {
+   "slide": 6,
+   "text": "Then arguments: what to act on, like a folder or a file.",
+   "start": 30.607,
+   "end": 35.676
+  },
+  {
+   "slide": 6,
+   "text": "So ls, dash l, slash content means: list, in long form, the folder called content.",
+   "start": 35.983,
+   "end": 43.173
+  },
+  {
+   "slide": 7,
+   "text": "You don't need to install anything.",
+   "start": 44.107,
+   "end": 45.714
+  },
+  {
+   "slide": 7,
+   "text": "The Colab notebook from Lesson three already runs on a Linux computer.",
+   "start": 46.192,
+   "end": 50.165
+  },
+  {
+   "slide": 7,
+   "text": "In a code cell, start a line with an exclamation mark, and Colab sends it to Linux instead of Python.",
+   "start": 50.83,
+   "end": 57.086
+  },
+  {
+   "slide": 7,
+   "text": "Try exclamation pwd, and exclamation whoami.",
+   "start": 57.759,
+   "end": 62.088
+  },
+  {
+   "slide": 8,
+   "text": "Here are your first three.",
+   "start": 62.747,
+   "end": 63.92
+  },
+  {
+   "slide": 8,
+   "text": "pwd prints the working directory: where you are.",
+   "start": 64.57,
+   "end": 68.039
+  },
+  {
+   "slide": 8,
+   "text": "ls lists what's in it.",
+   "start": 68.632,
+   "end": 70.451
+  },
+  {
+   "slide": 8,
+   "text": "And whoami tells you which user you are.",
+   "start": 70.927,
+   "end": 73.348
+  },
+  {
+   "slide": 8,
+   "text": "In Colab, whoami answers root: the all-powerful administrator.",
+   "start": 74.002,
+   "end": 78.939
+  },
+  {
+   "slide": 8,
+   "text": "We'll see why that matters in the lesson on sudo.",
+   "start": 79.543,
+   "end": 81.878
+  }
+ ]
+}

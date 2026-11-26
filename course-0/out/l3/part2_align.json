@@ -1,0 +1,72 @@
+{
+ "mp3": "/home/claude/c00/out/l3/audio/part2.mp3",
+ "duration": 59.167313,
+ "sents": [
+  {
+   "slide": 6,
+   "text": "For example: ls dash l, greater-than, listing dot txt saves the listing.",
+   "start": 0.0,
+   "end": 6.956
+  },
+  {
+   "slide": 6,
+   "text": "echo, run two done, double greater-than log dot txt adds a line to a log.",
+   "start": 7.455,
+   "end": 13.764
+  },
+  {
+   "slide": 6,
+   "text": "And python train dot py, two greater-than errors dot txt keeps the errors in their own file, so you can read them later.",
+   "start": 14.161,
+   "end": 23.009
+  },
+  {
+   "slide": 7,
+   "text": "The vertical bar is a pipe.",
+   "start": 23.61,
+   "end": 25.122
+  },
+  {
+   "slide": 7,
+   "text": "It takes the output of the command on the left and feeds it straight in as the input of the command on the right, with no temporary files.",
+   "start": 25.613,
+   "end": 33.499
+  },
+  {
+   "slide": 7,
+   "text": "cat data dot csv, pipe, head dash n three shows just the first three lines.",
+   "start": 34.031,
+   "end": 40.52
+  },
+  {
+   "slide": 8,
+   "text": "Pipes shine with small tools.",
+   "start": 41.102,
+   "end": 43.134
+  },
+  {
+   "slide": 8,
+   "text": "grep keeps only the lines that contain a word.",
+   "start": 43.684,
+   "end": 46.367
+  },
+  {
+   "slide": 8,
+   "text": "sort puts lines in order.",
+   "start": 46.801,
+   "end": 48.651
+  },
+  {
+   "slide": 8,
+   "text": "uniq dash c counts repeated lines, but only when they sit next to each other, so sort first.",
+   "start": 49.154,
+   "end": 55.527
+  },
+  {
+   "slide": 8,
+   "text": "And wc dash l counts what's left.",
+   "start": 55.981,
+   "end": 59.167
+  }
+ ]
+}
