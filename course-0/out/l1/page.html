@@ -204,8 +204,8 @@ drawLab();
 /* ---------- quiz ---------- */
 const QUIZ = [{"q": "Which operating system runs almost all AI training in the cloud?", "o": ["Windows", "Linux", "macOS", "Android"], "a": 1, "why": "Cloud servers, GPU machines, Colab and the world's top supercomputers run Linux."}, {"q": "In <code>ls -l /content</code>, what is <code>-l</code>?", "o": ["The command", "An option", "An argument", "A file name"], "a": 1, "why": "Options start with a dash and change how the command behaves. Here it asks for the long, detailed format."}, {"q": "In a Colab code cell, how do you send a line to Linux instead of Python?", "o": ["Start it with #", "Start it with !", "End it with ;", "Write it in capitals"], "a": 1, "why": "A leading exclamation mark tells Colab to run the line as a shell command."}, {"q": "Which command tells you the folder you are in?", "o": ["ls", "whoami", "pwd", "cd"], "a": 2, "why": "pwd prints the working directory. ls lists its contents, whoami shows your user, cd moves you."}, {"q": "You don't remember a command's options. What's the quickest built-in help?", "o": ["Restart the computer", "Add --help after the command", "Reinstall Linux", "Press Ctrl+C"], "a": 1, "why": "Most commands print a short guide to their options with --help. On a full Linux system, man opens the full manual."}];
 const PASS = Math.ceil(0.8 * QUIZ.length);
-const NEXT = {"title": "Moving around: files and folders", "url": "https://www.youtube.com/@LearnAItheRightway/videos", "foot": "Coming soon on the channel"};
-const BASIC = {"title": "Rewatch Course 0, Lesson 1", "url": "https://www.youtube.com/@LearnAItheRightway/videos", "foot": "Then try the quiz again"};
+const NEXT = {"title": "Moving around: files and folders", "url": "https://youtu.be/e6FGQtK7maI", "foot": "Next lesson on YouTube"};
+const BASIC = {"title": "Rewatch Course 0, Lesson 1", "url": "https://youtu.be/IpkLjoz72_A", "foot": "Then try the quiz again"};
 const PRAISE = ["Spot on!","Exactly right.","Nailed it.","Yes, well done.","Perfect."];
 const NUDGE = ["Not quite. Here's why.","Close. Have a look at this.","Good try. Here's the idea."];
 let i=0, right=0, results=[];

@@ -204,8 +204,8 @@ drawLab();
 /* ---------- quiz ---------- */
 const QUIZ = [{"q": "In <code>-rwxr-x---</code>, what can members of the group do?", "o": ["Everything", "Read and run", "Read only", "Nothing"], "a": 1, "why": "After the type character, the groups are owner rwx, group r-x, others ---. So the group can read and run."}, {"q": "What does <code>x</code> mean on a folder?", "o": ["You can delete it", "You can enter it with cd", "You can rename it", "You can run it as a program"], "a": 1, "why": "On a directory, execute means you're allowed to go into it."}, {"q": "Which number means <code>rw-r--r--</code>?", "o": ["755", "644", "600", "777"], "a": 1, "why": "rw- is 4+2=6, r-- is 4, r-- is 4: 644, the usual setting for normal files."}, {"q": "Your script gives Permission denied when you run it. What's the usual fix?", "o": ["chmod u+x script.sh", "rm script.sh", "chown root script.sh", "mv script.sh /"], "a": 0, "why": "The file needs the execute permission for you, its owner."}, {"q": "Why must an SSH private key be set to 600?", "o": ["To make it faster", "SSH refuses keys that other users can read", "So everyone can use it", "It must be executable"], "a": 1, "why": "600 means only the owner can read and write it. SSH rejects keys with looser permissions."}];
 const PASS = Math.ceil(0.8 * QUIZ.length);
-const NEXT = {"title": "sudo, root and staying safe", "url": "https://www.youtube.com/@LearnAItheRightway/videos", "foot": "Coming soon on the channel"};
-const BASIC = {"title": "Rewatch Course 0, Lesson 4", "url": "https://www.youtube.com/@LearnAItheRightway/videos", "foot": "Then try the quiz again"};
+const NEXT = {"title": "sudo, root and staying safe", "url": "https://youtu.be/zoVtKfFzXkA", "foot": "Next lesson on YouTube"};
+const BASIC = {"title": "Rewatch Course 0, Lesson 4", "url": "https://youtu.be/pZo-gDkZxsI", "foot": "Then try the quiz again"};
 const PRAISE = ["Spot on!","Exactly right.","Nailed it.","Yes, well done.","Perfect."];
 const NUDGE = ["Not quite. Here's why.","Close. Have a look at this.","Good try. Here's the idea."];
 let i=0, right=0, results=[];
